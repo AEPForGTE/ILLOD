@@ -1,0 +1,1103 @@
+dataset	id	requirements
+03_themas	73	The system shall read this file and the definitions shall be derived from the initialization data in the file.
+03_themas	74	The THEMAS system shall use the information contained in the initialization data file to determine which heating and cooling units are part of the THEMAS system.
+03_themas	82	This procedure loads the maximum number of concurrently running units allowed.
+03_themas	85	The trigger value is used in combination with the current temperature to determine when a heating or cooling unit shall be turned on or off.
+03_themas	87	This procedure shall read the initialization file and establish the trigger value from the data in that file.
+03_themas	88	The THEMAS system shall ensure the temperature reported by a given thermostat shall not exceed a maximum deviation value of 3 degrees Fahrenheit.
+03_themas	90	This procedure shall read the initialization file and establish the overtemperature value from the data in that file.
+03_themas	93	When the THEMAS system is initialized, it shall first turn off all the heating and cooling units.
+03_themas	94	Then, it shall check all the thermostats and determine if any thermostat’s settings require a heating or cooling unit to be turned on back on.
+03_themas	95	This process shall first determine a known state of all the heating and cooling units by issuing a request to turn off all the units.
+03_themas	96	It shall then read the current temperature values and current temperature settings of each thermostat.
+03_themas	97	If the settings reflect a need for a heating or cooling unit to be turned on, the process shall issue a request to turn on the appropriate unit.
+03_themas	101	This module shall process both types of data.
+03_themas	102	A current temperature value that is received from an individual thermostat shall be compared to the valid temperature range values.
+03_themas	103	If the current temperature value is strictly less than the lower value of the valid temperature range or if the received temperature value is strictly greater than the upper value of the valid temperature range, then the THEMAS system shall identify the current temperature value as an invalid temperature and shall output an invalid temperature status.
+03_themas	104	Otherwise, the THEMAS system shall output a valid temperature status.
+03_themas	105	A temperature setting value that is received from an individual thermostat shall be compared to the valid temperature range values.
+03_themas	106	If the temperature setting value is strictly less than the lower value of the valid temperature range or if the temperature setting value is strictly greater than the upper value of the valid temperature range, then the THEMAS system shall identify the temperature setting as an invalid temperature and shall output an invalid temperature status.
+03_themas	107	Otherwise, the THEMAS system shall realize the value for that thermostat’s temperature setting.
+03_themas	109	The THEMAS system shall determine wh en a reported temperature or a changed temperature setting exceeds the limits set by the overtemperature values.
+03_themas	110	Temperatures that exceed the overtemperature limits shall be reported as such.
+03_themas	111	Temperatures that do not exceed these limits shall be output for subsequent processing.
+03_themas	112	The THEMAS system shall compare the reported temperature value to the temperature setting and detect when the temperature value exceeds the specified limits.
+03_themas	114	If T = LO or UO = T then the THEMAS system shall recognize this condition as the temperature limit has been exceeded. In this case this process shall output the condition of the temperature limit having been exceeded.
+03_themas	115	If LO = T = UO, then this process shall output the temperature status.
+03_themas	116	When the current temperature value exceeds the current temperature setting by a pre -defined amount, the THEMAS system shall activate the appropriate heating or cooling unit.
+03_themas	119	If this condition is true, then the module shall output a request to turn off both the heating unit and the cooling unit.
+03_themas	121	If this condition is true, then this module shall output a request to turn on the heating unit if LO = T LT or the cooling unit if UT T = UO.
+03_themas	122	The THEMAS system shall control each of the heating and cooling units that are defined for the system.
+03_themas	123	The THEMAS system shall limit the number of heating or cooling units that may be running simultaneously.
+03_themas	124	The THEMAS system shall maintain the ON/OFF status of each heating and cooling unit.
+03_themas	126	When a request to turn on a heating or cooling unit is received, the system shall determine if the request can be honored.
+03_themas	127	If the maximum number of heating or cooling units is already running, the request will be added to a LIFO queue.
+03_themas	128	If the maximum number of heating or cooling units is not running, this process will generate a request to turn on the requested unit.
+03_themas	129	When a request to turn off a heating or cooling unit is received, this process shall check the queue of waiting heating and cooling requests.
+03_themas	130	If the queue is not empty, this process shall remove one request from the LIFO queue and check the current state of the thermostat for which the queued request was made.
+03_themas	131	If that thermostat still needs a heating or cooling unit turned on, this process shall submit a request to turn that unit on.
+03_themas	132	When a request for a heating unit or cooling to be turned is denied, an event shall be generated and the THEMAS system shall record that event.
+03_themas	134	This procedure shall realize the thermostat and heating or cooling information and use this information to generate a specific system event.
+03_themas	136	The THEMAS system shall control the heating and cooling units that are designated as part of the THEMAS system.
+03_themas	137	When a request to turn on or off a heating or cooling unit is made, this process shall generate the appropriate request to carry out that request.
+03_themas	139	Once a request to turn on or off a heating or cooling unit, the THEMAS system shall provide the necessary control signal for the unit.
+03_themas	140	This control signal shall also provide an indication of the unit’s status at the requesting thermostat.
+03_themas	141	This process shall recognize the values for the requested heating or cooling unit and the ON or OFF status that is being requested.
+03_themas	142	The necessary signal to the heating or cooling unit will be generated.
+03_themas	144	In order to provide an indication of the status of the heating or cooling unit back to the requesting thermostat, this procedure shall output the status information of the heating or cooling unit.
+03_themas	145	In order to provide an operational history and statistical reports, this process shall generate an event each time a change is made to the status of a heating or cooling unit.
+03_themas	147	There are two events that shall result in an alarm condition: 1) an invalid temperature value is reported from a thermostat, or 2) the reported temperature has exceeded the defined limits.
+03_themas	149	When the THEMAS system detects a request for an alarm, this process shall detect which of the two alarms are being requested.
+03_themas	150	If the system detects an invalid temperature, this process shall output a continuous series of alternating 500 Hz and 700 Hz beeps on the supervisor’s computer.
+03_themas	153	If the system detects a temperature limit has been exceeded, this process shall output a continuous series of alternating 1000 Hz and 1500 Hz beeps on the supervisor’s computer.
+03_themas	155	This series of beeps shall continue until the supervisor manually resets the alarm through the supervisor’s interface window.
+03_themas	156	Each time an alarm is requested, an alarm event shall be recorded.
+03_themas	157	This event shall be used to provide operational and statistical reports about the system.
+03_themas	158	For each event that is generated, the THEMAS system shall identify each event and generate the appropriate event data.
+03_themas	159	When an event occurs, the THEMAS system shall identify the event type and format an appropriate event message.
+03_themas	160	The THEMAS system shall record each event by a description and the current system time for that event.
+03_themas	161	This information shall be recorded in a Microsoft® Access® database that shall reside on the supervisor’s computer.
+03_themas	162	The THEMAS system shall provide the supervisor a mechanism to change the temperature setting of any of the thermostats in the system.
+03_themas	163	The supervisor’s interface shall display the available thermostats and their individual current temperature settings.
+03_themas	165	The THEMAS shall provide the ability for the supervisor to select between two different types of reports: 1) the operational history of the THEMAS system for the past twelve months and 2) a statistical summary for any selected month.
+03_themas	166	The supervisor’s interface to the THEMAS system shall provide a mechanism to select between an operational history report or a statistical summary report.
+03_themas	168	If the operational history report is selected, the THEMAS system shall select all the events from the event database, sort the events by date and time, and create the ASCII report file.
+03_themas	169	If the statistical report is selected, the THEMAS system shall present the operator with a list of available months from which to make a selection.
+03_themas	170	After selecting one of the months, the system shall generate the ASCII report file.
+05_tcs	248	Upon application of power the TCS shall enter the Startup State.
+05_tcs	250	The TCS will execute the particular startup mode which corresponds with the manner in which the TCS Software was halted.
+05_tcs	253	During startup, the TCS shall determine which of the 5 levels of interaction are achievable by the TCS configuration.
+05_tcs	254	Levels of interaction higher than those achievable by a particular TCS configuration shall be prohibited.
+05_tcs	255	The TCS shall inform the operator if the operator attempts to execute a function prohibited as a result of the determined level of interaction.
+05_tcs	256	When executing in the Normal Startup Mode, the TCS shall provide the system functionality necessary to initialize the system to place it in the Operations State within 60 seconds from the time power is supplied and the TCS application is launched.
+05_tcs	257	Initialization of the TCS HWCIs shall include startup of HWCIs , download of software , startup of CSCIs , execution of Startup FD/L , and establishment of the state of readiness of all interfaces.
+05_tcs	258	The TCS in the Recovery Startup Mode shall provide the system functionality to resume the Operations State within 45 seconds.
+05_tcs	260	The TCS shall be capable of automatically recording system state data, interface communications and other information necessary to support event reconstruction.
+05_tcs	261	For recovery from abnormal termination, TCS shall prompt the operator to select the type of recovery to be executed: (1)Resume in the Same Modes And (2)Resume in the Same Modes but Review and Modify the Command Data as Necessary or, (3) Perform a Command Shutdown and Startup Via the Normal Startup Mode.
+05_tcs	265	The TCS hardware and software shall execute periodic Fault Detection/Location (FD/L) while in the Normal Operations Mode and Training Mode, to include a periodic determination of level of interaction.
+05_tcs	269	In the Maintenance Operations Mode, if computer workstation Human Computer Interface (HCI) is required, the TCS shall support the following functions:
+05_tcs	270	Conduct AV maintenance Conduct payload maintenance
+05_tcs	271	Conduct Data Link Terminal maintenance Conduct workstation and peripheral equipment maintenance Perform Fault Detection/Location (FD/L) Perform Software Upgrades
+05_tcs	272	Perform Software Debug and Monitoring
+05_tcs	273	Upon the selection of a shutdown command the TCS shall enter the Shutdown State, which will cause the TCS to be placed in a condition where power can be removed without impacting operations as well as causing damage to the system, and from which restart of the system can be accomplished normally.
+05_tcs	276	The TCS will provide the hardware and software necessary to allow the operator to conduct the following major functions 1) mission planning, 2) mission control and monitoring, 3) payload product management, 4) targeting, and 5) C4I system interface.
+05_tcs	277	The TCS shall have the functionality to allow the operator to generate a UAV mission plan.
+05_tcs	278	The TCS shall have the functionality to receive and process UAV mission plans from service specific mission planning systems.
+05_tcs	280	The TCS shall have the functionality to transmit UAV mission plans to service specific mission planning systems.
+05_tcs	281	The TCS shall facilitate automated processing of mission plan data received via C4I interfaces in order to extract the appropriate mission planning data.
+05_tcs	282	The TCS shall have the functionality to receive and process UAV mission plans from other TCSs.
+05_tcs	283	The TCS shall have the functionality to transmit UAV mission plans to other TCSs.
+05_tcs	285	The TCS shall be capable of storing a minimum of 500 mission plans under unique names to allow for later retrieval.
+05_tcs	286	The TCS mission planning function shall provide a graphical user interface that gives the operator the ability to define waypoints on a map based display using a pointing device with full keyset redundancy.
+05_tcs	287	The TCS shall provide the capability to compute the range and bearing between two geographic positions on the map display.
+05_tcs	288	As an objective, the TCS shall have the capability to import as well as create and modify map display overlays for fire support coordination measures , airspace control measures , and threat identification measures.
+05_tcs	289	Upon completion of radar cross section analysis and characterization by the Government for each UAV type, TCS shall utilize a UAV signature versus threat lookup table (database) that identities the lethality of the threat to the UAV , and shall provide the capability of displaying aircraft signature versus threat, before and during flight.
+05_tcs	290	The TCS shall permit dynamic mission and payload retasking during all phases of operational mission execution.
+05_tcs	291	The TCS shall allow the operator to enter as well as review mission plan parameters, including AV flight parameters, payload control parameters, data link control parameters, AV VCR control parameters (if applicable to the selected AV), and AV loiter patterns.
+05_tcs	292	The TCS shall provide the capability to enter system configuration characteristics in the mission plan, to include selected AV type, AV identification number, selected payload type, ground control authorization information, and required communications pre-set for data links, tactical communications, and C4I data dissemination.
+05_tcs	293	The TCS shall provide the system functionality necessary to upload a flight route plan and payload plan (if applicable) to the AV via the selected system data link as well as direct ground connection.
+05_tcs	294	TCS shall provide the capability for the operator to retrieve a mission plan for viewing, modification, as well as deletion at the operator's discretion , and allow the operator to save the mission plan under a different name, for future retrieval .
+05_tcs	295	The TCS shall automatically check the validity of the intended mission plan prior to being uploaded including altitude constraints, payload constraints, data link range constraints, airspace restrictions, fuel limitations, threat constraints, data link terrain masking effects, and Loss of Link (LOL) Plan.
+05_tcs	296	The TCS shall notify the operator of all discrepancies found during the mission plan check as well as indicate successful completion of the mission plan check.
+05_tcs	297	The TCS shall provide the capability to override validation faults after the fault is acknowledged by the operator.
+05_tcs	298	The TCS shall allow the operator to set the LOL delay timer(s) during mission planning.
+05_tcs	300	The TCS shall provide the capability to print waypoint data in alphanumeric format.
+05_tcs	302	The TCS shall allow the operator to define the desired AV route in waypoint format , and shall provide the capability to include up to 500 waypoints in each flight route plan.
+05_tcs	303	The TCS shall provide the capability to display mission waypoints and flight path graphically.
+05_tcs	304	The TCS shall provide the capability to enter waypoint data in alphanumeric format.
+05_tcs	306	The TCS shall present to the operator the estimated time of arrival and fuel status at each programmed waypoint of the proposed mission plan.
+05_tcs	307	At every waypoint and every 5 minutes, the TCS shall compute the AV's flight range based on remaining fuel.
+05_tcs	308	The TCS shall analyze the flight route plan selected for uplink to determine that the flight constraints of the AV and the limitation of the data link are not violated prior to transmission of the flight route plan to the AV.
+05_tcs	311	The TCS shall provide the operator with an interactive graphics and map based flight route planning capability.
+05_tcs	312	The TCS shall provide the capability to create waypoints that define the desired flight path, define AV Altitude and Airspeed associated with the waypoint.
+05_tcs	313	The TCS shall provide the capability of displaying overlays each containing 100 simultaneous icons of known fire support coordination zones , airspace control zones , threat systems , and displaying the threat engagement envelopes with associated radar terrain masking for those threats .
+05_tcs	314	A de-clutter capability shall be provided that allows the operator to display only a selected number of the most significant threats.
+05_tcs	315	The TCS shall provide the capability to modify the maximum number of threats displayed, when de-clutter is selected.
+05_tcs	316	The TCS shall provide the capability to display waypoint data in alphanumeric format.
+05_tcs	317	The TCS shall have the capability to load a map onto the display, to zoom in and out, to scroll, to print, and to clear a map on the map display.
+05_tcs	318	The TCS shall provide the operator with a clearly indicated map scale.
+05_tcs	319	Upon operator request, the following icons shall be displayed on the map display (when the coordinates reside on the displayed portion of the map). Display an icon indicating AV position when receiving downlink from the desired AV. Display an icon indicating payload center field of view and footprint when receiving downlink from the desired AV. Display an icon, in variable sizes, indicating target position and type at coordinates selected by the operator. Display icons indicating TCS position and Ground Data Terminal (GDT) position. Display an icon indicating Launch, Handover, and Recovery site (when applicable). Display icons indicating Flight Plan waypoints.
+05_tcs	320	The TCS shall be capable of displaying the positions of the icons in Lat./Lon.,
+05_tcs	322	The TCS shall provide the capability to graphically display Line of Sight versus terrain profile (DTED).
+05_tcs	323	For those payloads identified in Table 3-2, the TCS shall be able to generate payload planning information to be uplinked to the AV separate from a flight route plan.
+05_tcs	324	The TCS shall provide the system functionality necessary to generate a payload plan that, as a minimum, shall include the following information: Payload type
+05_tcs	326	The TCS shall provide the capability to display the payload swath for the selected payload for planning purposes.
+05_tcs	327	The TCS will have the capability to control and monitor an AV, payload, data link, and C4I interfaces during the execution of a mission.
+05_tcs	328	While flying two MAE AVs Beyond Line Of Sight (BLOS), the TCS shall provide full control functionality of each AV.
+05_tcs	329	AV specific components used to perform ground based closed loop command and control functions for TCS shall be initialized upon operator selection of a specific AV.
+05_tcs	330	The TCS shall transmit command and control information to the AV via the uplink to the AV , and receive AV telemetry and payload information via downlink from the AV .
+05_tcs	332	The TCS shall have the capability to control and monitor multiple types of AVs.
+05_tcs	333	TCS shall notify the operator when AV performance parameters are out of limits.
+05_tcs	334	The TCS shall provide the capability to pass control of an AV to another TCS , and receive control of an AV from another TCS .
+05_tcs	335	The TCS shall provide the capability to control the AV flight commands as well as to release the AV to an autonomous flight control mode.
+05_tcs	337	The TCS shall provide the capability to control the flight of the selected AV in accordance with the specific AV's operational performance capabilities.
+05_tcs	338	The TCS shall provide the capability to fully control and display the AV's Identification Friend or Foe (IFF).
+05_tcs	339	The TCS shall provide the capability to enter AV preset limits which, as a minimum, will include airspeed limits, altitude limits, and fuel limits.
+05_tcs	340	The TCS shall allow the operator to control an AV using the LOS as well as SATCOM data links.
+05_tcs	341	The TCS shall provide the necessary system capabilities required for AV flight control BLOS via uplink command to two MAE air vehicles.
+05_tcs	342	The TCS shall support operation of the AV via all flight modes, to include manual controls.
+05_tcs	343	The TCS shall provide the capability to implement an emergency action plan, if supported by the AV, to control the AV during equipment failures.
+05_tcs	344	The TCS shall provide interactive displays necessary to command the flight of an AV.
+05_tcs	345	The TCS shall allow the operator to command the flight behavior characteristics inherent to the selected AV.
+05_tcs	347	The TCS shall have the capability to command the AV to use the navigation methods inherent to the selected AV.
+05_tcs	348	The operator shall have the capability to initiate as well as change, to include as a minimum manual override, UAV navigation methods by sending the proper control commands to the UAV.
+05_tcs	349	The TCS shall provide the functionality to control, monitor, and display the operation of the Air Data Terminal (ADT).
+05_tcs	351	The TCS shall provide the functionality to control the ADT antenna.
+05_tcs	353	The TCS shall provide the functionality to control the power, transmitter signal strength, and frequencies used by ADT for data link communication.
+05_tcs	354	As an objective, the TCS shall support an automatic launch and recovery system.
+05_tcs	356	As an objective, the TCS shall present sufficient cues to the operator to implement and monitor automatic launch and recovery, and to initiate abort procedures if required.
+05_tcs	357	The TCS shall allow the operator to initiate the emergency recovery feature of the AV, if the AV has an emergency recovery feature.
+05_tcs	358	TCS shall provide the capability to monitor specific telemetry elements real-time, and record all telemetry elements for future review and processing.
+05_tcs	359	TCS shall provide the capability to monitor AV adherence to the uplinked mission plan, detecting any deviations greater than 10% from projected flight path, and notifying the operator if deviations are detected.
+05_tcs	360	TCS shall provide the capability to monitor the status of all AV subsystems reporting status.
+05_tcs	361	The TCS shall display the AV status, to include but not be limited to the AV location and flight and avionics system status.
+05_tcs	362	When the data link is interrupted, the TCS shall present the last known AV status values and the time at which the last values were reported.
+05_tcs	363	The TCS shall be capable of displaying fuel parameters to the operator to include as a minimum, remaining fuel, flow rate, and bingo fuel.
+05_tcs	365	The TCS shall compute the estimated position of the AV during Loss of Link (LOL) based upon the last known AV position and anticipated flight path based on current flight mode (e.g. flight route plan mode, emergency flight route plan mode, maintain current heading mode).
+05_tcs	366	TCS shall display a LOL timer to the operator initiating a LOL onset.
+05_tcs	368	The TCS will have the capability to control and monitor the AV payload(s).
+05_tcs	369	The TCS shall have the capability to receive data from and control payloads on an AV that is being controlled from another TCS.
+05_tcs	370	The TCS shall provide the necessary system capabilities required for payload control beyond line of sight via uplink command of two air vehicles of the same type using sequential communication techniques.
+05_tcs	373	The TCS shall receive, process, and present payload data to the operator so that the status of the payload can be determined.
+05_tcs	374	The TCS shall permit the operator to control the payload using all methods supported by the payload installed in the selected AV.
+05_tcs	375	The TCS shall provide a graphical user interface display for the purpose of controlling the payload.
+05_tcs	376	The TCS shall provide override of payload automated as well as preprogrammed inputs.
+05_tcs	377	TCS shall provide the capability to monitor payload adherence to the uplinked mission plan.
+05_tcs	378	The TCS shall display the current search footprint and the search history of the payload on the map.
+05_tcs	379	The TCS shall have the capability to simultaneously control and monitor a line-of-sight as well as a BLOS data terminal.
+05_tcs	380	The TCS shall provide the system functionality necessary to record data obtained via the data link.
+05_tcs	381	The TCS shall be capable of interfacing with the specified data terminal and issuing data link terminal commands required to establish, control, and maintain the data link with a selected AV.
+05_tcs	383	The TCS shall be capable of automatically selecting the proper mode of operation for the selected data terminal.
+05_tcs	387	For shipboard operations, the TCS shall provide the capability to switch to a second LOS antenna, if a second antenna is available, when desired (e.g. the currently active antenna is masked by shipboard obstructions).
+05_tcs	388	The TCS shall provide the capability to switch to a SATellite COMmunication (SATCOM) antenna, if the selected AV has SATCOM capability, when desire (e.g. the AV proceeds beyond LOS range as well as when LOS is obstructed).
+05_tcs	389	The TCS shall provide an interactive display for the purpose of controlling the data link terminal.
+05_tcs	390	The TCS shall provide automatic pointing commands for directional antennas , and shall allow for the manual pointing of directional antennas when desired by the operator .
+05_tcs	391	The TCS shall be capable of positioning antennas to maintain LOS as well as SATCOM.
+05_tcs	393	The TCS shall be capable of automatically controlling the transmitter and receiver functions of the selected data terminal.
+05_tcs	394	The operator shall be able to manually override the automatic function selection of the selected data terminal, if desired.
+05_tcs	395	The TCS shall be capable of automatically controlling the transmitter and receiver modes of the selected data terminal.
+05_tcs	396	The operator shall be able to manually override the automatic mode selection of the selected data terminal, if desired.
+05_tcs	397	The TCS shall be capable of automatically controlling the transmitter and receiver frequencies of the selected data terminal.
+05_tcs	398	The operator shall be able to manually override the automatic frequency selection if desired.
+05_tcs	399	The TCS shall receive, process, and present status data to the operator so that the status of the data terminal and the supported AV data link can be monitored.
+05_tcs	400	The TCS shall be capable of monitoring and displaying the signal strength of the received and transmitted signals for the selected data terminal.
+05_tcs	401	The TCS shall be capable of monitoring and displaying the signal quality of the received and transmitted signals for the selected data terminal.
+05_tcs	402	The TCS shall be capable of presenting to the operator a visual depiction of the minimum and maximum data link operational ranges.
+05_tcs	403	The TCS shall have the functionality to process payload product data from Electro Optical (EO), Infrared (IR), and Synthetic Aperture Radar (SAR) payloads.
+05_tcs	413	The TCS shall display live and recorded imagery data, with as well as without annotation and overlay, upon operator request.
+05_tcs	416	The TCS shall provide the capability to simultaneously view imagery as well as data from more than one payload, when applicable.
+05_tcs	417	The TCS operator shall be able to select the content of the overlay information.
+05_tcs	418	The TCS shall have the capability to select and deselect several types of cross hairs (or other similar ICON) to identify a selected point on a target.
+05_tcs	419	RS170A video and digital imagery shall be routed to TCS functions and displayed upon operator request.
+05_tcs	420	The TCS shall have the functionality to conduct limited exploitation, to include voice and textual reporting for spot and mission objectives, on the payload product data.
+05_tcs	423	The TCS shall provide the capability to capture frozen-frames of imagery and store these frozen images for further review and processing.
+05_tcs	424	The TCS shall have the capability to display Near-Real Time (NRT) imagery to include, as a minimum, date/time group, target location coordinates when the target is in the center of the field of view, north seeking arrow, and AV position and heading.
+05_tcs	425	The TCS shall provide the capability to compute the range and bearing between two geographic positions located on the payload imagery display.
+05_tcs	426	The TCS will have the functionality to determine target coordinates, and estimate target coordinate accuracy.
+05_tcs	427	The TCS shall support a target location function where the operator can request the current ground location of the payload field-of-view center.
+05_tcs	428	The TCS shall have the functionality to determine the location of items of interest within the payload field of view, and express these locations in coordinates acceptable for military applications.
+05_tcs	429	The TCS shall have the functionality to develop an estimate of the error in computed target coordinates, and associate the error estimate with the appropriate target.
+05_tcs	430	The TCS shall be capable of entering DII-COE compliant (C4I) networks.
+05_tcs	432	The TCS shall have the functionality necessary to manage all aspects of C4I system interfaces to include receiving, processing, and transmitting tactical information to include but not limited to character based text messages, NITF 2.0 imagery files, and RS-170A video.
+05_tcs	433	The TCS shall provide the functionality necessary to interface with various C4I systems in order to satisfy the operational requirements for: 1. Tasking TCS to plan and conduct a mission. Presentation of payload product and target coordinates for export and dissemination. Use of UAV obtained data (Non-real time tracks, tactical points and amplifying information) to provide a C4I system with information that may be used by C4I system operators, for transmission on tactical data communication links, and available to support engagement by appropriate weapons systems.
+05_tcs	434	The TCS shall have the capability to interoperate with a data server to receive, extract, and push intelligence data.
+05_tcs	436	The TCS shall have the ability to interface with Service specific ground and airborne Ultra High Frequency (UHF), Very High Frequency (VHF), UHF/VHF, and High Frequency (HF) radios for digital message transmission while using the same radios for record traffic.
+05_tcs	439	The TCS shall export and disseminate formatted NITF 2.0 files , digital imagery (if applicable), RS-170A video (with as well as without overlay), and tactical communication messages.
+05_tcs	449	The TCS will have the functionality to process received C4I messages and to prepare C4I messages for transmission.
+05_tcs	451	The TCS shall, as a minimum, have the functionality to provide the following digital data processing capabilities: 1. Create Tactical Communications Messages to include United States Message Text Format (USMTF), Tactical Fire (TACFIRE), Over The Horizon Gold (OTH-Gold), and Intelligence and Electronic Warfare Character Oriented Message Catalog (IEWCOMCAT)
+05_tcs	453	All digital messages received by the TCS shall be automatically checked for errors and corrected when possible.
+05_tcs	454	All erroneous messages that cannot be corrected by TCS shall be flagged to the operator.
+05_tcs	455	The TCS shall provide the capability to log all incoming and outgoing formatted tactical messages.
+05_tcs	456	The TCS shall, as a minimum, have the functionality to provide the following analog data processing capabilities: 1. Prepare annotated as well as un-annotated analog imagery for transmission 2. Receive incoming annotated as well as un-annotated analog imagery
+05_tcs	457	The TCS shall have the functionality to monitor the status of all C4I interfaces, and display appropriate control information.
+05_tcs	458	The TCS shall, as a minimum, have the functionality to provide the following data monitoring capabilities: 1. Display which C4I systems are supported and online during a mission 2. Monitor the status of all incoming and outgoing tactical communication messages 3. Review all tactical communication messages received and transmitted 4. View incoming and outgoing, annotated as well as un-annotated analog imagery 5. View incoming and outgoing, annotated as well as un-annotated digital imagery messages
+05_tcs	459	TCS shall be capable of executing AV maintenance software and displaying appropriate status results.
+05_tcs	460	TCS shall be capable of executing payload maintenance software and displaying appropriate status results.
+05_tcs	461	TCS shall be capable of executing data terminal maintenance software and displaying appropriate status results.
+05_tcs	462	TCS shall be capable of executing workstation and peripheral equipment maintenance software and displaying appropriate status results.
+05_tcs	464	As a minimum, TCS shall provide Startup FD/L for the operator workstation.
+05_tcs	466	The TCS shall allow authorized operators to install software upgrades via CD-ROM as well as other media storage devices.
+05_tcs	467	The TCS shall restrict operator access to this capability via password protection.
+05_tcs	468	The TCS shall provide the capability for Authorized Operators to modify all TCS programmable parameters.
+05_tcs	469	As a minimum, the TCS shall restrict Operator access to this capability via password protection.
+05_tcs	470	The TCS shall be capable of importing National Imagery Mapping Agency (NIMA) Digital Terrain Elevation Data (DTED), Digital Feature Analysis Data (DFAD), Arc Digitized Raster Graphic and scanned hard copy maps, via compact disk.
+05_tcs	471	The TCS shall be capable of importing map information via operator procedure and shall be capable of incorporating vector format and Compressed ADRG (CADRG) maps.
+05_tcs	472	The TCS shall allow an Authorized Operator to execute a software debug capability and view the resulting debug diagnostic information.
+05_tcs	473	As a minimum, the TCS will restrict Operator access to this capability via password protection.
+05_tcs	474	The TCS will interface with external systems to conduct mission coordination and operations.
+05_tcs	475	The TCS shall provide the capability to interface with equipment necessary to provide connectivity with standard DoD tactical (VHF, UHF, and UHF/VHF) radios, Mobile Subscriber Equipment, and military and commercial satellite communications equipment.
+05_tcs	476	The TCS shall interface with external mission tasking systems (e.g., receive tasking orders, coordinate mission certification).
+05_tcs	477	The TCS shall provide the system functionality necessary to interface with the data terminal.
+05_tcs	478	The TCS shall provide the system functionality to allow interfacing with external systems via a local area network.
+05_tcs	479	The TCS shall provide external interfaces to launch and recovery systems.
+05_tcs	496	The TCS will provide the necessary hardware and software functionality to allow the TCS to integrate with Service Mission Planners.
+05_tcs	528	The TCS shall provide an interface between the TCS and an external hard copy printer.
+05_tcs	529	The TCS shall as a minimum, allow Operator(s) to print freeze-frame video, C4I Messages, Mission Plans, FD/L information, and current map display.
+05_tcs	530	The TCS shall have the functionality to output digital message data and imagery to a hard copy printer.
+05_tcs	532	The TCS shall provide an interface between the TCS and external data storage systems.
+05_tcs	533	The TCS shall have the functionality to transfer digital data as well as digital imagery to and from external data storage systems.
+05_tcs	535	The TCS shall have an interface between the TCS and DoD standard power supply equipment.
+05_tcs	536	The TCS shall have the functionality to connect to the power supply equipment provided in the TCS operating environment.
+05_tcs	538	The TCS shall have an interface to a source of current navigation information. As a minimum this information will include the location of all data terminals, launch and recovery sites, and the controlling TCS.
+05_tcs	540	The TCS shall implement an AV Standard Interface that will provide the proper data format to ensure communications with the selected AV.
+05_tcs	541	This interface shall allow for addition of future AVs and will provide the generic architecture to ensure interoperability.
+05_tcs	543	The TCS shall support a concurrent uplink and downlink capability.
+05_tcs	546	The TCS shall provide an internal interface for establishing communications with the Real Time Processor (RTP) within TCS.
+05_tcs	547	This interface shall allow the information from the data server to be made available to other components of the TCS.
+05_tcs	548	The RTP interface shall support distributed processing capability.
+05_tcs	550	Remotely hosted applications shall communicate in a client server relationship via the defined data server interface.
+05_tcs	551	The TCS shall provide an internal interface for the SAR Processor in order to disseminate SAR information (to include imagery and telemetry) to other components of the TCS.
+05_tcs	553	The TCS shall incorporate an intercom system that provides verbal communicate in the situation where there are multiple operators.
+05_tcs	556	The TCS will provide an interface between the TCS and a video cassette recorder.
+05_tcs	557	The TCS shall allow the Operator(s) to fully control the VCR via the TCS Display input device(s).
+05_tcs	558	The TCS shall be able to route VCR recorded payload video to the C4I Interfaces.
+05_tcs	559	An RS-170A video interface shall be provided for the system to output and input analog imagery and overlays to and from a Video Cassette Recorder (VCR) for recording and playback.
+05_tcs	561	The TCS shall have ports for outputting data and imagery to an internal hard copy printer.
+05_tcs	564	The TCS shall be able to access data storage devices.
+05_tcs	565	The TCS shall have the functionality to transfer digital data as well as digital imagery to and from data storage devices.
+05_tcs	566	The TCS shall provide a CD drive for the retrieval of TCS data.
+05_tcs	567	The TCS shall provide a tape drive for storage and retrieval of TCS data.
+05_tcs	568	The TCS shall provide a RAID for storage and retrieval of TCS data, if required.
+05_tcs	569	The TCS shall have an interface to an uninterruptible power supply.
+05_tcs	570	The TCS hardware will provide the functionality and capability to receive, process, and disseminate video and telemetry data from the AV and payload perform mission planning monitor and control the payload monitor and control the AV and monitor and control the data links.
+05_tcs	572	The TCS hardware shall allow for long range communications from one TCS to another, data storage expansion , access to other computers to share in processing capability , and multiple external peripherals .
+05_tcs	576	The TCS shall have sufficient throughput to support the processing requirements of the selected data link.
+05_tcs	586	The TCS software will provide the functionality and capability to receive, process, and disseminate video and telemetry data from the AV and payload perform mission planning
+05_tcs	592	The TCS software shall provide the UAV operator with the necessary tools for computer related communications, mission tasking, mission planning, mission execution, data receipt, data processing, and data dissemination.
+05_tcs	594	TCS software shall provide a windows based graphic operator interface.
+05_tcs	606	The controls shall allow the air vehicle and payload operators to perform mission control, mission monitoring, and mission updates and modifications while wearing cold weather clothing and in a Mission Oriented Protective Posture.
+05_tcs	607	The TCS shall provide the operator a caution and warning diagnostic when the TCS system has identified a malfunction.
+05_tcs	610	When performing a given task during mission execution, the operator shall be given appropriate warning messages from other concurrently-executing subsystem tasks.
+05_tcs	611	The TCS operator shall be required to enter an acknowledgment prior to disabling the display of critical warning flags for any AV, Payload, ADT, GDT, and TCS faults.
+05_tcs	612	A combination of visual and auditory outputs will be provided to alert the TCS operator to situations which may require operator response.
+05_tcs	613	All TCS warning messages and HCI actions shall be archived for later review.
+05_tcs	614	All TCS operator inputs shall be error checked such that any erroneous operator entry will not cause current processing to terminate.
+05_tcs	615	The HCI shall prompt the operator for a valid input.
+05_tcs	621	The TCS shall provide the functionality to display all HCI elements on any available monitor on the TCS workstation.
+05_tcs	622	The TCS shall be capable of displaying a window within a window format to include, as a minimum, displaying a video window overlaid on a map screen as well as a map screen overlaid on a video screen.
+05_tcs	623	The TCS shall provide full complementary control operations from the keyset as well as the X/Y control device (e.g., trackball, mouse, joystick).
+05_tcs	626	The TCS shall provide a capability for porting an off-the-shelf, complex control joystick with multiple toggle and multi-position switches as part of the TCS hardware suite.
+05_tcs	628	The TCS shall provide for multi-level information display tailoring by the operator.
+05_tcs	629	The TCS shall provide automated TCS system information, control options, and logical and simple operator guidance and support for immediate and adaptive responding to crisis situations.
+05_tcs	630	The TCS shall provide maximum automated system software support to system status monitoring and alerting of the TCS operator when a preset system parameter goes under as well as over a set threshold.
+05_tcs	631	The TCS shall provide the necessary processing, display, and control capabilities to ensure dynamic situational awareness input to the TCS operator.
+05_tcs	633	The TCS HCI shall provide unambiguous AV and payload control and status feedback indicators to ensure safe, efficient operations of two AVs and their payloads by a single TCS station.
+05_tcs	635	The TCS HCI shall provide the capability to select and amplify an object and point on a map as well as payload screen.
+05_tcs	637	The TCS HCI shall display the SAR imaging swath on the map display.
+05_tcs	638	The TCS HCI shall provide the on-screen capability to select and efficiently move as well as reorient a previously defined SAR imaging swath.
+05_tcs	639	The TCS HCI shall provide the capability to lock onto and hold a coordinate point on the payload imagery window.
+05_tcs	640	The TCS HCI shall provide the capability to display operator definable “Lock Out” zones around waypoints, Launch and Recovery Point (LRP), as well as any selected point on the AV flight path.
+05_tcs	641	The TCS HCI shall provide for a rapid means to cancel aural warnings.
+05_tcs	644	For AV safety as well as mission-critical Warnings, the TCS HCI shall provide a default selection as well as an override option, along with a selection of adaptive responses, and the minimum information necessary to assist the operator in responding quickly and adaptively to the emergency.
+05_tcs	647	The TCS HCI shall provide for the capability to automatically designate target locations from the payload screen onto the map screen.
+05_tcs	652	The TCS system shall provide, for the operator and maintainer, an embedded or add-on interactive training courseware with self-paced instruction, duplicating UAV flight performance characteristics, capabilities, and limitations.
+05_tcs	657	The TCS shall provide the functional capability to train in the operation of the TCS system, performance of TCS UAV functions, and on line system troubleshooting.
+05_tcs	660	The capability for the conduct of actual communications processing concurrently with Training operations shall be provided if and only if messages are identified as training messages.
+05_tcs	662	TCS shall record operator and maintainer actions for self assessment and performance enhancement.
+05_tcs	663	Operator and maintainer performance shall be measurable using parameters retrievable from the TCS to determine proficiency levels.
+06_microcare	692	Each voucher should have two portions with three tear off voucher slips each for Client and Partner.
+06_microcare	696	The VSP will submit the claim to VMIU field office to enter those into the database,
+06_microcare	698	If any of mandatory information is missed or any false information is existing then the field office will reject the claim back to VSP and the system will keep those claim in a quarantine area
+06_microcare	699	The quarantined forms will be sent back to the VSP for verification, if the VSP returns the claim with satisfactory details, the claims will be entered on to the system, in the following month’s batch.
+06_microcare	703	This validity date can be amended or altered at the system level ONLY by the authorized user Voucher will also have MRP (maximum retail price)
+06_microcare	704	Voucher should have three tear off portioned slips with a sub-section tear-off for the partner.
+06_microcare	706	Each voucher slip should contain the bar code of the Voucher with two identifications one for the client and the other for the partner.
+06_microcare	708	The voucher will be created ONLY by the authorized person.
+06_microcare	710	Once created vouchers will not be edited or deleted but there will be a provision to with-hold any voucher number if the admin team decides to do for any reason.
+06_microcare	711	There will be a provision to amend the validity date of the voucher.
+06_microcare	712	The system will capture the master details of every distributor so that the users can get the details of any distributor and sales details at any time.
+06_microcare	713	Each distributor will have unique code and detailed descriptions such as name, address, locations and type of business etc. such valid information will help us track information related to sales and distributions.
+06_microcare	714	The address field will capture the geographical location of the distributor, such as District, Sub-District, County, Sub-County or Village / Town, road or street.
+06_microcare	715	All the level of details will have a master table in order to update as per the program requirements.
+06_microcare	716	The system will check the duplicated ID for the distributors.
+06_microcare	717	The system can allow the duplicate names of the Distributor.
+06_microcare	718	On capture of any duplicate name the system will give a warning message to have the duplicate name or to change the name.
+06_microcare	720	System will have a provision to print the distributor master details.
+06_microcare	721	The distributor screen will have a provision to view the Sales History of a particular distributor with following summary details.
+06_microcare	722	There will be a provision to select a particular distributor to view the details (e.g. sales) by double clicking on the grid.
+06_microcare	725	There will also be a provision for the other users to view the details of a distributor with purchase and sales details.
+06_microcare	726	The system will capture the details of MSIU Salesman this would help the MSIU management team to understand the performance of each Team or salesman.
+06_microcare	727	During every distribution transaction the user should select the name of the sales man listed from Team Master.
+06_microcare	729	The system will check the duplicated ID for the salesman and team.
+06_microcare	730	The system can allow the duplicate names of the salesman.
+06_microcare	731	On capture of any duplicate name the system will give a warning message to have the duplicate name or to change the name.
+06_microcare	733	The system will capture the details of voucher sales between MISU sales team and Distributors.
+06_microcare	735	With the below details the user can get the details of Distributor-wise and Salesman-wise and Batch No wise sales details as reports.
+06_microcare	736	According to the number of vouchers required by the distributor, the system should allocate the relevant vouchers with their numbers and batch numbers based on the stock.
+06_microcare	737	The system will generate an auto-generated number as Distribution Invoice No.
+06_microcare	738	Suppose the distributor or salesman name is not available in the system, then the system has a provision to navigate quickly to its master screen and enter the new Distributor and Salesman details, without closing the present screen.
+06_microcare	739	While entering the No of vouchers required, the system should automatically pick the Batch No’s with voucher No’s from the available voucher stock and list the details of each voucher with below information’s as a grid format.
+06_microcare	744	The VSP will send the collected claim forms monthly and send it to MSIU field office.
+06_microcare	746	The VSP code is a digit code with suffix SP, would be automatically generated by the system.
+06_microcare	747	The system should generate message with two option “Continue – Yes/No” while the user trying to create a new VSP with an existing name, If the user press Yes the system will allow the user to enter the same, if not the system wont allow the new entry to save.
+06_microcare	748	The system will list District, Sub-District, County, Sub-County, Village / Town from the master during VSP creation, if any of them are not available in the system, then the system will have the provision to navigate quickly to its master screen and do enter master details and back to VSP screen.
+06_microcare	750	If any of the information is not available in existing master of above, then the system will have the provision to navigate quickly to its form to enter the master details and back to VSP Screen.
+06_microcare	751	The system will populate Active VSP only on other screen during data entry process, but the system will also populate all VSP for report purpose.
+06_microcare	753	But if the system is found more than two fraud entries during the claim process of particular VSP, then the system would automatically change the status of that particular VSP as In-activate.
+06_microcare	754	Activation of that particular VSP is again purely based on MSIU Management decision.
+06_microcare	755	The VSP Master Information screen should have a provision to enter the payment terms agreed between MSIU and VSP.
+06_microcare	758	The allowed users only can able to Add, Modify or delete the VSP master information including payment terms.
+06_microcare	759	The VSP screen will have the provision to view the Claim Status of selected VSP.
+06_microcare	760	The system will facilitate to show the user following details if necessary. VSP Name (as the report header and below as the details part of report) Claim No Date Date of System Entry Amount Status Remarks
+06_microcare	761	The system will generate message while creating a new staff with existing name, but the system will allow the user to save that new staff if its required.
+06_microcare	762	All above information’s other than Qualification are mandatory during the creation of new staff under any VSP.
+06_microcare	763	The system will automatically create Staff Code with Suffix as VSP Code + SC + 3 digit. For example HP0001SC0001 Staff type (should be select from list of staff type listing from Staff Type Master)
+06_microcare	764	If any of the staff type is not available in the system, then the system should have the provision to navigate quickly to staff type master to enter the new staff type and then back to Staff Master screen.
+06_microcare	765	The claim entry is purely based on the Treatment (claims) Form submitted by the VSP.
+06_microcare	769	if any details are not exist in Master record, then the system should have the provision to navigate quickly to its master screen to enter the new details and back to the Claim Entry Screen
+06_microcare	770	The system admin only can able to create User Groups
+06_microcare	771	The system should have the provision to create any number of individual user under any user group.
+07_phin	774	Systems supporting OM should provide the ability for computers in disconnected mode to reconnect to a server to share OM data among other computers that operate in disconnected mode.
+07_phin	775	OM data should be synchronized so that all instances of OM applications working from the same server are able to share and use the same data.
+07_phin	776	Systems supporting OM should be able to electronically record and store data from remote devices that may be uploaded to an aggregating system.
+07_phin	782	Systems supporting OM must have the capability to capture data about organizations (e.g., a local health department, a university, a professional association) involved in an OM investigation, including: organization name, location, and contact information.
+07_phin	783	Systems supporting OM must have the capability to capture data about locations involved in an OM investigation, including: name (if applicable), type (e.g., floor, building, room, store), street address, city, state, zip code, country, GPS coordinates, and other specific details (e.g., a specific building on a campus, a business branch location, a local chapter’s meeting hall)
+07_phin	784	Systems supporting OM must have the capability to capture data about any animals involved in an OM investigation, including: type (dog, monkey, etc), age, gender, owner’s name and address, color, weight, and species. A Subject ID should also be collected for animals in an OM investigation. It may be a challenge to ensure unambiguous identification because demographic details of an animal are not easily identified; therefore, animals involved in investigations may need to be tagged.
+07_phin	785	Systems supporting OM must have the capability to capture data for any object involved in an OM investigation, such as a letter, invoice, food item, or any object that cannot be classified as a “person, organization, place, or animal.” Collected data may include: name of the object, type, physical descriptors, address, identification number (e.g. serial number, package slip number), and relevant dates and times (e.g., invoice date, shipping date, packaging date).
+07_phin	786	Systems supporting OM must have the capability to capture data about any conveyance involved in an OM investigation, including: type of conveyance, route taken (e.g., flight number), etc.
+07_phin	787	Systems supporting OM must have the capability to capture data about any public or private gathering of people (e.g., church social, ball game) involved in an OM investigation, including: time, location, nature of the event, etc.
+07_phin	788	Systems supporting OM must have the capability to capture data about any living things other than persons or animals that are involved in an OM investigation, including: type of living thing, and other customizable data collection questions.
+07_phin	789	Systems supporting OM must have the capability to capture an entity’s travel history to support investigations of entities infected, exposed or potentially exposed.
+07_phin	790	When a health event is investigated, it must be assigned an event identifier (i.e., Event ID) that is unique within the jurisdiction.
+07_phin	791	Data describing the health event should be captured, including the reason for the investigation, the category of event (e.g. environmental, infectious), the date the event began, the suspected agent (if known) or investigation focus, the geographic area impacted by the event, as well as the event status (e.g., open, closed).
+07_phin	792	Systems supporting OM should have the ability to record the case definition for a health event.
+07_phin	793	Systems supporting OM should have the ability to capture changes to the case definition that occur as the health event evolves.
+07_phin	795	Travel history data should include information such as the method of transportation (e.g. bus, plane, boat, car), flight number, departure and arrival dates and times, and the origination and destination locations (city, state, and country).
+07_phin	796	Information about each leg of a trip, as well as the parent information about the trip, should be captured. For example, if a person who lives in Georgia travels to Seattle and becomes exposed to monkey pox, then visits a friend in Santa Fe, travel history and conveyance data should be noted accordingly for each place the exposed person traveled.
+07_phin	797	Travel history data to be collected for an animal or object should include shipping invoices, animal shelter delivery and adoption receipts, and delivery schedules (including delivery vehicle and driver information).
+07_phin	798	Detailed conveyance data must be collected when relevant to the investigation, including the carrier identifier, the type of conveyance (such as airplane, bus, or train, among countless others), as well as the make, model, year, and identification number (e.g., VIN) of each vehicle with which the entity was in contact (if this information is relevant to the investigation).
+07_phin	799	Case and exposure data provide more detailed information beyond demographic data. Cases can be persons or animals, and exposure contacts can be persons, animals, other organisms, or exposure settings, such as travel conveyance, location, organization, object, or event.
+07_phin	800	Because attributes of both case and exposure data may describe the same entity, systems supporting OM must have the ability to avoid capturing redundant entity demographic information.
+07_phin	801	Case data about the entity should include: a case identifier (i.e., Case ID) that is unique within the jurisdiction being reported, the suspected agent, case diagnosis, health status (e.g., no symptoms, acute illness), case status (e.g., confirmed, probable, suspect), investigation dates, clinical history, symptom onset date and time, epidemiological links to other cases, and priority (e.g., high, medium, low).
+07_phin	802	There must be a means to update the case diagnosis either manually or automatically if the case definition changes during an event.
+07_phin	803	Epidemiological (epi) data must be collected to assist in the case investigation of events. Standard epi data to be collected includes: onset date and time of symptoms, type of symptoms, risk factors, medical history data, laboratory data, procedure data, and questionnaire responses.
+07_phin	804	Systems supporting OM must allow for dynamic, event-specific case investigation data to be captured.
+07_phin	805	In the context of a case, all entities exposed to a case must be recorded and linked to the case.
+07_phin	806	Demographic information should be collected about the investigator, including their name, address, and contact information, so that the investigator may be contacted to answer questions or to provide additional information.
+07_phin	807	Both the jurisdiction investigating the event and the jurisdiction reporting the cases and associated investigations must be captured. For example, if a person becomes ill during travel in one jurisdiction but is the resident of another, the illness will be reported by the state (jurisdiction) of residence and investigated by the jurisdiction visited.
+07_phin	808	Systems supporting OM should have the ability to classify entities associated with the investigation as investigation controls. For example, controls share demographic characteristics with the subject of the case, but are not infected with the agent that is the focus of the investigation.
+07_phin	809	Exposure investigation data to be captured must include information related to exposure levels, type of exposure (e.g., intimate, social, household, common conveyance), place of exposure, length of time the entity was exposed, frequency of exposure, and the entity’s proximity to the source of exposure.
+07_phin	810	Detailed data must be collected about the source of exposure as well as the exposed entity to support contact exposure tracing. Exposure data related to both the potential source and the potential spread include the entity’s type, Subject ID, Contact ID, contact’s name and address, exposure dates and times, health status, and priority code.
+07_phin	811	Epi data must be collected to assist in the exposure investigation of health events. Standard epi data to be collected for exposure investigation parallels the data to be collected for case investigation and includes: onset date and time of symptoms, type of symptoms, risk factors, laboratory data, procedure data, and questionnaire responses.
+07_phin	812	Systems supporting OM must support capturing dynamic, event-specific data that describes contact between two subjects.
+07_phin	815	Monitoring data should be collected about cases and exposed individuals who are isolated or quarantined because of a health event.
+07_phin	818	Specimen/sample collection and laboratory response data supports the collection of clinical specimens, food samples, environmental samples, and other types of samples that will be tested for biological, chemical, and radiological agents. These specimens/samples can be collected from places, persons, animals, or environmental sources such as air, water, food, or soil.
+07_phin	819	Specimens/samples collected for laboratory testing must be assigned an identifier (i.e., Specimen ID) that is unique within the jurisdiction.
+07_phin	820	The subject of a specimen/sample collected for laboratory testing must be linked to the specimen/sample by an identifier (i.e., Subject ID) that is unique within the jurisdiction.
+07_phin	821	Systems supporting OM must be able to store data about the specimens/samples that are collected for laboratory testing. Examples of this data are: Specimen ID, Subject ID, purpose for test, collection date and time, subject type (e.g., human, plant, animal, food), specimen category, specimen type, suspected agent, risk indicator (e.g., infectious, radioactive, corrosive), person performing specimen/sample collection (including contact information), location of collection, and volume and quantity details.
+07_phin	822	Clinical specimen data should include information about the specimen source/site from which the specimen was taken, symptom date of onset, and whether the sample is acute or convalescent.
+07_phin	823	Environmental sample data should include information about the collection method, location (geocoded if possible) from which the sample was taken, source (e.g., rain or well for water, radiation release, asbestos, chair or desk in a specified location), nature of the sample (e.g., soil, water, air), quality control data, collection begin and end date and time for air samples, and original volume and volume of concentrate tested for water samples.
+07_phin	824	Food sample data should include information about the lot number, batch number, manufacturer name, shipping invoice, temperature, sample type (e.g., dairy – milk, red meat, spice), and product storage condition.
+07_phin	825	Bar-coding should be supported for the capture of detailed specimen/sample data to improve the quality and efficiency of data collection.
+07_phin	826	Chain of custody information for all specimens/samples should be captured.
+07_phin	827	Chain of custody information for forensic and select agent samples must be captured, including the person who collected the sample, the location of collection, all people who came into contact with the sample during the preparation for shipment to the laboratory, and the acceptance of the package by the shipper.
+07_phin	828	Systems supporting OM must be able to create a laboratory test request for a specimen/sample or group of specimens/samples. More information about creating laboratory test requests is found in section 2.5 System Integration and Data Exchange of this document.
+07_phin	829	Information about batch shipments of specimens/samples that are transferred to test laboratories or other facilities must be collected, including the shipper (e.g., UPS, FedEx), shipment tracking number, and the sending organization’s contact information.
+07_phin	830	Systems supporting OM should be able to support the inclusion of labeling, packaging and shipping instructions (e.g., container type, storage condition, preservative), and the shipping manifest with batch shipments of specimens/samples.
+07_phin	831	Systems supporting OM must be able to store laboratory result(s) and link the result(s) to the original laboratory test request. More information about receiving and linking laboratory test requests is found in section 2.5 System Integration and Data Exchange of this document.
+07_phin	832	Systems supporting OM must store data about laboratory results. Examples of this data include the Specimen ID, Subject ID, test date and time, test type (LOINC), data for each organization involved in the testing of the specimen/sample (e.g., testing or reference laboratory name, location, contact information), laboratory results and result values (SNOMED), other data such as unit of measure for result value, overall interpretation, and any relevant notes.
+07_phin	833	If the specimen/sample collection record exists, the laboratory result must be linked to the specimen collection record by the Specimen ID.
+07_phin	834	If the specimen/sample collection record does not exist, the laboratory result must be linked to the subject by the Subject ID.
+07_phin	835	All levels of granularity of results (e.g., specimen/sample level, assay level) must be supported.
+07_phin	836	Systems supporting OM should capture or be linked to data regarding the prophylaxis or treatment to cases, exposed individuals, or at risk persons, including the person who ordered the prophylaxis or treatment, and the name, date, type, duration, and dosage of the treatment or prophylaxis given. For specific data requirements regarding the administration of prophylaxis and treatment, please reference PHIN Preparedness Countermeasure/Response Administration Functional Requirements and Process Flows, available at www.cdc.gov/phin.
+07_phin	837	Contraindication information should be collected to indicate why vaccinations, treatments, or antidotes may not have been administered or why the patient may not have complied with prescribed interventions.
+07_phin	839	Systems supporting OM should capture information such as the date and time of an activity, activity type, who initiated the activity, and contact information to generate activity logs for management purposes.
+07_phin	840	Activity logs, which are tools for investigators to track their actions during a case, should be supported. For example, investigators may log calls made to monitor symptoms or calls made to schedule follow-up visits.
+07_phin	843	Electronic questionnaires should provide the capability to accept digital signatures.
+07_phin	844	Systems supporting OM must provide the ability to control the configuration of and revisions to investigation-specific questionnaires.
+07_phin	845	Systems supporting OM must provide the ability to publish investigation-specific questionnaires and implementation guides.
+07_phin	847	Systems supporting OM should provide a manual or automatic means of updating the status of case records as the case definition changes.
+07_phin	848	Systems supporting OM should track the changes made to the status of case records as a result of changes in the case definition.
+07_phin	850	Systems supporting OM must support dynamically defined associations between entities for the purpose of defining relationships. For example, person-to-person (e.g., family relationship, exposure relationship), person-to-place (e.g., household, common place), animal-to-person, object-to-place, person-to-travel.
+07_phin	851	Entity-to-epi data links must match the entity to their symptoms, survey questions, specimens/samples collected, laboratory results, and prophylaxis and treatment data.
+07_phin	852	Each new case must be able to link an assigned Entity ID to an Event ID within the scope of the investigation.
+07_phin	853	Systems supporting OM require the ability to capture information about possible cases and potential contacts from the identification process through the treatment and follow-up process, as supported by linkages among entities, events, and actions.
+07_phin	854	Laboratory results must be linked to corresponding specimens/samples including multiple results from one specimen/sample), and subjects when the participating laboratory returns the results. These linkages must unambiguously associate multiple laboratory results to case and contact identifiers.
+07_phin	855	If the specimen/sample was created from another specimen/sample (e.g., aliquots, and new specimen types created from a source sample), laboratory results for the child specimens/samples must be linked to the corresponding parent specimen/sample.
+07_phin	858	Systems supporting OM should be able to create new contacts from existing case records, and should also identify the contact type.
+07_phin	859	Systems supporting OM must support contact exposure tracing by allowing one contact to be linked to multiple cases, and allowing multiple contacts to be linked to a single case.
+07_phin	860	Systems supporting OM should be able to produce contact work lists for each investigator to use, and should allow sorting by priority or geography.
+07_phin	861	Systems supporting OM should allow for analytical searches based upon multiple criteria.
+07_phin	862	Systems supporting OM should have the ability to produce charts, maps, and graphs that illustrate OM data, such as epi-curves and the effect of vaccination or prophylaxis on the number of new cases (demonstrating the effectiveness in containing the health event) or maps that illustrate the number of cases by zip code.
+07_phin	863	Systems supporting OM should generate electronic data dictionaries for dynamic data (or other user-defined data descriptions to assist with effective data exchange), line lists, activity logs, aggregate data, and call-back lists to assist the emergency response group and investigators in responding to and containing a health event.
+07_phin	864	Reports generated by systems supporting OM should clearly indicate the number of cases, the number of contacts per case, the number of cases with no known epi-link at the time of diagnosis, the laboratory results, and the number of vaccinations and/or treatments administered.
+07_phin	865	Systems supporting OM should have the ability to produce pre-formatted queries and reports to allow faster and more accurate reporting, while still allowing the flexibility of ad-hoc reporting.
+07_phin	866	Systems supporting OM should have the ability to produce individual reports for each emergency team member or investigator.
+07_phin	867	Systems supporting OM should have the ability to compare characteristics of exposed and non-exposed (i.e., controls) persons.
+07_phin	868	Systems supporting OM should have the ability to produce lists of action items (e.g., to do lists).
+07_phin	869	Systems supporting OM must have the ability to print questionnaires for multiple uses, including taking to the field, use during phone interviews, etc.
+07_phin	870	Systems supporting OM must be able to aggregate data. Examples of aggregated data to be supported are: number of cases, number of contacts per case, and number of vaccinations and/or treatments administered.
+07_phin	871	Health event data should be aggregated into a centralized data store (i.e., data warehouse) designed specifically to support analysis of events over time.
+07_phin	874	Contact information for key response partner organizations should be stored in a local instance of a public health directory for associating to a health event, as described in section 2.2.2 Health event Data of this document.
+07_phin	875	Systems supporting OM must be able to accept data from other partner systems supporting OM.
+07_phin	876	Systems supporting OM must be able to create and send messages for laboratory test requests. This requirement is identified as a key performance measure for assessing preparedness as described in PHIN Preparedness Key Performance Measures, available at www.cdc.gov/phin.
+07_phin	877	Systems supporting OM should be able to receive, parse and process messages for laboratory test request responses, in accordance with PHIN Laboratory Test Order Response Message Implementation Guide, available at www.cdc.gov/phin.
+07_phin	878	Systems supporting OM must be able to receive, parse and process messages for laboratory results. This requirement is identified as a key performance measure for assessing preparedness as described in PHIN Preparedness Key Performance Measures, available at www.cdc.gov/phin.
+07_phin	879	Laboratory results should be linked to laboratory test requests, which are linked to subjects.
+07_phin	880	Systems supporting OM should be able to exchange messages for laboratory results with systems supporting surveillance, early event detection (EED), and other preparedness areas.
+07_phin	881	Systems supporting OM must be able to exchange messages for confirmed, probable and suspect cases, and the other case classifications that are noted in the PHIN message implementation guide, with systems supporting surveillance, early event detection (EED), and other preparedness areas. This requirement is identified as a key performance measure for assessing preparedness as described in PHIN Preparedness Key Performance Measures, available at www.cdc.gov/phin.
+07_phin	882	Systems supporting OM must exchange messages for investigations and for exposure contacts. This requirement is identified as a key performance measure for assessing preparedness as described in PHIN Preparedness Key Performance Measures, available at www.cdc.gov/phin.
+07_phin	883	Systems supporting OM must be able to receive, parse and process messages for countermeasures that have been administered. This requirement is identified as a key performance measure for assessing preparedness as described in PHIN Preparedness Key Performance Measures, available at www.cdc.gov/phin.
+07_phin	884	Countermeasures that have been administered must be linked to the entity that was administered the countermeasures.
+07_phin	885	Systems supporting OM must be able to create and send messages for countermeasure administration requests. This requirement is identified as a key performance measure for assessing preparedness as described in PHIN Preparedness Key Performance Measures, available at www.cdc.gov/phin.
+07_phin	887	Systems supporting OM should be able to provide the aggregate data necessary for health event monitoring to systems that support response tracking, such as the number of suspect cases, number of persons under isolation or quarantine, and the number of patients receiving countermeasures.
+07_phin	889	Message components should be grouped by observation type (e.g., laboratory, symptom, exposure, risk, treatment) by systems supporting OM.
+07_phin	891	Data exchange should support analysis and information sharing of possible health events at all levels of public health (e.g., national, state, local).
+08_eirene	902	All voice call services shall be able to operate between any combination of fixed and mobile equipment users.
+08_eirene	903	The system shall support point-to-point voice calls between any two call parties.
+08_eirene	904	Such point-to-point calls shall allow both parties to talk simultaneously.
+08_eirene	905	The system shall allow a user to make public emergency point-to-point voice calls.
+08_eirene	907	The system shall support broadcast voice calls.
+08_eirene	908	Broadcast voice calls provide one-way voice communications from a single user to multiple users in a pre-defined local area, all of whom are members of the same call group.
+08_eirene	909	The composition of call groups shall be able to be modified within the network. A single user shall be able to be a member of one or more call groups.
+08_eirene	910	The local area over which broadcast calls shall be implemented shall be able to be modified within the network.
+08_eirene	911	It shall only be possible for the user who initiated the call to talk, other users can only listen.
+08_eirene	912	The system shall support group voice calls.
+08_eirene	913	Group voice calls provide voice communications between a number of users in a pre- defined local area, all of whom are members of the same call group.
+08_eirene	914	The composition of call groups shall be able to be modified within the network. A single user shall be able to be a member of one or more call groups.
+08_eirene	915	The local area over which group calls are implemented shall be able to be modified within the network.
+08_eirene	916	It is acceptable that only one mobile user involved in the group call may talk at any time. In this case:
+08_eirene	917	It shall be possible for controllers to speak at any time during the call.
+08_eirene	919	The system shall support multi-party voice communications between up to six different parties.
+08_eirene	920	Any of the parties involved in a multi-party voice call shall be able to talk simultaneously.
+08_eirene	921	The EIRENE network will provide data services to support the following data applications: text messages general data applications automatic fax train control applications.
+08_eirene	922	The network should support the transmission of point-to-point and point-to- multipoint text messages from the ground to mobile users.
+08_eirene	923	The network should support the receipt of mobile-originated text messages by the ground.
+08_eirene	924	If the text message facility is implemented, it shall not interfere with the ability of users to make or receive high priority voice or data calls.
+08_eirene	925	Support is required for a range of data communications between the ground and mobile users. Such applications may include: timetable information maintenance and diagnostic applications e-mail remote database access.
+08_eirene	926	The network shall support point-to-point data communications.
+08_eirene	930	The network should support fax transmissions between the ground and mobile users.
+08_eirene	931	Where fax functionality is provided, it shall be possible to interrupt the fax to make or receive a high priority voice or data call.
+08_eirene	936	The EIRENE network will support the following call related services: display of identity of called/calling user restriction of display of called/calling user priority and pre-emption closed user group call forwarding call hold call waiting charging information call barring.
+08_eirene	937	It shall be possible for the equipment to display the identity of the called or calling party in the form of a standard telephone number.
+08_eirene	938	It shall be possible to display the identity of the called or calling party as a textual description of their function.  Restriction of display of identity
+08_eirene	939	It should be possible for the network to prevent the identity of certain users from being displayed on the mobile, either when being called, calling or both.
+08_eirene	940	The network shall provide a mechanism whereby calls may be assigned one of a number of different priority levels.
+08_eirene	942	Pre-empted calls will be discontinued and the new call of a higher priority shall be connected instead.
+08_eirene	944	Any user who is not within the list of allowed EIRENE users shall not be able to gain access to any of the functions and services provided by the network.
+08_eirene	945	It shall be possible for an incoming call or data message for one user to be forwarded to another user using functionality provided by the network.
+08_eirene	946	In the case of voice calls, it shall be possible for the user who is attempting to forward a call to converse with the intended recipient prior to forwarding.
+08_eirene	952	The network shall allow the user to temporarily exit from an existing call by putting the call on hold.
+08_eirene	953	It shall be possible for the user to re-join the call which is on hold at any time.
+08_eirene	954	The network shall provide the ability to inform a user, who is involved in an existing call, of attempts by other users to contact them.
+08_eirene	955	Where network services are chargeable, it should be possible for the network to provide information about call rates and on-going call charges.
+08_eirene	970	Where fixed network users are involved in a group or broadcast call, fixed network users will be pre-defined and will not change during the course of the call.
+08_eirene	973	Any group or broadcast calls initiated in a given location shall be broadcast over an associated area based on the location of the call originator, and also to any fixed network numbers associated with the originating location.
+08_eirene	976	Mobiles configured for reception of railway emergency calls entering into a call area where a railway emergency call is ongoing shall automatically join this call.
+08_eirene	977	Cab Radios configured for reception of a call to all drivers in the same area entering an area where a call to all drivers in the same area is ongoing shall automatically join this call unless involved in a higher priority call or involved in a call of the same priority.
+08_eirene	989	Any pressure pulses caused by vehicles passing, entering or leaving tunnels shall not affect the normal operation of EIRENE mobile equipment.
+08_eirene	1000	A Push-To-Talk function shall be provided for use during group calls.
+08_eirene	1002	It shall be possible for the driver to initiate a call to any of the following types of controller with a minimum of driver action being required (eg a single keystroke): primary controller secondary controller power supply controller.
+08_eirene	1003	If the radio system cannot give a unique identity for a given type of controller, the identity could be obtained using external systems as defined in .
+08_eirene	1004	Once an appropriate destination has been obtained, the radio shall attempt to establish a call to this destination.
+08_eirene	1005	The functional identity shall be displayed to the controller.
+08_eirene	1007	An audible and visual indication shall be provided to the driver that the call is proceeding.
+08_eirene	1008	When the call is connected to the controller, an audible and visual indication is to be provided to the driver.
+08_eirene	1009	The call shall be connected to the loudspeaker at the pre-set value.
+08_eirene	1010	The functional identity of the connected party, if available, shall be displayed to the driver.
+08_eirene	1011	If the functional identity of the connected party contains an alphanumeric description, this shall also be displayed.
+08_eirene	1012	If the system is not able to connect the call, an audible and visual indication shall be provided to the driver that the call was not received by the controller.
+08_eirene	1014	It shall be possible for a driver to initiate and participate in group voice calls between drivers in a pre-defined geographical area.
+08_eirene	1015	A driver shall be able to initiate the establishment of a call to other drivers with a minimum of action (eg a single keystroke).
+08_eirene	1016	The group identity shall be displayed on the Cab radios of the participating drivers.
+08_eirene	1017	An audible and visual indication shall be provided to the driver that the call is proceeding.
+08_eirene	1018	Once connected, the driver shall be able to communicate with other driver(s) by using the Push-To-Talk button on the handset. An indication shall be provided to the driver as a reminder of the need to use the Push-To-Talk button on the handset if he wants to talk.
+08_eirene	1019	The call shall be connected to the loudspeaker until the driver picks up the handset.
+08_eirene	1021	If the train moves out of the group call area whilst the call is in progress, an audible and visual indication of the loss of call shall be provided to the driver.
+08_eirene	1022	If the system is not able to connect the call, an audible and visual indication shall be provided to the driver.
+08_eirene	1023	It shall be possible for a driver to initiate Railway emergency calls (see section 13).
+08_eirene	1024	If a train-borne recorder is connected to the Cab radio, details of the activation, termination and any failures of the emergency function shall be sent to the train-borne recorder as each event occurs.
+08_eirene	1025	A continuous visual and short audible indication (from 0 to 20 seconds, for trials: 5 seconds) that the emergency function has been activated shall be provided in the cab. (Note that when the handset is off-hook, the audible indication shall be sounded from the loudspeaker at a low volume, but shall not be sounded from the handset.)
+08_eirene	1026	Once the Railway emergency call is connected and the audible indication is finished, an indication shall be provided to the driver as a reminder of the need to use the Push- To-Talk button on the handset if he wants to speak.
+08_eirene	1027	The call shall be connected to the loudspeaker until the driver picks up the handset.
+08_eirene	1028	If the train moves out of the call area whilst the call is in progress, it will leave the call and an audible and visual indication of the loss of call shall be provided to the driver.
+08_eirene	1029	Once the call is terminated, the continuous visual alarm indication in the cab shall cease.
+08_eirene	1030	If the system is not able to connect the call, an audible and visual indication shall be provided to the driver.
+08_eirene	1032	Where these vehicles are not connected by on-train wire connections, it shall be possible for the lead driver to establish a permanent radio connection between each of the active cabs.
+08_eirene	1034	Whilst on-going, a multi-drivers indication shall be displayed permanently at all Cab radios.
+08_eirene	1035	The lead driver shall be notified if a member of the group has placed the call on hold, although this shall not affect communications between the remaining members of the group.
+08_eirene	1036	At any time during the call, the lead driver shall be able to remove a member of the group.
+08_eirene	1037	The lead driver shall be able to terminate the entire call.
+08_eirene	1038	If a driver is disconnected from the multi-driver call, a clear indication shall be given.
+08_eirene	1040	In each cab, the call shall be connected to the loudspeaker whilst the handset is on- hook.
+08_eirene	1041	If any part of the call fails, an audible and visual indication shall be provided in the appropriate cab.
+08_eirene	1044	For calls between a controller and the lead cab, it shall be possible to add the controller to the multi-driver call.
+08_eirene	1047	Functional identity of the controller shall be displayed in the leading cab.
+08_eirene	1048	It shall be possible for the driver to contact members of on-board train staff using a point-to-point voice call.
+08_eirene	1049	Upon activation of this function, the Cab radio shall provide the driver with a list of generic staff, eg: chief conductor conductor 1 conductor 2 catering staff 1.
+08_eirene	1052	It is required that, in these cases, the Cab radio shall be integrated with internal communication systems such that the appropriate means of connection (wire or radio) will be determined automatically.
+08_eirene	1053	The Cab radio shall be capable of being used as a standard telephone, such that the driver is able to call any valid number subject to pre-defined call restrictions.
+08_eirene	1054	The call may be initiated by: selection from a pre-defined list (up to 99 entries) direct dialling a subscriber number calling a functional number.
+08_eirene	1055	An audible and visual indication of an incoming call shall be provided.
+08_eirene	1056	The functional identity (which may contain an alphanumeric description) of the calling party, when available, shall be displayed.
+08_eirene	1057	Point-to-point calls that are not automatically answered (see table 10-1) shall only be answered once the driver accepts the call.
+08_eirene	1058	Once the driver has accepted the standard point-to-point call, it shall be connected appropriately, eg if the driver has accepted the call by lifting the handset, then the call shall be routed to the handset.  Receive incoming group or broadcast voice call
+08_eirene	1059	An audible and visual indication of the incoming call shall be provided when a Cab radio receives a group or broadcast call.
+08_eirene	1060	The group identity of the voice group call (VBS or VGCS) shall be displayed.
+08_eirene	1061	Group or broadcast calls shall automatically be connected to the loudspeaker if the handset is not in use, or to the handset if the handset is off hook.
+08_eirene	1062	The driver shall be informed if a broadcast call is ongoing by a visual indication displayed on the MMI.
+08_eirene	1064	If the call is a group call, the driver shall be required to request permission before being able to speak as part of the call by lifting the handset and pushing the Push-To- Talk (PTT) button.
+08_eirene	1065	During a group call, a visual indication shall be displayed on the drivers MMI to remind the driver of the need to use the PTT button.
+08_eirene	1066	The driver can not speak in a group call until permission is granted by the network after pushing the PTT button.
+08_eirene	1067	In a group call, an audible and visual indication of whether the request to talk was successful shall be provided.
+08_eirene	1068	The driver shall then be able to speak as part of the call whilst the PTT button is pressed.
+08_eirene	1069	If the train moves out of the group or broadcast call area whilst the call is in progress, an audible and visual indication of the loss of call shall be provided to the driver.
+08_eirene	1070	Reception of this call proceeds as for a standard group or broadcast call, except that a distinctive audible and visual indication shall be provided in the cab.
+08_eirene	1071	If a train-borne recorder is connected to the Cab radio, details of an incoming Railway emergency call shall be transmitted to the train-borne recorder for recording, see section .
+08_eirene	1072	An automatic confirmation shall be generated by the Cab radio at the end of the Railway emergency call as detailed in section 13.
+08_eirene	1074	The Cab radio shall provide a means for the driver to terminate calls which he is authorised to terminate (ie all calls except Railway emergency calls not initiated by the driver and shunting group calls).
+08_eirene	1075	For group or broadcast calls, a means to leave the call without terminating the call shall be provided.
+08_eirene	1076	The Cab radio system shall be able to receive incoming text messages (see section 12 for details).
+08_eirene	1077	The Cab radio shall support a shunting mode of operation that provides a link assurance tone to reassure users of the integrity of the communication link (see section 14).
+08_eirene	1078	A means to enter and leave shunting mode shall be provided.
+08_eirene	1079	The functionality to enter and leave shunting mode shall not be available when there are on-going calls involving the Cab radio.
+08_eirene	1080	The link assurance tone shall be provided via the loudspeaker.
+08_eirene	1081	If the Cab radio is equipped with an additional security device, this audible indication may be muted for the drivers convenience.
+08_eirene	1082	In this case, the security device alerts the driver if the link has failed or if it is cancelled.
+08_eirene	1084	If direct mode is implemented, a means to enter and leave direct mode shall be provided.
+08_eirene	1085	If the radio is in direct mode and the normal network service returns, the user shall be provided with an audible and visual indication.
+08_eirene	1086	Not all communications using the Cab radio will involve the driver. Where these calls involve the Cab radio, the driver shall be provided with an indication that the Cab radio is busy.
+08_eirene	1087	For voice calls using the Cab radio not involving the driver as a called or calling party, the driver shall have the possibility to listen to the audio output of the communication.
+08_eirene	1088	For voice communications, if the driver picks up the handset, the radio shall allow him to join the communication.
+08_eirene	1089	The driver shall be able to terminate communications (voice or data) by selecting another call.
+08_eirene	1090	Where the Cab radio is required by a national railway to support a handheld portable, the Cab radio shall: provide a clear indication as to whether the handheld portable is activated or not; provide an interface to allow the handheld portable to be recharged when not in use; forward calls automatically to the handheld portable when the handheld portable is activated; cancel any call forwarding to the handheld portable when it is deactivated; allow the driver to override the call forwarding to the handheld portable.
+08_eirene	1091	Powering up the Cab radio will initiate the following: automatic self-testing; automatic selection of the pre-set loudspeaker volume; registration with other on-train systems, such as ERTMS/ETCS; all failures of self-tests should be recorded in the train-borne recorder; connection of the Cab radio to an authorised mobile network.
+08_eirene	1092	This shall be the network to which the mobile was last registered (where available); if connection is successful, the name of the network shall be displayed on the MMI and an audible indication of successful connection shall be given; if connection is not successful, an audible and visual indication shall be provided. if connection is not successful, the manual network selection procedure may be initiated by the driver (see ).
+08_eirene	1093	At the point of successful connection, the Cab radio will be able to receive all calls made using the Cab radios telephone number, engine number or appropriate group call numbers (including Railway emergency calls).
+08_eirene	1094	Powering down the Cab radio shall cause the disconnection of the Cab radio from the mobile network.
+08_eirene	1095	When switched off, the radio shall retain any numbers which are stored at the time the radio is switched off.
+08_eirene	1097	Switching the MMI on shall cause the following: self test of MMI (eg transitory lighting of the display and of all the controls and indicator lights of the MMI); determination of the status of the Cab radio, providing a display of radio status on the MMI.
+08_eirene	1098	When the MMI is switched on, the configuration shall be determined by the time elapsed since the MMI was last switched off: less than minutes the MMI shall power up with the same configuration as when t it was last powered down; greater than minutes the MMI shall power up with default settings.
+08_eirene	1100	Switch off shall be soft so that the Cab radio completes the following housekeeping functions before actually switching off: controlled termination of a current call; deregister train number (where applicable); store required data; confirmation of Railway emergency calls (see section 13).
+08_eirene	1104	By default, prompts and information shall be displayed in the language selected by the train owner (as stored within the system).
+08_eirene	1105	It shall be possible for the user to display a list of available languages and select the language in which radio related prompts and information are displayed both at turn on and during a journey (eg where a change of drivers may occur).
+08_eirene	1109	It shall be possible for the driver to increase and decrease the loudspeaker volume within the adjustment range selected.
+08_eirene	1110	When the handset is picked up, the loudspeaker shall continue to operate, but at a reduced volume level.
+08_eirene	1111	Using a simple MMI action, it shall be possible for the driver to view a prioritised list of all authorised mobile radio networks (see section ).
+08_eirene	1112	When presented with this list, it shall be possible for the driver (using simple MMI actions) to select the required mobile radio network manually, whereupon the Cab radio shall attempt to attach to this selected network.
+08_eirene	1113	The manual network selection function shall not be available when there are on-going voice calls involving the Cab radio.
+08_eirene	1114	A visual confirmation of the new network identity shall be given to the driver when a manually initiated network change has been completed successfully.
+08_eirene	1116	The Cab radio should be capable of selecting the mobile radio network automatically from a list of suitable networks (see section ).
+08_eirene	1117	If automatic network selection is implemented, it shall be possible for the driver to activate and deactivate automatic network selection.
+08_eirene	1119	If directed network selection and/or automatic network selection are implemented, the driver shall be informed by means of an audible and visual indication of the new network identity whenever a network change takes place without user intervention.
+08_eirene	1121	If directed network selection is implemented, input from the external device(s) shall initiate the network change regardless of the identity of the current network and how it was selected.
+08_eirene	1123	The Cab radio should be capable of selecting the mobile radio network as directed by input from an external device (eg a balise).
+08_eirene	1124	If directed network selection is implemented and voice calls are ongoing at the time when the external device attempts to trigger a network change, an audible and visual indication shall be given to the driver and network change shall be deferred until the call is terminated or until coverage of the current network is lost.
+08_eirene	1126	The Cab radio should be capable of selecting the mobile radio network automatically from a list of suitable networks (see section ).
+08_eirene	1127	If automatic network selection is implemented, it shall be possible for the driver to activate and deactivate automatic network selection.
+08_eirene	1128	Automatic network selection shall not be used for international border crossing.
+08_eirene	1130	If directed network selection and/or automatic network selection are implemented, the driver shall be informed by means of an audible and visual indication of the new network identity whenever a network change takes place without user intervention.
+08_eirene	1131	It shall be possible for the driver to register and deregister a train number in the following ways: 1) enter train number;  2) initiate automated request (applicable only for leading driver).
+08_eirene	1133	If an automated request is initiated (option 2), the driver shall be able to accept or reject the train number returned by the network.
+08_eirene	1134	Where ERTMS/ETCS and radio systems are available and the driver is required to enter the train number as part of the initialisation procedure, this task shall be carried out only once on the ERTMS/ETCS system and the entered number transmitted to the radio system.
+08_eirene	1136	The driver shall be warned (by audible and visual indications) if a train with the same train number is already registered on the same network.
+08_eirene	1137	A means to override the currently registered train number shall be provided to the newly registering driver.
+08_eirene	1138	The driver of the previously registered train shall be informed (by audible and visual indications) that his train number has been overridden by another driver.
+08_eirene	1139	Where a change of train number is required during the course of a trains journey, it shall be possible for the driver to initiate the change or override the automatic change. This shall be carried out by entering the train number (option 1 in ).
+08_eirene	1140	Non leading drivers shall be able to indicate to the system their location in the train during the registration procedure (2nd driver, 3rd driver etc).  Register and deregister on-train users (on-train functions)
+08_eirene	1141	The drivers functional number shall be automatically registered/deregistered when the train number is registered/deregistered.
+08_eirene	1142	The functional number of other on-train users who may be addressed through the Cab radio via the on-train bus shall be registered/deregistered automatically at the same time as the registration/deregistration of the drivers functional number.
+08_eirene	1143	Where an on-train bus is connected to the Cab radio, deregistration of functional numbers can be performed on an individual basis and also by the train driver, by one action for all users (including the driver), at the end of the journey when the train number is no longer associated with the train.  Register and deregister stock number (engine/coach number)
+08_eirene	1144	There shall be a fixed relationship between the telephone numbers of radios installed in the locomotive/coach and the stock number, which shall remain even if the radio is changed.
+08_eirene	1145	It shall be possible to register and deregister a stock number in one or both of the following ways: automatically using information from on-board systems; automatically via a fixed interface between the locomotive/coach and the radio. Store/retrieve numbers and their details
+08_eirene	1146	The Cab radio shall have a reconfigurable list of stored numbers that may be used to perform abbreviated dialling to named user identities.
+08_eirene	1147	It shall be possible for the driver to find and display stored numbers and their information.
+08_eirene	1148	It should be possible for the driver to store and overwrite numbers and their details in the Cab radio.
+08_eirene	1149	General MMI functions are required to support the following call functions: forward call to the driver handportable; put a call on hold; display incoming call details whilst in an on-going call; temporarily exit an existing call to answer another incoming call; multi-driver call service.
+08_eirene	1153	The result of the tests shall be displayed in a similar format to the self-test when MMI is powered on.
+08_eirene	1155	The Cab radio system may be required to be able to handle incoming and outgoing calls not only to and from the driver, but also to and from other on-train users and devices (conductor, public address system, data systems, etc) via appropriate interfaces and ports.
+08_eirene	1156	For data applications, calls shall be possible even if the driver MMI is switched off.
+08_eirene	1158	The Cab radio may be required to set up calls from a number of different sources. Therefore, the radio shall provide a priority function for calls from different sources in order to handle contention for the radio.
+08_eirene	1159	In order to meet other call priorities, established calls shall be able to be either put on hold or cleared down (pre-empted).
+08_eirene	1160	The Cab radio shall be capable of handling contention between calls of differing priorities.
+08_eirene	1161	An outgoing call request of higher priority than an established call shall take precedence over the established call.
+08_eirene	1162	Where pre-emption occurs, an advisory indication may be provided to the pre-empted parties.
+08_eirene	1164	Upon the request of the driver, the Cab radio should be able to perform a suite of run- time diagnostic tests on all physical interfaces.
+08_eirene	1165	If run-time diagnostics are implemented, failure of an interface shall be reported to the driver via the display.
+08_eirene	1166	If run-time diagnostics are implemented, all failures should be available to be recorded in a train-borne recorder.
+08_eirene	1167	If run-time diagnostics are implemented, diagnostic tests shall not interfere with normal operation of the Cab radio.
+08_eirene	1173	Cab radios should be able to continue to operate for a period of at least 1 hour in the event of failure of the trains power supply, based on the following cycle: point-to-point calls 20%; group calls 5%; standby 75%.
+08_eirene	1180	The driver shall be able to adjust the brightness of buttons, indicator lights and displays according to the ambient lighting in the cab.
+08_eirene	1181	The driver shall be able to adjust the contrast of the display.
+08_eirene	1183	Any displays shall be clearly readable from a normal drivers position, assuming a normal reading distance.
+08_eirene	1190	If contact with the mobile radio network is lost, then the Cab radio shall give an audible and visual indication.
+08_eirene	1191	A driver safety device (DSD) interface should be provided in traction units that are equipped with a DSD in order to support the transmission of a DSD alarm.
+08_eirene	1193	The activation of the driver safety device shall automatically trigger the Cab radio to send a data message.
+08_eirene	1194	The DSD alarm call/message shall provide the following information: train number; engine number; location information.
+08_eirene	1195	DSD alarm information shall be transmitted to the primary controller.
+08_eirene	1197	The Cab radio shall be able to provide the following information to a train-borne recorder or other equipment via a standardised interface: activation of Cab radio emergency call button; receipt of incoming Railway emergency call; termination of outgoing or incoming Railway emergency call; radio faults; driver safety device alarm message transmission; details of confirmation of Railway emergency call.
+08_eirene	1204	The following functions will be provided: call authorised users (including controllers); send Railway emergency calls; receive Railway emergency calls; receive incoming calls; group and broadcast calls; terminate calls;  Other functions switch radio on and off; select language; select mobile radio network; adjust loudspeaker volume; register and deregister functional numbers; store/retrieve numbers and their details; computer interface.
+08_eirene	1205	The General purpose radio shall be capable of use as a standard telephone, such that the user is able to call any valid number subject to call restrictions enforced by the network.  Send Railway emergency call
+08_eirene	1207	A special MMI action shall be required for a General purpose radio user to send a Railway emergency call.
+08_eirene	1208	It shall not be possible for any General purpose radio user to send a Railway emergency call by dialling a short code or telephone number.
+08_eirene	1209	An audible and visual indication of an incoming call shall be provided.
+08_eirene	1210	Where available, the functional identity of the calling party shall be displayed.
+08_eirene	1211	A short audible and visual indication of the incoming call shall be provided.
+08_eirene	1212	The group identity of the voice group call (VBS or VGCS) shall be displayed.
+08_eirene	1213	If the call is a broadcast call, the user shall be informed that he cannot speak as part of the broadcast call.
+08_eirene	1214	If the call is a group call, the user has to request permission to speak during the call by using the Push-To-Talk (PTT) function.
+08_eirene	1215	In a group call, a visual indication shall be provided to remind the user of the need to use the PTT function.
+08_eirene	1217	In a group call, an audible and visual indication of whether the request was successful shall be provided. The user may then talk whilst the PTT function is used.
+08_eirene	1218	If the user moves out of the group or broadcast call area whilst the call is in progress, an audible and visual indication of the loss of call shall be provided to the user.
+08_eirene	1219	Reception of this call (if implemented) shall proceed as for a standard group or broadcast call except that a distinctive audible and visual indication shall be provided.
+08_eirene	1220	The radio shall provide a means for the user to terminate calls which he is authorised to terminate (ie all calls except broadcast or group calls not initiated by the user).
+08_eirene	1221	The radio shall have an on/off switch.
+08_eirene	1222	Switching the radio on shall initiate the following: transitory lighting of any display, controls or indicator lights; automatic self-testing; if the self-test fails a visible and audible indication shall be provided; connection to a mobile network (see section ); if connection is successful, the name of the network shall be displayed and an audible confirmation of successful connection shall be given; if connection is not successful, an audible and visual indication shall be provided.
+08_eirene	1223	At this point, the radio will be able to receive all calls initiated using the telephone number or appropriate group call number.
+08_eirene	1224	Switching the radio off shall cause the following: termination of all calls under the control of (ie initiated by) the radio; disconnection of the radio from the network; clearing the display and inhibition of functions.
+08_eirene	1225	When switched off, the radio shall retain any settings and numbers which are stored at the time the radio is switched off.
+08_eirene	1227	The user shall be able to select his preferred language for the display; this setting shall be retained by the radio.
+08_eirene	1228	When the radio is first powered on, the language that appears on the display shall be the default one set by the national railway.
+08_eirene	1229	Where more than one mobile radio network is available for use by a mobile, the selection of the network to use shall be automatic (see section ).
+08_eirene	1230	When the mobile changes network automatically, a visual and audible indication shall be given.
+08_eirene	1231	It shall be possible for a user to override the automatic network selection manually. This function shall not be available during calls.
+08_eirene	1234	Where a change of functional number is required, it shall be possible for the user to initiate the change.
+08_eirene	1235	It shall be possible for the user to find and display stored numbers and their information.
+08_eirene	1236	It shall be possible for the user to store and/or overwrite numbers and their details in the radio.
+08_eirene	1237	A standard data interface should be provided to allow a computer to be connected to the radio.
+08_eirene	1245	The General purpose radio should comprise the man-machine interface which includes the following components: display; control panel; loudspeaker; microphone.
+08_eirene	1246	The MMI should be suitable for use both by day and night.
+08_eirene	1248	Facilities should be provided to adjust the loudspeaker volume.
+08_eirene	1249	A Push-To-Talk function shall be provided. The Push-To-Talk function does not need to be a dedicated button.
+08_eirene	1250	Four buttons should be provided for designated stored numbers. These buttons need not be dedicated buttons. (This facility is required to allow calls to specified users to be initiated quickly.)
+08_eirene	1252	If the ability to initiate Railway emergency calls is implemented in the radio, accidental initiation of a Railway emergency call shall be prevented.
+08_eirene	1253	A visual and audible indication shall be given when the remaining capacity of the battery is such as to enable only 10 minutes of full duplex call time.
+08_eirene	1254	A network service availability indication shall be provided to the user.
+08_eirene	1255	A visual indication shall be provided to the user if the network service is no longer available.
+08_eirene	1256	An audible indication should be provided to the user if the network service is no longer available.
+08_eirene	1259	The following functions will be provided: Call related functions call authorised users; call controller; send Railway emergency calls; receive Railway emergency calls; receive incoming calls; group and broadcast calls; terminate calls; shunting mode communications; enter/leave direct mode;  Other functions switch radio on/off; select language; select mobile radio network; adjust loudspeaker volume; register and deregister functional number; store/retrieve numbers and their details; computer interface.
+08_eirene	1261	The Operational radio shall be capable of use as a standard telephone, such that the user is able to call any valid number subject to call restrictions enforced by the network.  Call controllers
+08_eirene	1262	It shall be possible for the user of an Operational radio to establish a call with each of the following types of controller (who are not permanently included in a shunting group) with a minimum number of actions being required: primary controller; secondary controller; power supply controller.
+08_eirene	1263	For some users, particularly for shunting team leaders, up to twenty valid numbers may be stored for one controller type.
+08_eirene	1264	In these cases, the identities of the controllers corresponding to these valid numbers shall be displayed with an audible and visual prompt for one to be selected.
+08_eirene	1266	If no selection is made by the user within 10 seconds the radio shall abandon the call attempt.
+08_eirene	1267	Once an appropriate number has been obtained, the radio shall attempt to establish a call to this number with railway operation priority.
+08_eirene	1268	An audible and visual indication shall be provided to the user that the call is proceeding.
+08_eirene	1269	When the call is connected to the controller, an audible and visual indication shall be provided to the user.
+08_eirene	1270	The functional identity of the connected party, if available, shall be displayed to the user.
+08_eirene	1271	Where available, an alphanumeric description of the identity of the connected party shall be displayed.
+08_eirene	1272	If the system is not able to connect the call, an audible and visual indication shall be provided to the user.
+08_eirene	1273	The Railway emergency call shall be able to be initiated using a single red button (see section 13).
+08_eirene	1274	It should be possible, as a maintenance function, to enable/disable the emergency call function.
+08_eirene	1275	If the emergency call function is disabled, a visual indication and short audible indication shall be given when: the radio is switched on; the emergency button is pushed (in this case nothing else will happen).
+08_eirene	1276	An audible and visual indication of an incoming call shall be provided.
+08_eirene	1277	Where available, the functional identity of the calling party shall be displayed.
+08_eirene	1278	A short audible and visual indication of the incoming call shall be provided.
+08_eirene	1279	The group identity of the voice group call (VBS or VGCS) shall be displayed.
+08_eirene	1280	If the call is a broadcast call, the user shall be informed that he cannot speak as part of the broadcast call.
+08_eirene	1281	If the call is a group call, the user has to request permission to speak during the call by using the Push-To-Talk (PTT) function.
+08_eirene	1282	In a group call, a visual indication shall be provided to remind the user of the need to use the PTT function.
+08_eirene	1283	The user may not speak in a group call until permission is granted by the network after using the PTT function.
+08_eirene	1284	In a group call, an audible and visual indication of whether the request was successful shall be provided. The user may then talk whilst the PTT function is used.
+08_eirene	1285	If the user moves out of the group or broadcast call area whilst the call is in progress, an audible and visual indication of the loss of call shall be provided to the user.
+08_eirene	1286	Reception of this call shall proceed as for a standard group or broadcast call except that a distinctive audible and visual indication shall be provided.
+08_eirene	1287	The radio shall provide a means for the user to terminate calls which he is authorised to terminate (ie all calls except broadcast or group calls not initiated by the user).
+08_eirene	1289	If shunting mode is implemented, a means to enter and leave shunting mode shall be provided.
+08_eirene	1290	If shunting mode is implemented, the functionality to enter or leave shunting mode shall not be available whilst there are on-going calls involving the Operational radio.
+08_eirene	1291	If shunting mode is implemented, the link assurance tone shall be provided via the loudspeaker.
+08_eirene	1292	A means to enter/leave the direct mode of operation should be provided (see section 15).
+08_eirene	1293	The radio shall have an on/off switch. Switching the radio on shall initiate the following: transitory lighting of any display, controls or indicator lights; automatic self-testing; if the self-test fails a visible and audible indication shall be provided; connection to a mobile network (see section ); if connection is successful, the name of the network shall be displayed and an audible confirmation of successful connection shall be given; if connection is not successful, an audible and visual indication shall be provided.
+08_eirene	1294	At this point the radio should be able to receive all calls initiated using the telephone number or appropriate group call number.
+08_eirene	1295	Switching the radio off shall cause the following: termination of all calls under the control of (ie initiated by) the radio; disconnection of the radio from the network; clearing the display and inhibition of functions.
+08_eirene	1296	When switched off, the radio shall retain any settings and numbers which are stored at the time the radio is switched off.
+08_eirene	1298	The user shall be able to select his preferred language for the display; this setting shall be retained by the radio.
+08_eirene	1299	When the radio is first powered on, the language that appears on the display shall be the default one set by the national railway.
+08_eirene	1300	Where more than one mobile radio network is available for use by a mobile, the selection of the network to use shall be automatic (see section ).
+08_eirene	1301	When the mobile changes network automatically, a visual and audible indication shall be given.
+08_eirene	1302	It shall be possible for a user to override the automatic network selection manually. This function shall not be available during calls.
+08_eirene	1303	It shall be possible to register and deregister a functional number in the following way: Initiated by the user and transmitted to the ground: user enters functional number which is transmitted to the network.
+08_eirene	1304	Where a change of functional number is required, it shall be possible for the user to initiate the change.
+08_eirene	1305	It shall be possible for the user to find and display stored numbers and their information.
+08_eirene	1306	It shall be possible for the user to store and/or overwrite numbers and their details in the radio.
+08_eirene	1307	A standard data interface should be provided to allow a computer to be connected to the radio.
+08_eirene	1320	The Operational radio MMI shall comprise the following components: display; control panel; loudspeaker; microphone.
+08_eirene	1326	A dedicated Push-To-Talk button shall be provided.
+08_eirene	1327	A visual and audible alarm shall be given when the remaining capacity of the battery is such as to enable only 10 minutes of full duplex call time.
+08_eirene	1328	A visual indication shall be provided to the user if the network service is no longer available.
+08_eirene	1329	An audible indication should be provided to the user if the network service is no longer available.
+08_eirene	1335	The primary controllers MMI should provide the following functionality: Queue all incoming calls or call requests.
+08_eirene	1336	Display the queue to the controller, showing the functional identity and priority of callers.
+08_eirene	1337	High priority calls should be identified and presented at the top of the queue.
+08_eirene	1338	Allow the controller to select any of the incoming calls currently queued by the system.
+08_eirene	1339	Allow the controller to establish a call of Railway emergency, public emergency or railway operation priority to any mobile by selection from the display.
+08_eirene	1340	Allow the controller to establish, close, enter and leave group calls (at Railway emergency, public emergency or railway operation priority).
+08_eirene	1341	Allow sending and receiving of text messages.
+08_eirene	1342	For post incident analysis, the controller equipment should provide the possibility to record all operational speech and data calls.
+08_eirene	1343	It should be possible for calls to be answered automatically according to incoming call priority as defined in section.
+08_eirene	1350	The EIRENE system shall enable users to originate and receive calls by functional number.
+08_eirene	1351	Each mobile shall be identified by a unique telephone number.
+08_eirene	1352	The use of train numbers to address trains shall not result in any ambiguities.
+08_eirene	1353	Every on-train function shall be identified by a unique standard number.
+08_eirene	1354	The use of engine/coach numbers to address trains shall not result in any ambiguities.
+08_eirene	1355	Every on-engine/coach function shall be identified by a unique standard number.
+08_eirene	1356	Every shunting team number shall be based on an association of: service area identifier; shunting team identifier.
+08_eirene	1357	Every maintenance team number shall be based on an association of: service area identifier; type of maintenance team (speciality code); maintenance team identifier.
+08_eirene	1358	Every controller number shall be based on an association of: controller location; controller identifier.
+08_eirene	1360	Group call service areas shall be freely configurable within the operational responsibility of each railway network.
+08_eirene	1366	Authorised users within the EIRENE network shall be able to receive calls from calling parties outside the EIRENE network.
+08_eirene	1372	The lowest priority ongoing call shall be pre-empted before that of a higher priority.
+08_eirene	1376	A mobile may be a member of a number of groups. It shall be possible to activate or deactivate the mobiles subscription to these groups.
+08_eirene	1377	Activating a group on the mobile shall allow a user to receive a call from that group.
+08_eirene	1378	Deactivating a group on the mobile shall prevent a user receiving calls from that group.
+08_eirene	1380	All mobiles with Railway emergency group call subscription(s) shall be prevented from deactivating the emergency group(s) whilst operational.
+08_eirene	1381	Authorised networks shall be listed (or automatically selected if automatic selection has been enabled) in the following order: home EIRENE network; foreign EIRENE networks; public networks.
+08_eirene	1382	Where EIRENE facilities are not available within the currently selected network, the user shall be given a visible indication.
+08_eirene	1391	An addressing scheme shall be provided which permits users to be identified by numbers corresponding to their functional roles rather than by numbers tied to the terminal equipment that they are using.
+08_eirene	1394	It shall be possible to assign up to a minimum of 3 functional numbers to an EIRENE user at any one time.
+08_eirene	1395	Only one EIRENE user shall be assigned to a given functional number at any one time.
+08_eirene	1396	A user shall be able to set up a functional number on one network, and cancel the number from another network.
+08_eirene	1397	The functional number shall remain valid as a user roams from one network to another.
+08_eirene	1399	It shall be possible to call EIRENE users by functional numbers from a wide range of terminals (EIRENE and non-EIRENE). Examples include EIRENE mobiles, controller terminals, railway fixed network telephones and public telephones. (All such calls will be subject to any access restrictions see section .)
+08_eirene	1400	The functional addressing scheme should permit calls to be routed from a controller to an international train within the control area without reference to any EIRENE system other than that providing service to the international train.
+08_eirene	1401	Functional numbers must be unique within the domain of operation. Since the number must be independent of networks, each number must be unique across all networks (including implementation of EIRENE facilities on public networks).
+08_eirene	1402	The functional number shall consist of numeric characters only.
+08_eirene	1404	The functional identity of the called user shall be presented to the user initiating a call and the functional identity of the initiator shall be presented to the user receiving a call.
+08_eirene	1405	For broadcast and group voice communications, the functional identity provided shall be that of the broadcast or group identity.
+08_eirene	1406	If the user initiating the call has more than one functional identity, the user shall be able to select, prior to call establishment, which functional identity is presented to the receiving user.
+08_eirene	1407	In the case of Cab radio, when a train number is assigned as a functional identity, this shall take priority over other Cab radio functional identities, and shall be the functional identity for the Cab radio to be displayed to other users.
+08_eirene	1410	The functional addressing scheme shall be supported by a straightforward procedure for registration of functional numbers. This procedure shall be carried out by the user on commencement of the functional role.
+08_eirene	1412	It should be possible for the system to prevent certain types of users from registering functional numbers that they are not authorised to use, for example: train number; driver of train; shunting team leader.
+08_eirene	1415	Duplicate functional numbers (eg two trains with the same train number) shall be prevented.
+08_eirene	1416	The system shall provide a means to recover consistent data sets following a system failure during which functional addressing facilities are lost. During this recovery period, the system shall not permit the use of unverified functional numbers.
+08_eirene	1417	The functional addressing scheme shall be supported by a straightforward procedure for deregistration of functional numbers. This procedure shall be carried out by the user at the end of the functional role.
+08_eirene	1418	The functional number deregistration facility shall be supported by all EIRENE user equipment.
+08_eirene	1420	In addition, a given set of users shall also be allowed to: deregister a functional number which is no longer valid but which has not been deregistered by the user; deregister, by overriding, another user of the same type (eg a driver can deregister a train number that another driver has forgotten to deregister); deregister, with one action, all functional numbers associated with the same mobile (eg the driver deregisters all functions at the end of the journey).
+08_eirene	1421	An EIRENE mobile shall remove the displayed functional number and provide an indication to the user that deregistration has taken place.
+08_eirene	1422	To allow roaming between EIRENE networks, the system shall support a procedure for the re-registration of functional numbers after selection of a new network.
+08_eirene	1424	After automatic re-registration is performed, the new registration details shall be displayed to the user.
+08_eirene	1425	Location dependent addressing shall be provided to route calls for a given function to a destination number that is dependent upon the users location.
+08_eirene	1426	The functions to which calls shall be routed based upon the location of the mobile shall include: Primary controller; Secondary controller; Power supply controller; Train management centre (eg RBC, CTS).
+08_eirene	1427	The correspondence between the locations and the destination of the call shall be easily re-configurable to support dynamic changes in controller area boundaries (eg controller area boundaries will change from peak to off-peak periods during the working day or over longer periods, areas may change to match changes in railway organisation or traffic demand).
+08_eirene	1429	The location dependent addressing scheme shall be available to all mobiles.
+08_eirene	1430	As a minimum, the location information used by the EIRENE system shall be derived from that available from the network itself (eg current cell or base station serving the mobile).
+08_eirene	1431	Where greater accuracy for location dependent addressing is required, additional location information may be provided by systems external to EIRENE. Sources of such information may include:  a) ground-based signalling systems; b) on-train systems (eg ERTMS/ETCS equipment, balise readers, GPS etc).
+08_eirene	1432	There is a requirement that the EIRENE system can be used as a bearer to support an application connected to the radio for exchange of text messages between ground and mobile(s) or mobile and ground.
+08_eirene	1435	It should be possible to transfer text messages between ground and mobile(s) through the EIRENE system.
+08_eirene	1441	A standard data interface between the mobile and the application module shall be provided.
+08_eirene	1445	The type of call initiated shall be determined automatically, based upon the mode of operation of the radio.
+08_eirene	1446	If the mobile is in shunting mode, the emergency call button shall initiate a shunting emergency call, otherwise the call shall be a Train emergency call.
+08_eirene	1447	The Train emergency call shall be sent to all drivers and controller(s) within an area, which is pre-defined to meet operational requirements. The predefined areas for emergency calls shall include, where necessary, parts of one or more network(s).
+08_eirene	1448	The appropriate ERTMS/ETCS RBC should be informed when a Train emergency call is initiated.
+08_eirene	1449	The Shunting emergency call shall be sent to all users involved in shunting operations in the shunting area.
+08_eirene	1450	The Shunting emergency call shall automatically take priority over the link assurance signal.
+08_eirene	1452	A Railway emergency call shall be able to be initiated by using a simple MMI action (eg a single MMI action for the Cab and Operational radios).
+08_eirene	1453	A connection of Railway emergency priority (see section ) shall be established to a pre-determined set of receiving mobiles and controller(s).
+08_eirene	1454	If the system is not able to connect the call, the system shall automatically keep trying to connect the call for 30 seconds.
+08_eirene	1455	During this period the user shall be provided with an audible and visual indication that the system is trying to connect the call.
+08_eirene	1456	After the 30 second period, if the connection was unsuccessful, the system shall provide another audible and visual indication that it was unable to connect the call.
+08_eirene	1457	An audible indication of 5 seconds (to be confirmed by trials) shall be provided to originating and receiving users that the emergency function has been activated.
+08_eirene	1459	A continuous visual indication that the emergency function has been activated shall be provided at the originating and all receiving terminals.
+08_eirene	1460	In the event that a train enters the affected area after the warning stage is complete, the same audible and visual indications shall be provided.
+08_eirene	1461	A speech connection shall be established immediately following the warning tone, to allow the originator of the emergency call, to give information concerning the nature of the emergency.
+08_eirene	1462	Speech should be possible to allow a controller receiving the warning tone to give information.
+08_eirene	1463	Additionally, speech should be possible to allow other mobile users receiving the warning tone to give information.
+08_eirene	1464	The information shall be received by the same set of users who received the warning tone.
+08_eirene	1465	A Railway emergency call may only be terminated by: the originator of the call; a controller participating in the call; the network following a (nationally determined) period of no speech.
+08_eirene	1466	If the radio moves out of the area whilst the emergency call is in progress, an audible and visual indication of the loss of the call shall be provided to the user.
+08_eirene	1467	Authorised EIRENE mobiles shall be able to receive a Railway emergency call at any time while the mobile is powered up.
+08_eirene	1468	For Railway emergency calls initiated by a mobile, the controllers display will indicate: location; the functional identity of the originating mobile, which includes the following: the train number, if available; the engine number, if no train number is available; the coach number of the leading cab, if neither a train number nor an engine number is available.
+08_eirene	1469	For post-incident analysis, it is important that the origination and reception of Railway emergency calls by mobiles is confirmed by a message sent to a ground-based central location (and also recorded in the on-train recording device).
+08_eirene	1470	The confirmation shall be generated automatically without input from the user.
+08_eirene	1471	The confirmation message shall commence at the end of the call or if the radio moves out of the call area.
+08_eirene	1472	If the radio loses contact with the network, the mechanism shall commence as soon as possible on regaining communications, for up to a maximum of 5 minutes without achieving contact.
+08_eirene	1473	For Railway emergency calls initiated by a mobile, the automatic confirmation message of the initiating mobile shall contain: the time at call establishment; the time at clear down; the functional number of the call originator; the train number and engine number of the call originator, if a train.
+08_eirene	1474	For Railway emergency calls received by a mobile, the automatic confirmation message of the receiving mobile shall contain: the time at which the call was first received; the time at which the call was lost (or terminated); the group identity of the sender; the functional number of the recipient; the train number and engine number of the recipient, if a train.
+08_eirene	1478	There is a requirement to regulate the membership of shunting groups to prevent uncontrolled membership.
+08_eirene	1479	During specific shunting operations where the driver is not able to see the way ahead and where he is therefore relying on information from another shunting member, a link assurance signal is needed to provide reassurance during silent periods that the radio link is still established. This signal is also employed to provide reassurance that this other shunting member is not incapacitated.
+08_eirene	1480	The shunting call shall be a group call and shall have Railway operation priority (see section ).
+08_eirene	1481	Throughout the duration of the shunting group call, it shall be possible for any member of the shunting group to speak to all other members of the group, using the PTT function (as described in sections ,  and ), except during transmission of the link assurance signal.
+08_eirene	1482	During the transmission of the link assurance signal, only the originator of the link assurance signal shall be able to speak to all other members using the PTT function.
+08_eirene	1483	The shunting communication shall be protected from unintentional and unauthorised access.
+08_eirene	1484	It shall be possible for all mobile members of the shunting group (except the driver) to transmit a link assurance signal.
+08_eirene	1485	Within the shunting group, it shall be possible for only one member of the group to transmit the link assurance signal at any time.
+08_eirene	1486	Operational radios used for shunting shall enable the link assurance signal to be activated and de-activated by the shunting group member.
+08_eirene	1487	The link assurance signal should be used to reassure the driver of the integrity of the member at the head of the shunting movement.
+08_eirene	1488	Operational radios used for shunting shall be able to be switched between the following two operating modes by a maintenance function: Mode 1: the member is required to continuously press the link assurance signal button in order to transmit the link assurance signal; Mode 2: the member is required to switch on the link assurance signal and then periodically press a button in order to transmit the link assurance signal (failure to do so shall result in the deactivation of the link assurance signal after a predefined period has elapsed).
+08_eirene	1489	The link assurance signal shall be used to provide an audible indication to all group members. For the driver, this indicates that the radio link is operational.
+08_eirene	1490	It shall be possible for any member of the shunting group (including a driver) to transmit a shunting emergency call to all shunting groups in the area.
+08_eirene	1491	It shall be possible for all shunting drivers and shunting group members to receive a shunting emergency call from any equipment capable of taking part in shunting communications. The shunting emergency call shall cause the audible link assurance signal to be interrupted.
+08_eirene	1492	It should be possible for the system to record: shunting group composition at a given instant; the source and time a shunting emergency call was transmitted; the recipients of a shunting emergency call.
+08_eirene	1493	If a user, other than the shunting leader, attempts to make another call whilst being an active member of a shunting group, the attempt shall be ignored.
+08_eirene	1494	If the radio is used by the team leader for a shunting group call (ie initiated the shunting group call), switching the radio off shall result in the termination of the shunting group call.
+08_eirene	1495	A shunting group shall be able to consist of the following mobile members: the shunting leader; the shunting driver, who may remain fixed (ie in a shunting area) or may change one or more times during a working period (ie passenger or freight stations); up to three shunting team members.
+08_eirene	1496	In addition to the above shunting group members: a controller shall be able to be associated permanently or temporarily with the shunting group; a shunting manager or other person capable of taking part in a shunting communication should be able to be temporarily associated with the shunting group.
+08_eirene	1497	It shall only be possible for the shunting leader to communicate with a person external to the ongoing shunting communication. This may be initiated by either the shunting leader or the external user. In the latter case, in order to avoid disturbing a shunting movement, the shunting leader should be informed by a visual and audible indication. The shunting leader can then choose the moment when he takes or rejects the call.
+08_eirene	1498	The shunting leader shall then be able to allow the external user to join the shunting communication.
+08_eirene	1504	This means will consist of an additional safety device (external to the radio system) interposed between the Cab radio and the loudspeaker with the purpose of muting the continuous link assurance signal for the drivers convenience. In this case, the safety device will alert the driver only if the link assurance signal has failed or if it is cancelled.
+08_eirene	1505	Operational radios used for shunting shall be able to be switched between the following two operating modes by a maintenance function: Mode A: the link assurance signal shall be interrupted, but not cancelled, when the initiator of the link assurance signal presses the PTT to speak. Mode B: the link assurance signal shall not be interrupted when the initiator of the link assurance signal presses the PTT to speak.
+08_eirene	1506	The link assurance signal shall be deactivated upon receipt of a shunting emergency call.
+08_eirene	1507	All members of the shunting group, other than the initiator of the link assurance signal, shall be unable to speak during the transmission of the link assurance signal. However, they shall be able to initiate a shunting emergency call at any time.
+08_eirene	1510	The operational requirement for direct mode is to: provide short range fall-back communications between train drivers and trackside personnel in the event of failure of mobile telephony services normally available; provide short range communications for railway personnel operating in remote areas where no mobile telephony facilities are available.
+09_ertms	1513	ETCS shall be able to supervise train and shunting movements.
+09_ertms	1518	The current application level shall be indicated on the DMI.
+09_ertms	1519	The driver shall acknowledge the level transitions, if requested from trackside.
+09_ertms	1520	If the driver does not acknowledge after the transition the brake shall be applied.
+09_ertms	1521	If the driver acknowledges afterwards, the brake can be released
+09_ertms	1524	Any transition which occurs while the train is moving shall in principle occur automatically.
+09_ertms	1526	If, as a result of an automatic transition, except for transitions to and from National Operation (STM), the responsibility for the driver increases, the ETCS shall seek an acknowledgement from the driver, whether the train is stationary or not.
+09_ertms	1527	For transitions to and from National Operation (STM) the ETCS shall request, an acknowledgement by the driver.
+09_ertms	1528	In case the transition has to be acknowledged and the driver fails to acknowledge as required, the ETCS shall initiate a brake application
+09_ertms	1530	If an ETCS equipped train passes a level transition to a line fitted with more than one level, the onboard shall switch to the highest level, according to the priority given by trackside, for which it is equipped.
+09_ertms	1531	If an ETCS equipped train passes a level transition to one or more levels for which it is not equipped, ETCS shall initiate a brake application.
+09_ertms	1532	The current operational status shall be indicated to the driver on the DMI
+09_ertms	1533	The ETCS on-board shall be capable of receiving National values from the trackside to adapt to National requirements
+09_ertms	1535	Once received onboard the national values shall remain valid even if the onboard equipment is switched off
+09_ertms	1536	If the on-board has no valid national values for the current location, default values shall be used by the onboard equipment.
+09_ertms	1538	At Start Up, the on board equipment shall perform an automatic self-test.
+09_ertms	1540	The DMI shall indicate the result of the self-test.
+09_ertms	1541	Train data shall be entered before the on-board ETCS equipment allows train movement.
+09_ertms	1542	The driver shall be able to select Train Data Entry on the DMI.
+09_ertms	1543	Entering or overwriting data manually by the driver shall be possible but only when stationary.
+09_ertms	1544	Train data may be entered automatically from a railway management system or from train memory.
+09_ertms	1545	The driver shall be able to consult train data when the train is stationary or moving.
+09_ertms	1546	Current train data shall be stored (except at transition to shunting) in the ETCS equipment until the traction unit is not operative.
+09_ertms	1547	Stored train data shall be offered to the driver to be confirmed when Data Entry starts.
+09_ertms	1549	The entry of driver identification and the selection of the language shall be possible.
+09_ertms	1550	The change of driver identification during a journey or a Train Running Number shall be possible
+09_ertms	1551	Following successful completion of Train Data Entry, the driver shall be able to perform shunting movements or train movements.
+09_ertms	1552	If the onboard fails to contact the RBC when awakening the driver shall be asked to enter the RBC contact details
+09_ertms	1554	Transfer to Shunting on driver’s selection shall only be possible when stationary.
+09_ertms	1555	To prevent unauthorised use of the function permission shall be obtained from the RBC if the train is operating under the control of the RBC.
+09_ertms	1556	Permission received shall be indicated to the driver.
+09_ertms	1557	It shall be possible to manually select Shunting from Stand By operation, Full Supervision operation or Partial Supervision operation
+09_ertms	1559	Before authomatic transition to Shunting, ETCS shall request confirmation from the driver.
+09_ertms	1560	ETCS shall supervise Shunting operation to a permitted national speed value.
+09_ertms	1561	The supervised Shunting speed shall be indicated to the driver on request.
+09_ertms	1562	It shall be possible to apply the train trip function, if the shunting movement passes a signal showing "danger for shunting".
+09_ertms	1563	Exit from Shunting shall only be possible when the train is stationary.
+09_ertms	1564	Exit from Shunting shall take place when the driver selects exit from shunting.
+09_ertms	1566	If acknowledgement is specified the driver shall acknowledge transfer from Full Supervision to Partial Supervision within 5 seconds
+09_ertms	1567	Partial Supervision shall be indicated on the DMI.
+09_ertms	1568	In Partial Supervision the train shall be supervised according to train speed and distance data available.
+09_ertms	1569	The train shall have the capability of being supervised to a ceiling speed.
+09_ertms	1570	This ceiling speed shall not be shown continually on the DMI but may be shown momentarily when selected by the driver.
+09_ertms	1571	The train shall leave Partial Supervision when the trainborne equipment is not operative any longer, when Shunting is selected or when Full Supervision is available.
+09_ertms	1572	It shall be possible to order a train trip when passing a stop signal
+09_ertms	1573	Transferring to Full Supervision shall occur automatically when a movement authority and all other necessary information is received through track-to-train transmission.
+09_ertms	1574	It shall be possible for the trackside to ask a driver for confirmation about the occupancy of the track ahead before sending a Full Supervision movement authority.
+09_ertms	1575	Full Supervision shall provide supervision of speed and distance.
+09_ertms	1576	The trainborne equipment shall remain in Full Supervision until the trainborne equipment is not active any longer, when Shunting is selected or when Partial Supervision information is received.
+09_ertms	1577	The ETCS trainborne equipment shall be capable of being isolated.
+09_ertms	1578	When the ETCS trainborne equipment is isolated, the system shall not show any ETCS information other than the fact that the system is isolated.
+09_ertms	1579	Isolation of the ETCS trainborne equipment shall disconnect the ETCS trainborne equipment from the vehicle braking system.
+09_ertms	1580	The ETCS trainborne equipment shall be capable of receiving information from the national train control systems by means of the STM.
+09_ertms	1581	The DMI shall display or be compatible with information from national train control systems. This may mean displaying the information shown by the national system.
+09_ertms	1584	The on board shall supervise the train against a ceiling speed
+09_ertms	1586	The onboard shall be capable to switch to another ETCS status when transmitted from trackside
+09_ertms	1587	The ETCS on-board shall be capable of receiving track description from the trackside.
+09_ertms	1589	It shall also be possible, to allow the driver to change the adhesion conditions; in this case information from trackside has priority.
+09_ertms	1591	If track data at least to the location where the relevant movement authority ends are not available on-board, the movement authority shall be rejected.
+09_ertms	1593	The ETCS trainborne equipment shall supervise the end of movement authority, if this information is available on-board.
+09_ertms	1595	Together with the movement authority, the on board shall be able to receive one or more time-out(s) for certain sections of the movement authority, and shorten the movement authority accordingly when a time out expires.
+09_ertms	1598	Before entering an occupied track, a driver acknowledgement shall be requested.
+09_ertms	1599	The train shall be supervised according to train speed data available.
+09_ertms	1600	The train shall, as a minimum, be supervised to a ceiling speed; the supervised speed shall not be shown on the DMI unless selected by the driver.
+09_ertms	1601	The target distance shall not be shown on the DMI unless selected by the driver.
+09_ertms	1602	On request of the RBC, the driver shall have the possibility to confirm that the track ahead of him until the end of the on sight section is clear
+09_ertms	1603	ETCS shall collect all relevant information concerning train and line speed.
+09_ertms	1604	ETCS shall calculate the permitted speed for the train for all locations of the authorised movement.
+09_ertms	1605	This static train speed profile shall also respect maximum line speed and track speed and special speed levels for special classes of trains.
+09_ertms	1606	The ETCS trainborne equipment calculates the static train speed profile on the basis of infrastructure data and train data.
+09_ertms	1607	Based on all relevant data, the ETCS shall calculate an emergency braking curve and a service braking curve
+09_ertms	1609	When changing to a lower speed level, the front end of the train shall respect the dynamic train speed profile.
+09_ertms	1610	When changing to a higher speed level the rear end of the train shall respect the static train speed profile.
+09_ertms	1613	Where failure to apply the full service brake is detected the emergency brake shall stop the train in rear of the danger point.
+09_ertms	1615	The release speed shall be indicated on the DMI.
+09_ertms	1616	If the release speed is calculated on board it shall ensure that the train will stop before reaching the danger point
+09_ertms	1619	The ETCS trainborne equipment shall be able to determine the location of the entire train.
+09_ertms	1620	On lines fitted with RBC, the ETCS trainborne equipment shall be able to transmit the location of the entire train to the RBC.
+09_ertms	1621	The train location calculation shall take into account error of odometry.
+09_ertms	1622	Actual speed shall be indicated on the DMI
+09_ertms	1626	Visual and acoustic warnings to the driver about possible intervention from ETCS shall be given to enable the driver to react and avoid intervention.
+09_ertms	1627	The driver shall have the possibility to select the language, this does not concern non pre-defined texts sent from the trackside.
+09_ertms	1628	A train shall be supervised to its static and dynamic train speed profiles.
+09_ertms	1629	Within the braking curve area, a warning shall be given to the driver to enable him to react and avoid intervention from ETCS equipment at least 5 sec. before the intervention.
+09_ertms	1630	If the train or the shunting movement exceeds the permitted ceiling speed by a certain harmonised margin, the trainborne equipment shall execute a brake intervention until the actual speed does not exceed permitted speed; then the driver shall be able to release the brake
+09_ertms	1631	The driver shall be able to release an ETCS emergency brake application when stationary.
+09_ertms	1633	To protect a traction unit from roll away and unwanted reverse movements the trainborne equipment shall monitor the direction of movement in relation to the permitted direction.
+09_ertms	1634	The trainborne equipment shall apply the emergency brake after a distance, defined by a national value, is travelled by the train.
+09_ertms	1635	The roll away/reverse movement intervention shall be indicated on the DMI.
+09_ertms	1636	When the traction unit has come to a standstill, the driver shall be able to release the emergency brake.
+09_ertms	1637	After releasing the emergency brake ETCS will provide the supervision appertaining when roll away protection was initiated
+09_ertms	1638	When using more than one traction unit this function shall be disabled in all but the leading traction unit.
+09_ertms	1639	All data entered, received or indicated to the driver shall be recorded onboard. All data shall be related to UTC (Universal Time Corrected) and a reference point.
+09_ertms	1641	Standardised output interfaces shall enable transmission of information recorded to other media for investigation
+09_ertms	1645	The driver shall enter the driver ID
+09_ertms	1646	It shall be possible to drive the train backwards in a supervised way (speed and distance) according to information received from trackside
+09_ertms	1647	The train speed shall be at or below a speed specified by a national value.
+09_ertms	1648	The driver shall select an override control according to the permission received.
+09_ertms	1650	When the train passes the stop signal, the train trip function shall be suppressed.
+09_ertms	1655	If supervised by an RBC it shall be possible to command an emergency stop to all trains in a particular area or to a specific train
+09_ertms	1656	It shall be possible to command an immediate train stop.
+09_ertms	1657	It shall be possible to command a conditional emergency stop. If the train has already passed the location for the emergency stop the command shall be ignored
+09_ertms	1658	When a train has received an emergency stop ETCS shall command the emergency brake.
+09_ertms	1659	The emergency stop shall be indicated to the driver on the DMI.
+09_ertms	1660	It shall be possible to prevent a train from entering a route for which it does not meet the required criteria.
+09_ertms	1661	Route unsuitability shall be indicated on the DMI.
+09_ertms	1662	The driver shall be able to override the function when the train is stationary.
+09_ertms	1663	After overriding this function the movement authority shall be re-established.
+09_ertms	1664	When a traction unit passes a stop-signal the emergency brake shall be triggered.
+09_ertms	1665	Operation of the train trip shall be indicated on the DMI.
+09_ertms	1666	The emergency brake shall be applied until the traction unit is stationary.
+09_ertms	1667	When the traction unit is stationary the driver shall be required to acknowledge the train trip condition. This acknowledgement will release the emergency brake.
+09_ertms	1668	After the acknowledgement the driver shall be able to continue the movement
+09_ertms	1669	After the acknowledgement the train shall be able to be driven backwards for a certain distance defined by national value
+09_ertms	1670	The ETCS trainborne equipment shall transmit its own train identification to the RBC.
+09_ertms	1672	On demand, the position of the front end of the train at the time of the demand shall be indicated on the DMI. This shall be possible while the train is moving or stationary.
+09_ertms	1673	The ETCS on-board shall be capable of receiving information about pantograph and power supply from the trackside.
+09_ertms	1674	The ETCS trainborne equipment shall indicate on the DMI the information regarding pantograph and power supply.
+09_ertms	1676	The ETCS on-board shall be capable of receiving information regarding air tightness from the trackside.
+09_ertms	1677	It shall be possible to send plain text messages from track to train.
+09_ertms	1678	When the plain text message appears on the DMI, the driver shall be alerted.
+09_ertms	1679	The onboard equipment shall display plain text messages as received.
+09_ertms	1681	It shall be possible to send fixed text messages from track to train
+09_ertms	1682	Fixed text messages shall be provided in the language selected by the driver
+09_ertms	1684	Information shall be shown on the DMI
+09_ertms	1685	The ETCS on-board shall be capable of sending to the trackside train integrity information detected by a system outside ETCS
+09_ertms	1686	The driver shall be able to confirm the train integrity to the RBC manually. The confirmation requires the train to be stationary.
+09_ertms	1687	The on board shall be capable of sending train data to the trackside after confirmation by the driver, or when entering the RBC area
+09_ertms	1689	It shall be possible to revoke a Movement Authority that has already been issued to a train in a co-operative way between RBC and train.
+09_ertms	1690	The co-operative revocation of the MA shall be possible to a new target location, proposed from RBC.
+09_ertms	1691	The new target location shall be checked for acceptance by the on board.
+09_ertms	1692	If a train cannot stop at the proposed new target location it shall reject the request and keep the old target location.
+09_ertms	1693	The Reversing function shall only be possible in one active cab which is not closed at any time during the procedure.
+09_ertms	1694	Reversing shall be possible as defined by a value given with the MA
+09_ertms	1695	The driver shall be able to use the Reversing function without needing to re-confirm the train data.
+09_ertms	1696	Reversing shall be supervised to a distance and speed set as National Values
+09_ertms	1697	The distance supervised can be extended from the trackside.
+09_ertms	1698	Once the train starts reversing the MA shall be cancelled.
+09_ertms	1699	The train shall be able to automatically pass from one RBC area to another without driver intervention.
+09_ertms	1701	If the train is equipped with only one operational radio, passing from one RBC to another shall still be possible but might result in a performance penalty.
+09_ertms	1703	If there are failures of the trainborne equipment which compromise the safety of train supervision, the ETCS trainborne equipment shall immediately command the brake and bring the train to a stop.
+09_ertms	1704	The occurrence of a failure shall be displayed on the DMI.
+09_ertms	1705	In ETCS with RBC this restriction on performance shall, if possible be transmitted to the RBC.
+10_peering	1710	The SLA-allocator performs the provisioning and reservation of Web server’s resources (e.g. CPU, bandwidth, storage etc.) to satisfy both local and delegated SLAs, and ensures that the terms of the SLAs are enforced.
+10_peering	1711	The Web servers’ underlying algorithms perform on-demand caching, content selection, and routing between servers.
+10_peering	1717	The Service Registry encapsulates the resource and service information for each CDN.
+10_peering	1718	The Service Registry helps in discovering local resources through enabling the Web servers of CDN providers to register and publish their resource, service and policy details.
+10_peering	1719	In the face of traffic surges, the Service Registry supplies any necessary local resource information to the mediator.
+10_peering	1720	When a new peering arrangement is established, an instance of the service registry is created that encapsulates all local and delegated external CDN resources.
+10_peering	1721	The Policy Repository virtualizes all of the policies within a peering arrangement including PWS, PM, and PPeering (i.e. Web server-specific policies, mediator policies, peering policies), along with any delegated policies for resources as a result of the peering arrangement.
+10_peering	1722	The Policy Repository provides a set of rules to the mediator to administer, manage, and control access to the resources in a peering arrangement.
+10_peering	1723	The Policy Repository returns existing peering policies to the PA during the establishment of long-term peering arrangements.
+10_peering	1724	A Peering Agent acts as a policy-driven resource discovery module for establishing negotiations.
+10_peering	1725	A Peering Agent exchanges policy, resource information, and service requirements with external PAs.
+10_peering	1726	A Peering Agent is used as a conduit by the mediator to establish negotiations with PAs of other peers and to acquire resources from them.
+10_peering	1727	Content replication is performed using a cooperative pull-based approach where participating CDNs assist each others in serving data. Thus, content replication is featured through extending it to participating servers from the peers in a given peering arrangement, subject to the available resources they contribute
+10_peering	1728	Load distribution is performed by measuring the load information and disseminating it within individual CDNs and amongst other CDNs using a hierarchical approach, where current bandwidth and resource usage of web servers in a CDN is reported to the CDN gateway (i.e. mediator, PA and policy repository as a single conceptual entity) in a periodic or thresholdbased manner. The gateways of participating CDNs then communicate aggregated load information describing the load of their constituent servers
+10_peering	1731	Service registration is triggered when either one of the following occurs: (a) resources are available as a provider starts operating; (b) previously registered resource information needs to be updated; (c) available local resource information is required in the event of traffic surges; and (d) local and delegated external resource information is to be encapsulated in an SR instance included in an established peering arrangement.
+10_peering	1732	Available local resources of a CDN provider are detected along with their service information such as CPU, storage, upload and download rate, etc. These resources could be provisioned and reserved to satisfy SLAs.
+10_peering	1733	Resources are registered in the service registry and being updated in a regular basis.
+10_peering	1734	Each CDN Web server publishes resource and service information.
+10_peering	1735	If it is a new resource, its service information is registered in the SR with a new resource ID. Resource ID counter is incremented.
+10_peering	1736	Else, resource information in SR is updated in a regular basis.
+10_peering	1737	In the face of traffic surges, information on available local resources along withtheir IDs is supplied to the Mediator.
+10_peering	1739	If a resource fails, its service information is removed from SR and the resource ID counter is decremented.
+10_peering	1749	The Trigger is invoked when a (primary) CDN realizes that it cannot handle a part of theworkload on its WS(s). The triggering condition considers the expected andunexpected load increases in the initiating (primary) CDN.
+10_peering	1750	If the user requests experience service timeout (threshold), initiation request is cancelled.
+10_peering	1752	Upon receiving the initialization request to trigger peering, the mediator generates service requirements and passes it to local PA.
+10_peering	1773	The policy repository instance in the established peering arrangement assists in the deployment, administration and enforcement of the functional policies.
+11_peppol	1783	The tool interface is available in the official languages of the European Union.
+11_peppol	1786	Identity and access management MUST provide a functionality to register an economic operator in a formal procedure in order to create a VCD account. 
+11_peppol	1787	Identity and access management MUST provide an interface to submit sensitive economic operator data (for example by uploading attestations that verify sensitive economic operator data) in order to allow the economic operator to apply for the creation of a VCD account.
+11_peppol	1788	Sensitive economic operator data MUST be verified through a formal procedure by an officer.
+11_peppol	1789	An officer has to create a VCD account for the economic operator.
+11_peppol	1790	Sensitive economic operator data MUST be placed to a VCD account by an officer.
+11_peppol	1791	Identity and access management MUST provide a functionality that enables the economic operator to receive his log-in data. 
+11_peppol	1792	The authentication within identity and access management SHOULD provide a single-sign on functionality that can be used across other systems.
+11_peppol	1794	The economic operator MUST be able to delete his account.
+11_peppol	1795	The VCD System SHOULD make use of a single-sign-on interface and function in order to submit login data.
+11_peppol	1796	The VCD system MUST provide a functionality to check through identity and access management whether an economic operator has sufficient user rights to access his account.
+11_peppol	1797	The VCD system MUST provide an interface where the economic operator can provide nonsensitive economic operator data.
+11_peppol	1799	The VCD system MUST provide an interface where the economic operator can request the creation of a VCD package.
+11_peppol	1800	The VCD system MUST have an interface to receive and process the information (mapping of evidence) provided by the pre-VCD mapping tool.
+11_peppol	1801	The VCD system MUST provide a functionality that suggests a possible compilation of the VCD to the economic operator according to the tender-specific criteria.
+11_peppol	1802	The VCD system MUST provide a functionality where the economic operator can decide which particular attestation services should be invoked and collected.
+11_peppol	1803	The VCD system MUST provide a functionality that displays the attestation services that cannot be invoked automatically and that have to be manually added by the economic operator. 
+11_peppol	1804	The VCD system must provide a functionality to request attestations that can be collected automatically via an issuing body. 
+11_peppol	1806	The VCD system MUST have a functionality to extract structural data of evidence from attestations that can be retrieved automatically.
+11_peppol	1808	The evidence submitted to the VCD system MUST correspond to the mapping information suggested by the VCD system (or the pre-VCD mapping tool).
+11_peppol	1809	The VCD system MUST provide an interface where an economic operator can add structural data of evidence that belong to specific evidence. 
+11_peppol	1811	The VCD system MUST provide and interface where the economic operator can initiate the compilation process. 
+11_peppol	1812	The VCD system MUST provide a functionality to compile various data formats from various sources (issuing bodies) into a single VCD package.
+11_peppol	1813	The VCD package MUST provide a functionality to add structural VCD package data to the VCD package and VCD system (e.g. log file) during the compilation process.
+11_peppol	1814	The VCD package MUST provide a functionality to add tender-specific data to the VCD package and VCD system (e.g. log file) during the compilation process.
+11_peppol	1815	The VCD package MUST provide a functionality to add economic operator data to the VCD package and VCD system (e.g. log file) during the compilation process.
+11_peppol	1816	The VCD package MUST provide a functionality to add tender-specific data to the VCD package and VCD system (e.g. log file) during the compilation process.
+11_peppol	1817	The VCD package MUST provide a functionality to add structural data of evidence to the VCD package and VCD system (e.g. log file) during the compilation process.
+11_peppol	1818	The VCD package MUST provide a functionality to add evidences to the VCD package and VCD system (e.g. log file) during the compilation process. 
+11_peppol	1819	The VCD package MUST provide a functionality to add translations to the VCD package and VCD system (e.g. log file) during the compilation process.
+11_peppol	1820	The VCD system MUST provide a functionality to notify the economic operator when the compilation process is finished.
+11_peppol	1822	The VCD transportation system MUST provide a functionality that enables both parties involved, contracting authorities and economic operators, to authenticate to the VCD transportation system before using it.
+11_peppol	1823	The authentication to the VCD transportation system SHOULD make use of single-sign-in interface and function in order to submit login data.
+11_peppol	1824	The VCD transportation system MUST provide a functionality that enables the economic operator to find an electronic address of a contracting authority for receiving VCD packages.
+11_peppol	1825	The VCD transportation system MUST have an interface to connect to it in order to submit the VCD package to a contracting authority.
+11_peppol	1826	The VCD transportation system MUST provide a functionality that supports the economic operator in submitting the VCD package to a contracting authority.
+11_peppol	1827	The VCD transportation system SHOULD provide a functionality that supports the economic operator in submitting the VCD package to a contracting authorities’ procurement platform where the tender/bid has to be placed.
+11_peppol	1829	The VCD viewing system MUST provide a functionality to authenticate contracting authorities to view the data contained within a VCD package.
+11_peppol	1830	The authentication to the VCD viewing system SHOULD make use of single-sign-on interface and function in order to submit login data.
+11_peppol	1831	The VCD viewing system MUST display structural VCD package data contained in the VCD package.
+11_peppol	1832	The VCD viewing system MUST display tender-specific data contained in the VCD package.
+11_peppol	1833	The VCD viewing system MUST display economic operator data contained in the VCD package.
+11_peppol	1834	The VCD viewing system MUST display tender-specific data contained in the VCD package.
+11_peppol	1835	The VCD viewing system MUST display structural data of evidence contained in the VCD package.
+11_peppol	1836	The VCD viewing system MUST display evidences contained in the VCD package.
+11_peppol	1837	The VCD viewing system MUST display translations of evidences contained in the VCD package.
+11_peppol	1842	A VCD system MUST provide functionality to collect and process context specific data for evidence that has to be provided automatically by the issuing body.
+11_peppol	1845	A VCD system MUST provide a user interface to the issuing body to provide context specific data for an evidence in a structured form (e.g. web-interface, XML-file-upload).
+11_peppol	1846	The VCD system MUST provide a functionality to validate the provided context specific data during the submission process of context specific data to ensure the data is consistent with the VCD advanced package schema.
+11_peppol	1852	A functionality to display context specific data SHOULD/MUST be included within any VCD.
+11_peppol	1853	A VCD system MUST provide a user-interface to the economic operator to initiate the creation of a VCD advanced package.
+11_peppol	1854	A VCD system MUST provide a user-interface to the economic operator to provide existing VCD packages of other economic operators when specific disclosure options have been activated.
+11_peppol	1855	A VCD system MUST provide a functionality to check, whether the structural VCD package data of existing VCD packages of other economic operators are consistent with the VCD advanced package schema of other economic operators, or not.
+11_peppol	1856	A VCD system MUST provide a functionality to check, whether the tender specific data of existing VCD packages are consistent with the tender specific data of other VCD packages.
+11_peppol	1857	A VCD system MUST provide functionality to merge the following data from several existing VCD packages of other economic operators:Structural VCD package data, Structural data of evidence, Tender specific data, Economic operator data, Context specific data, Evidence, Authorized translation of evidence.
+11_peppol	1858	A VCD system MUST provide functionality to compile the data which result from the evidence collection process and the data provided by the economic operator in the VCD advanced package creation.
+11_peppol	1859	A VCD system MUST provide a user-interface to the economic operator to initiate the recompilation of an existing VCD package into a VCD advanced package.
+11_peppol	1860	A VCD system MUST provide a user-interface to the economic operator for uploading an existing VCD package.
+11_peppol	1861	A VCD system MUST provide a functionality to decompose an existing VCD package.
+11_peppol	1862	A VCD system MUST provide a functionality to identify outdated or obsolete evidences.
+11_peppol	1863	A VCD system must provide a functionality to retrieve actual instances of outdated evidences.
+11_peppol	1866	The VCD system MUST provide a functionality that enables National VCD Service Providers to store attestations.
+11_peppol	1867	A functionality for referencing to attestations MUST be implemented within the VCD system.
+11_peppol	1869	The functionality for referencing to attestations within the VCD MUST be implemented, either VCD-specific or contracting authority-specific, in order to approve whether the contracting authority has sufficient rights for requesting the attestations.
+11_peppol	1871	The VCD system MUST provide a functionally to check whether a contracting authority has sufficient rights and has been mandated by the economic operator to retrieve attestations.
+11_peppol	1873	The VCD system MUST ensure that the attestation that is requested by the contracting authority is still valid at the time of awarding or when the Call for Tender is closed.
+11_peppol	1874	The VCD system MUST provide a functionality that initiates a conflict resolution process between economic operator and contracting authority if errors occur or when certain attestation or a translation cannot be delivered on demand.
+11_peppol	1875	The VCD system SHOULD provide a functionality to approve attestations through validation data and to make this approval visible within a VCD networked package when a National VCD Service provider takes the role of a national validation point in accordance with Article 52 (1) of Directive 2004/18/EC and EFTA EEA Committee decision 68/2006.
+12_videosearch	1896	Database of torrent sites can be updated via the internet. 
+12_videosearch	1897	There will be a tick box to allow the user to choose to include torrent searching in the search. 
+12_videosearch	1898	Query will retrieve the no. of seed and peers, size of the file, date posted and a link to the webpage itself. 
+12_videosearch	1899	If no results are found on a search it will display a message “No results were found for this search.”
+12_videosearch	1900	Results will be arranged in size/date/alphabetical order by clicking on the column headers. 
+12_videosearch	1901	There will be page button for the user to navigate the results.
+12_videosearch	1903	Database of video hosting and video linking sites can be updated via the internet.
+12_videosearch	1904	There will be a tick box to allow the user to choose to include video host searching in the search.
+12_videosearch	1905	There will be a tick box to allow the user to choose to include video link searching in the search.
+12_videosearch	1906	Query to video hosting sites will retrieve full video name, length, date posted and a link to the video itself.
+12_videosearch	1907	Query to video link sites will retrieve the show’s name, episode name and a link to the webpage itself.
+12_videosearch	1908	If no results are found on a search it will display a message “No results were found for this search.”
+12_videosearch	1909	Results will be arranged in length/date/alphabetical order by clicking on the column headers.
+12_videosearch	1910	There will be page button for the user to navigate the results.
+13_blitdraft	1911	The User shall be able to view the hyperlinks and descriptions listed.
+13_blitdraft	1912	The User shall be able to choose a function by clicking the hyperlink.
+13_blitdraft	1913	The system shall display the desired operational page for the user after clicking the hyperlink.
+13_blitdraft	1914	A user with admin privileges shall be able to Add/Create a new user and associate the user with specified role(s) in the system.
+13_blitdraft	1915	The system shall display an error message if the new user is found in the [system name] system.
+13_blitdraft	1916	The system shall display an error message if the new user is not active in the Active Directory.
+13_blitdraft	1917	The system shall display the xxx tab as the default tab.
+13_blitdraft	1918	The user shall be able to create/add a new user manually or from a template.
+13_blitdraft	1919	The user record shall inherit all specified role(s) settings in the template when the user record is created from the user template.
+13_blitdraft	1920	The user shall be able to add additional roles manually while creating/adding a new user from a user template.
+13_blitdraft	1921	The system shall save the user info to the database with specified roles associated with divisions for the newly created/added user.
+13_blitdraft	1922	The system shall perform a search on the [system name] user display name and user name columns in the user tables to find the user and verify the user’s existence.
+13_blitdraft	1923	The system shall perform a search in the Active Directory to verify the status of the user — Active/Inactive within the company—when the user attempts to create/add a new user in the [system name] system.
+13_blitdraft	1924	The system shall generate a standard confirmation message after saving data and warning/caution messages after the cancel or close button is clicked.
+13_blitdraft	1925	The user must have the flexibility to click any tab to commence the adding process, although the xxx Tab shall display as the default tab.
+13_blitdraft	1926	All required fields as specified in the UIS must be marked with a red asterisk alerting the user to fill the required fields in.
+13_blitdraft	1927	The user shall be able to save data after creating/adding a new user or cancel data to abort the process.
+13_blitdraft	1928	The system shall clear up data if the user chooses to click the Cancel button in the midst of creating/adding a new user.
+13_blitdraft	1929	The system shall direct the user to the xxx Page if the user chooses to click the close button without entering any data.
+13_blitdraft	1930	The user must associate at least one role, division, designator code, and lab location at the time of creating/adding a new user.
+13_blitdraft	1931	The user must fill in the required fields—User Name and Display Name—in the User Information section at the time of creating/adding a new user.
+13_blitdraft	1932	The system shall generate a standard error/warning message after the user attempts to save data without associating one of each of the following criteria—xxx—and/or without filling in the required fields in the User Information section.

@@ -4,4 +4,4 @@ ILLOD, a binary classifier for abbreviation-expansion detection. It checks wethe
 
 ILLOD is a feature based classifier and proves to be more accurate than approaches based on syntactic or semantic similarity. Therefore it can beneficially extend term clustering tools for synonym detection.
 
-[1]  Schwartz, A.S., Hearst, M.A.: A simple algorithm for identifying abbreviation def-initions in biomedical text. In: Biocomputing 2003, pp. 451–462. World Scientific(2002)
+[1]  Schwartz, A.S., Hearst, M.A.: A simple algorithm for identifying abbreviation definitions in biomedical text. In: Biocomputing 2003, pp. 451–462. World Scientific(2002)

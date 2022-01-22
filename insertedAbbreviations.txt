@@ -1,0 +1,30 @@
+current time	cT
+events	Evs
+realtor	RT
+search result	SR
+program of study	PoS
+nursing staff member	NSM
+clinical site	Csi
+ticket retrieval	TR
+disputes system	DS
+dispute case	DC
+repair facility	RF
+collision estimate	CE
+audit report	AR
+recycled part	rP
+conference room	CR
+search parameter	SP
+user interface	UI
+substitutionary ingredient	sI
+product formula	PF
+product menu	PMs
+inventory quantity adjustment	IQA
+credit card	CC
+system	Sys
+streaming movie	sMo
+web service	WES
+lead score	LeSco
+lead data	LeDA
+defensive grid	dG
+offensive player	oP
+status	STAT

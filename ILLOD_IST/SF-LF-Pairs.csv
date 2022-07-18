@@ -1,0 +1,1338 @@
+access;
+several exist vcd package;
+payload monitor;
+Data Exchange;DatEx
+state of readiness;SoR
+mission plan;MP
+reply;
+on - go call;
+brake curve;
+inclusion;
+particular VSP;
+c4i system;C4IS
+XS service;XSS
+movement;
+JTA;JTA
+Sub - District;
+police personnel;PP
+train number;TN
+gender;
+resource failure;
+one action;
+staff;STF
+program;PRG
+prompt and message;
+two type;
+same time;
+integrity;
+aggregate datum;
+certain function;
+audible and visual indication of new network identity;
+follow two operate mode;F2OM
+coordinate;Coord
+agent;
+following information;FI
+functional identity of call party;FIoCP
+connection;Conn
+termination of call;ToC
+public network;PN
+uplink command;
+TCS operator;TCSOp
+other component of tcs;OCTCS
+shunting group;
+compilation process;
+emergency;EMER
+datum terminal;
+format;FMT
+analog imagery;AI
+basis;BSS
+structural datum of evidence;SDoE
+establishment;Est
+source of exposure;SoE
+subject ID;SID
+computer interface;CI
+CDNs;CDNs
+normal operation;NO
+definition;Def
+status;STS
+target distance;TD
+audible confirmation of successful connection;ACSC
+view;VW
+WS;WS
+presentation;PRES
+team;Tm
+follow call relate service;
+functional requirement;fR
+RBC;
+area;A
+whom;
+CENELEC standard;
+recipient;RCPT
+following function;
+destination;DEST
+inhibition of function;IoF
+risk factor;RF
+datum link;
+incoming railway emergency call;
+low value;LV
+high level;HL
+laboratory test request;
+incoming call;
+public address system;PAS
+Active Directory;AD
+no;
+vcd transportation system;
+detail of Tactical Control System;
+priority;Pri
+device;DEV
+permitted speed;
+four button;
+submission;SUB
+Fault detection / Location;FD/LC
+resource provisioning , delegation and reservation policy;
+semantic interoperability;SI
+radio related prompt and information;
+time of symptom;ToS
+possibility;POSS
+phin Preparedness Key Performance measure;
+two geographic position;
+location of entire train;
+flight path;FP
+page button;
+readiness of interface;
+alarm;ALM
+carry feature;
+plant;PLT
+resource;RES
+other organism;
+expose individual;
+full Supervision;FS
+regular basis;RB
+upper value;UV
+alphanumeric format;AN
+mission;MSN
+level of public health;LoPH
+consistent level;
+risk;R
+minimum manual override;MMO
+type of mobile radio;
+completion;CMPL
+Startup State;
+authorised user;AUs
+acceptance;Accept.
+follow Information Resource artifact;
+maximum number;MN
+Railway emergency call;
+user request;URQ
+flexibility;Flex
+new network identity;NNI
+acknowledgement;ACK
+investigator;IV
+party;PTY
+shutdown;SHDN
+permission;PERM
+one or more call group;
+environment;Env
+rechargeable battery;RBC
+restriction;RESTR
+list;LST
+dedicated button;
+AV;
+VSP;
+group voice call;GVC
+salesman;
+rule;
+load;
+trial;
+type of symptom;
+stored number and information;SNaI
+loss of call;
+member of group;
+other economic operator;OEO
+control area;CTA
+recovery;
+external power interface;EPI
+stock number;SN
+line;
+successful connection;CS
+uplinked mission plan;uMP
+association;
+case definition;
+manner;
+front end;FE
+Assistant Secretary;AS
+standard telephone;ST
+radio;
+valid temperature range;VTR
+radio equipment;RE
+vcd account;
+receive;RECV
+IAS IDD;
+optimal peer;
+same train number;sTN
+initiator of link assurance signal;
+tick box;
+portion;
+AV and payload;
+port;
+relationship;REL
+order;ORD
+trackside worker;
+need;
+EIRENE;
+exist vcd package of other economic operator;
+mandatory information;
+translation;transl.
+TSET;
+multiple deployment option;MDO
+store / retrieve number and detail;
+OM investigation;
+5 level of UAV interaction;
+personnel;
+MSIU;
+designation of heating or cool unit;
+Modify;
+railway emergency;RE
+hospital;
+warning message;WM
+JDISS;
+link;
+case records;CR
+originator;
+person;
+ASAS;
+shunt group call;
+table;
+peripheral device;
+deregistration of functional number;
+group member;
+query;Q
+review;Rev
+other component;
+address;ADDR
+who;
+part;
+external device;EXD
+connect descriptor;
+waypoint;WPT
+select AV;
+payload screen;
+efficiency;EFFCY
+Cab radio system;CRS
+other user;
+early event detection;EED
+operator request;
+maximum semantic understanding of term;
+follow type;
+mobile;
+locomotive / coach;
+hyperlink;
+driver identification;
+type;
+action;
+lubricant;
+data management service;
+laboratory data;
+railway network;
+video;
+vaccination;
+policy;
+web server;
+developer of system;
+installation;
+identity and access management;
+ERTMS;
+interoperability;
+dissemination;
+default;
+distinctive audible and visual indication;
+loudspeaker volume;
+template;
+concurrently run unit;
+call or call party;
+attestation;
+select datum terminal;
+configuration;
+ASCII report file;
+AFATDS;
+court;
+record traffic;
+off;
+reminder of need;
+accidental use;
+test;
+visual and audible indication;
+transitory lighting of display;
+different language;
+ETCS;
+same call group;
+available local resource;aLR
+way;
+example;
+resource information;
+maximum number of heating or cool unit;
+infrastructure datum;
+functionality and capability;
+advisory;
+maximum;
+group;
+automatic selection;
+EED;
+av;
+exposure datum;
+receipt of Railway emergency call;
+payment;
+course;
+interaction protocol;
+output;
+mobile network;
+economic operator and contracting authority;
+identity;
+overlays;
+intend recipient;
+radio link;
+board;
+data link;
+network;
+export and dissemination;
+service information;
+internet;
+trigger value;
+functionality and interface;
+multiple type;
+issue body;
+heating;
+scope;
+NIMA;
+air;
+automatic network selection;
+current map display;
+future tactical uav;
+vcd package and vcd system;
+thermostat;
+broadcast or group call;
+place;
+validity;
+structural VCD package datum;
+search;
+traction unit;
+patient;
+radio related prompt;
+traffic surge;
+resident;
+ftp;
+DMI;
+current temperature value;
+activation;
+vcd advanced package;
+shunt group;
+journey;
+EIRENE system;
+initiator;
+reason;
+ceiling speed;
+sufficient right;
+relation;
+conductor;
+illness;
+high priority;
+cab;
+range;
+voice;
+terminal;
+actual speed;
+appropriate status result;
+self - test;
+procedure;
+module;
+laboratory testing;
+National Operation;
+display;
+USMTF;
+warning tone;
+server;
+safety;
+model;
+CDN;
+member;
+general purpose radio;
+train control application;
+VCD advance package schema;
+instance;
+power;
+language;
+request;
+particular distributor;
+member of shunt group;
+brake application;
+heating and cool unit;
+phin functional area;
+alert;
+cab radio general purpose;
+training;
+hardware;
+activation of driver safety device;
+export;
+LIFO queue;
+duplicate ID;
+follow cycle;
+value;
+negotiation;
+ground;
+distribution;
+display of identity;
+default tab;
+operator;
+select point;
+one time;
+time;
+suspect agent;
+Air Force Mission Support System;
+resource and service information;
+short audible and visual indication;
+error;
+limit;
+Assistant Secretary of Defense;
+network service;
+high priority voice or datum call;
+other TCS function;
+single user;
+UAV interaction;
+XML Spec;
+deregistration;
+local area;
+emergency call button;
+list of suitable network;
+functional addressing scheme;
+front end of train;
+c4i;
+audible and visual indication of incoming call;
+voucher;
+external resource;
+operational history report;
+change of functional number;
+if direct network selection;
+ERTMS / ETCS;
+external interface;
+inhibition;
+payload;
+flight route plan;
+warning;
+mission planning;
+hci;
+transmission;
+performance penalty;
+mobile radio;
+e.g. log file;
+unique identifier;
+purpose;
+ATHS;
+end - user;
+mechanism;
+demographic datum;
+o;
+member of one or more call group;
+ADT antenna;
+national railway;
+gateway;
+exit;
+example of datum;
+well reporting purpose;
+maximum semantic understanding;
+connected party;
+health status;
+signal;
+message segment;
+identity of call or call party;
+detail;DTL
+store / retrieve number;
+transition;
+measure;
+linkage;
+adhesion condition;AC
+visual indication;
+differentiate indicator;
+CCTNS;
+testing;test.
+specific data requirement;
+telephone number;TN
+batch shipment of specimen / sample;
+STM;
+phase;PH
+cool unit;CU
+uav;UAV
+functionality;
+face;
+type of datum;
+Service Mission Planners;SM/P
+talk;
+5 second;
+deletion;
+mission execution;
+group identity of voice group call;
+vcd package of several economic operator;
+retrieval of TCS datum;
+Data Exchange of document;
+standardised telephone number;
+vcd package;
+VCR;
+95 %;
+customer;CUST
+level;Lv.
+primary controller;
+activity;ACT
+layout;LYT
+country;
+state;
+interface window;
+Information Resource Submittal Package;IRSP
+shunt movement;
+Recovery Startup Mode;RSM
+retrieval;
+etcs;
+reverse;Rev.
+General purpose radio;GPRS
+mobile radio network;MRN
+set;
+disconnection;DISC
+file;
+xml document;
+heating or cool unit;
+composition of call group;
+member of same call group;
+EIRENE specification;
+SR;
+follow data application;
+item;
+activity log;ALOG
+internal interface;
+upper value of valid temperature range;
+peering arrangement;
+require field;
+wide range of condition;
+Service Registry;SR
+more than one mobile radio network;
+deploy unit;
+different type;
+visible and audible indication;
+established peering arrangement;
+new case;
+plain text message;PTM
+addressee;ADDEE
+designation;DES
+automatic self - testing;AST
+exposure;EXP
+user template;
+condition;cond
+IAS;
+unfitted operation;
+priority scheme;PS
+NITF;
+Operations State;
+speciman;S
+coverage;CVGE
+tcs position;
+secondary controller power supply controller;
+see section;
+establishment of state;
+arrival;arr.
+interaction;INT
+ETCS trainborne equipment;
+vcd view system;
+audible and visual indication of loss;
+series;SER
+interest;INT
+custody information;
+service registry;SR
+lead driver;LD
+e.g. , xsl;
+initialization file;INI file
+at least 10 language;
+MA;
+name and address;N&A
+track;TRK
+loss;
+functional addressing;
+driver safety device;DSD
+architecture;arch.
+one RBC;
+other computer;
+User Information section;
+storage;STOR
+AMPS;
+SSL;
+code;
+necessary hardware and software functionality;
+tcs hwci;
+provision;Prov.
+economic operator;EO
+data services;DS
+minimum;MIN
+night;N
+control;ctrl
+video and telemetry datum;
+intervention;INT
+partner;ptnr
+Specimen ID;
+object;Obj
+designate stored number;
+proof;PR
+one or more time;
+OM datum;
+other type;
+prompt;
+product;prod
+public emergency call;PEC
+maintenance function;MF
+-board;
+international border crossing;
+FD / L information;
+TAMPS;
+shipping invoice;
+m o o table;
+future av;
+international border;IB
+Tactical Control System;TCS
+role;
+implementation;impl.
+supervision;
+contrast;CTRST
+launch;LNCH
+mean;
+travel;TVL
+function;func.
+EIRENE user equipment;
+entire train;
+eight hour operation;
+vcd;
+tcs HCI;
+MSIU Admin team;
+CCTV;
+operator access;OA
+responsibility;RESP
+treatment;tmt.
+service brake curve;
+confirmation message;CM
+phin preparedness Cross Functional component Requirements;
+Mediator;Med.
+determination;determ.
+single charge;SC
+associated semantic structure;
+interactive display;ID
+request thermostat;
+afmss;
+local pa;
+select;SEL
+loudspeaker;LS
+flight;FLT
+capability;CAP
+functional identity of connected party;
+system;SYS
+public emergency and group;
+center of field;COF
+public;PUB
+EIRENE mobile;
+policy and procedure;P&P
+tcs function;
+mission control;MC
+reception of call;
+only 10 minute of full duplex call time;
+foreign network;FN
+only 10 minute;
+chain of custody information;COCI
+datum systems;
+overtemperature value;Ov
+metadata;MD
+brightness;BRT
+I&RTS;
+problem;Prob
+addition;ADD
+identification;ID
+tag;
+m o;
+emergency brake curve and service brake curve;
+downlink;DL
+MSIU Management decision;
+limited exploitation;
+DFAD;
+secondary controller;
+invalid temperature status;
+engine / coach number;
+battery;BAT
+operation;OP
+selected payload;
+member of number;
+event type;
+continuous series;
+duration;DUR
+unique standard number;
+single - sign - on interface and function;
+staff type;StTyp
+mobiles;Mob
+master;Ms
+EIRENE facility;
+Countermeasure / Response Administration;CM/RA
+group identity;GID
+contact;Cont
+network change;NetCh
+eg;
+stage;stg
+multi - driver call;MltDrC
+evidence;
+police;Po
+cab radio;CabRd
+conveyance;
+administration;admin
+description;desc
+pre - vcd mapping tool;
+number of contact;NoCont
+standardised interface;StndInt
+Information Resources;InfoRes
+low value of valid temperature range;
+temperature data;TempDt
+resource ID counter;ResIdCo
+other naming convention;
+provider policy;PP
+food;
+developer;dev
+specification;spec
+login data;LogDt
+health event datum;
+select datum link;
+group or broadcast call area;
+countermeasure;CM
+beeps;Bps
+i.e. DTD;
+call driver;
+voice call;VoC
+travel history;
+remain capacity of battery;rcbat
+national train control system;NTCS
+XS module;
+economic operator datum;
+sr - mediator;
+single - sign;
+same area;
+symptom;Symp
+JMCIS;
+water;h2o
+two air vehicle;TAV
+district;dist
+Cab radio;CabRd
+number;No
+category;cat
+ATWCS;
+electromagnetic emission;em
+change;Ch
+error message;ErrM
+external system;ext sys
+TCS system;
+process flow;
+hold;
+peer agent;
+override control;
+initialization;init
+confirmation;conf
+multi - party voice call;
+new target location;NTgtLoc
+balance;
+Train datum entry;
+beep;Bp
+information;info
+entity;Ent
+pantograph and power supply;
+division;div
+static train speed profile;
+status of case record;
+call controller;CC
+application of power;AppPw
+follow - up datum;
+2.5 system integration;
+sight;
+long - term peering arrangement;ltp
+support;Sup
+trackside;
+source;src
+Shutdown State;
+e.g. consortium;
+tcs;
+validation value;VldVal
+various type;VarTyp
+straightforward procedure;
+individual thermostat;
+command;cmd
+automatic see section;
+-PRON-;
+Display;disp
+negotiate policy;
+master detail;m/d
+system name system;
+EIRENE network;
+necessary system capability;
+one network;
+communication requirement;com req
+onset date and time;
+head;
+movement authority;h
+control panel;cp
+TCS hardware;
+data exchange;data ex
+tender - specific datum;
+ability of user;AoU
+user interaction;
+individual user;ind. user
+recovery site;rec. site
+vehicle;
+operational radio;op radio
+facility and feature;
+railway personnel;
+data message;data msg
+team leader;tlead
+datum entry;
+design;
+hook;
+level of interaction;LoI
+series of beep;
+man - machine interface;MMI
+VBS;
+UAV mission plan;
+facility;fac.
+session time - out value;sess to val
+defense;def
+surveillance;surv
+same type;Styp
+MMI;
+SR instance;
+method;Mtd
+national value;
+web;Web
+appropriate level of interaction;
+/sample;Smp
+other Cab radio function;
+result;res.
+VSP screen;
+software;SW
+tcs software;tcs sw
+direct mode;
+contention;
+EIRENE mobile equipment;EIRENEme
+CDN provider;
+allowable operation;
+structural data;
+mission control and monitoring;MCM
+duplicate name;
+invalid temperature;inv temp
+speed and distance;S&D
+establish norm;
+xml tag;
+indicator light;
+health event;
+not requirement;not req
+LO;
+turn;trn
+teg;
+address scheme;
+field of view;FOV
+emergency call;EC
+30 second;30s
+mean of audible and visual indication;
+dte;
+remain capacity;ReCpt
+contracting authority;CA
+initiation request;InitReq
+service area identifier;SAID
+prepare;prep
+Mission plan;MP
+maximum number of concurrently run unit;
+2.5 System Integration and Data Exchange;
+shipment;
+such emergency call;
+tool;tl
+text message facility;TMF
+capture of duplicate name;
+Normal Startup Mode;
+size;S
+access management;AM
+zip code;zip
+exposure contact;
+LOL delay;LOLd
+tactical communication;TC
+functional role;
+single - sign - on interface;
+follow control capability;
+officer;offc
+use of train number;
+release speed;
+sample of xml document;
+successful completion;
+train driver;
+registration;reg
+emergency function;EmF
+specific evidence;
+conjunction;Conj
+public health;PH
+audible confirmation;
+shunt emergency call;
+type of conveyance;
+day and night;24/7
+other information;
+give peering arrangement;
+demand;dmd
+location of collection;
+other function;
+Web Server - SR;WS
+radio system;RS
+use of tool;UoT
+simple MMI action;sMMI
+select av;
+stop signal;ssig
+standard group;sgroup
+shipper;spp
+sensitive economic operator datum;SenEcoOpD
+onboard;OB
+machine interpretable format;
+composition;comp
+conduit;
+car adapter kit;
+electronic questionnaire;
+112 call;
+preferred language;plang
+shunt communication;scom
+section;sect
+data communications;data com
+power supply controller;PSC
+target;tgt
+public emergency;pubem
+shunt;
+password protection;passprot
+new staff;
+Digital Feature analysis datum;
+position;pos
+other set - up detail;
+UAV operator;
+animal;
+requirement;req
+jurisdiction;jur
+appropriate group call number;
+batches;
+case investigation;CI
+county;cnty
+PTT function;
+UIC fiche;
+tactical communication message;
+process;
+suitable network;
+imagery;
+compliance;compl
+user intervention;UI
+conveyance datum;
+objective;objv
+indication;ind
+select language;sel lang
+payload product datum;
+5 minute;5 min
+scheme;
+schema;
+up to ten functional number;utt fnum
+danger point;
+storage and retrieval;S&R
+field;
+dmi;
+RS-170A video;
+transmission of link assurance signal;
+equipment;eq
+case and exposure datum;C&E datum
+performance;perf
+name of network;nonet
+trainborne equipment;
+active cab;
+combination;comb
+theater;
+VGCS;
+message;msg
+body;
+readiness;R
+download of software;dl-sw
+board equipment;
+pre - define local area;
+preparedness;
+context;cntx
+specimen / sample;
+microphone;mic
+statistical report;
+lead cab;
+follow definition;
+transitory lighting;
+c4i message;
+use of single - sign - on interface;use of sso interface
+user - interface;UI
+map display;
+layout of cab equipment;
+temperature set value;
+digital data;dig. data
+date;
+call;
+pa of peer;
+ground and mobile user;
+SLAs;SLAs
+document;doc
+reversing function;
+mobile user;
+PA;
+run - time diagnostic;rt diag
+use;use
+residence;
+temperature limit;temp lim
+issuing body;
+threat;
+content;cont
+default value;def val
+automatic confirmation;aut conf
+other;
+controller equipment;
+speech;
+follow way;
+CDN gateway;
+term;
+face of traffic surge;
+supervised shunt speed;
+additional information;
+it - interface;it-int
+fix text message;
+execution;exec
+mode of operation;op mode
+processing;proc
+ability;
+means;
+selection of network;
+context specific datum;
+UAV;
+standard epi datum;
+full duplex call time;
+standard data interface;sDA
+stored number;
+effect;
+system functionality;sys funct
+several economic operator;
+caution;
+day;
+direct sunlight;
+modification;mod
+shunt area;
+startup of HWCIs;
+lead traction vehicle;
+FD / l;
+national requirement;nat req
+such number;
+status of heating or cool unit;
+key performance measure;KPM
+access matrix;
+darkness;
+disconnection of radio;
+account;acc
+provider;prov
+consistent level of service;consistent LoS
+subscriber;subs
+chain;
+claim form;
+item of equipment;
+ETCS equipment;
+onset date;
+IDD;
+CARS;
+valid temperature range value;val temp rng val
+emergency brake curve;
+shopping cart;
+user identity;user id
+TMDE;
+distance;dist
+brake;
+interface;iface
+application;app
+driver of train;
+nature;nat
+av position;
+investigation;Inv
+number of vaccination;NoVacc
+Startup FD / l;
+handset;
+datum;
+wide range;
+automatic confirmation message;aut conf msg
+citizen;ct
+payload data;
+travel history datum;
+external user;ext user
+text message;txt msg
+video host;
+event;evt
+entry;ent
+batch shipment;
+situation;sit
+service requirement;svc req
+client;cl
+attempt;Atmp
+one vcd package;
+formal procedure;
+monitoring;mon.
+direct network selection;
+other driver;
+ie call;
+user;usr
+other datum;
+registration procedure;reg procd
+registration / deregistration;
+completion of service;cmpl svcs
+unit;
+target coordinate;
+digital imagery;dig. imagery
+subject;subj
+aim;
+number and detail;No&D
+city;ct
+other tcs;
+train emergency call;
+train;
+payment term;
+people;ppl
+voice communications;
+case;
+minimum of eight hour operation;
+peer;
+5 level;
+author;aut
+failure;fail
+interface requirement and specification;
+level transition;
+XS;
+reference;ref
+voice group call;
+VCD;
+operational requirement;op req
+package;pkg
+hwci;
+av Standard Interface;
+alphanumeric description;alnum desc
+part of broadcast call;
+weight;wt
+follow type of controller;
+More information;more inf.
+call group;cg
+speed;spd
+payload plan;
+multiple location;mult loc
+master screen;
+contractor - subcontractor - relationship;
+OM;OM
+task;task
+train datum;
+functional identity;fId
+datum exchange;datum exchg
+many train;
+contract authority;
+other preparedness area;
+mode;mode
+emergency call function;EC function
+railway emergency call;railway emg call
+end;end
+driver functional number;dfun
+xml document of tag;xmldot
+group or broadcast call;gob call
+onboard equipment;onb equip
+distributor;distr.
+button;btn
+xml Tags;
+field office;FO
+controller;ctrl
+engine number;eng nr
+train movement;
+service specific mission planning system;sesmips
+working period;wPrd
+PTT button;ptt btn
+location information;loc info
+intercom system;
+name;
+service;svc
+audible indication;
+queue;
+temperature;temp
+terminate analog communication;
+TBMCS;
+procedure datum;proc datum
+discrepancy;
+other cdn;o. cdn
+common semantic;
+objective capability;
+investigation process;invsProc
+reception;rec
+Use;
+startup of CSCIs;
+PAs;
+authentication;auth
+waypoint data;wp data
+freeze - frame video;
+User;usr
+ambiguity;
+screen;scrn
+tcs datum;
+themas system;
+option;opt
+center;ctr
+glove;
+negotiate relationship;
+csci;
+received and transmit signal;rtsig
+pa;
+platform;pl
+emergency brake;
+EIRENE equipment;
+TES;TES
+part of call;PoC
+termination;term
+map;
+three tear;
+length;ln
+relevant datum;
+information resource type;TInfRes
+legal requirement;
+call area;
+claim;cl
+EIRENE user;
+point;pt
+limitation;limit
+train - bear recorder;
+event of failure;EOF
+Partial Supervision;pasup
+part of themas system;
+call party;
+traction;
+interface requirement;intReq
+webpage;
+attribute;attr
+communication;comm
+reminder;rm
+fuel;
+TACCOM segment;
+date and time;DaT
+mediator;
+certain type;
+power supply;ps
+operating environment;op env
+current temperature;CurTemp
+local resource;LoRes
+LOS;
+other member;
+link assurance tone;
+in - operative cab;
+download;dl
+train trip;
+startup;
+prophylaxis;
+datum storage device;
+registry;reg
+feature;ft
+organization;org
+shunt leader;
+validity date;val date
+exist tag;
+collection;coll
+operators;ops
+neither train number;
+pantograph;
+heating unit;
+end of journey;EoJ
+number of case;NoCa
+part of Information Resource Submittal Package;
+HCI;HCI
+audible and visual indication;av indication
+contact information;
+proper control command;
+group and broadcast call;
+new user;
+selection;sel
+railway;rlW
+example of aggregate datum;exAggDt
+railway operation priority;
+broadcast;bc
+isolation;
+producer;prod
+initialization request;init req
+group call;grpCall
+driver convenience;
+questionnaire response;
+TCS;TCS
+appropriate level;appLevel
+input;in
+incoming datum / user request;
+case and expose individual;
+laboratory;lab
+investigation - specific questionnaire;
+xml Tag Specification;
+driver;drv
+Joint Technical Architecture;JoinTA
+specific datum;
+vcd system;
+receipt;rcpt
+call originator;CO
+exist call;
+analysis;anal
+user of need;
+setting and number;
+icon;
+creation;
+cab equipment;
+period;
+latter case;
+column header;
+hardware and software;hw and sw
+functional number;func numb
+maintenance;maint.
+sample;smpl
+contact exposure;
+exist name;
+un - annotate analog imagery;
+maintenance team;mtncTeam
+TCS Software;
+broadcast call;bc call
+Policy repository;
+record;rec
+datum application;
+progress;prog
+follow function;
+external pa;ext pa
+map screen;
+exist vcd package;
+clear indication;
+annotation;annot
+one jurisdiction;
+antennas;
+display and inhibition;
+alarm event;
+shunt mode;
+follow component;
+database;db
+supervisor;
+capture;cptr
+laboratory result;
+ADT;
+short audible and visual indication of incoming call;savic
+theft;
+setting;
+report;rep
+computer;comp
+high priority call;
+form;frm
+Tactical Aircraft Mission Planning System;TAMPS
+supervised speed;
+training software;train sw
+train trip function;
+link assurance signal;
+post - incident analysis;
+accordance;accn
+train speed;v
+train data;
+identification number;id number
+location;loc
+emergency button;
+overlay;
+current network;cur net

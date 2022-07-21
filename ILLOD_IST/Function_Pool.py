@@ -579,14 +579,14 @@ def replace_phrase_with_abb(nc_to_reqID_map, reqs_list, replacement_sample):
 
 
 
-def create_uncontrolled_abbreviations_in_requirements(data_list, terms_to_be_replaced):
+def create_uncontrolled_abbreviations_in_requirements(data_list, terms_to_be_replaced, number_of_abbreviations):
     nc_to_reqID_map = generate_nc_to_reqID_map(data_list)
     list_of_replacements = []
     for sample in terms_to_be_replaced:
         if not (sample[1] != sample[1]):
             if sample[0] in nc_to_reqID_map.keys()and len(nc_to_reqID_map[sample[0]]) >= 2:
                 list_of_replacements.append(sample)
-    list_of_replacements = random.sample(list_of_replacements, 50)
+    list_of_replacements = random.sample(list_of_replacements, number_of_abbreviations)
     
     changed_data_list = data_list.copy()
     for r_sample in list_of_replacements:

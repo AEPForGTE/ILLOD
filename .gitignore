@@ -2,3 +2,4 @@
 cc.en.300.bin*
 **venv/
 **/.ipynb_checkpoints/
+.idea/

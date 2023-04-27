@@ -1,10 +1,65 @@
-import pandas as pd
 import random
-import functionsPool
+import re
+import spacy
+nlp = spacy.load("en_core_web_sm")
+
+
+
+def normalize_nc(nc):
+    doc = nlp(nc)
+    cleaned_nc = ""
+    for token in doc:
+        if token.pos_ != "DET" or token.text in ["such", ""]:
+            cleaned_nc = cleaned_nc + " " + token.lemma_
+            cleaned_nc = re.sub(r"[\([{})\]]", "", cleaned_nc)
+            cleaned_nc = cleaned_nc.strip()
+    return cleaned_nc
+
+
+def nc_detect(req):
+    noun_chunks_set = set()
+    doc = nlp(req)
+    for nc_ in doc.noun_chunks:
+        noun_chunks_set.add(nc_.text)
+
+    composed_terms = set()
+    for nc1 in noun_chunks_set:
+        for nc2 in noun_chunks_set:
+            comp_term1 = nc1 + " of " + nc2
+            comp_term2 = nc1 + " and " + nc2
+            if comp_term1 in req:
+                composed_terms.add(comp_term1)
+            if comp_term2 in req:
+                composed_terms.add(comp_term2)
+    found_terms = noun_chunks_set.union(composed_terms)
+
+    term_pairs = []
+    for original_term in found_terms:
+        term_pairs.append((original_term, normalize_nc(original_term)))
+    return set(term_pairs)
+
+
+def generate_nc_to_reqID_map(data_list):
+    nc_to_reqID_map = {}
+    for sample in data_list[1:]:
+        current_ID = sample[0] + "_" + sample[1]
+        set_of_nc_tuples_in_sent = nc_detect(sample[2])
+
+        for term_tuple in set_of_nc_tuples_in_sent:
+            cleaned_term = term_tuple[1]
+            if cleaned_term in nc_to_reqID_map.keys():
+                ID_list_so_far = nc_to_reqID_map[cleaned_term]
+                if current_ID not in ID_list_so_far:
+                    ID_list_so_far.append(current_ID)
+                nc_to_reqID_map[cleaned_term] = ID_list_so_far
+            else:
+                nc_to_reqID_map[cleaned_term] = [current_ID]
+    return nc_to_reqID_map
+
 
 
 def replace_term_with_abb_in_given_req(req_text, cleaned_nc, abb):
-    set_of_term_pairs = functionsPool.nc_detect(req_text)
+    set_of_term_pairs = nc_detect(req_text)
     for item in set_of_term_pairs:
         if item[1] == cleaned_nc:
             return req_text.replace(item[0], abb)
@@ -42,7 +97,7 @@ def replace_phrase_with_abb(nc_to_reqID_map, reqs_dict, replacement_sample):
 
 
 def create_uncontrolled_abbreviations_in_requirements(data_list, terms_to_be_replaced, number_of_abbreviations):
-    nc_to_reqID_map = functionsPool.generate_nc_to_reqID_map(data_list)
+    nc_to_reqID_map = generate_nc_to_reqID_map(data_list)
     list_of_replacements = []
     for sample in terms_to_be_replaced:
         if not (sample[1] != sample[1]):
@@ -67,21 +122,3 @@ def create_uncontrolled_abbreviations_in_requirements(data_list, terms_to_be_rep
         changed_data_dict = replace_phrase_with_abb(nc_to_reqID_map, changed_data_dict, r_sample)
 
     return changed_data_dict
-
-
-def generate_modified_requirements(number_of_replacements):
-    filePath = "pure_requirements.csv"
-    data = pd.read_csv(filePath, names=['ID', 'dataset', 'requirement'], sep=';', encoding='utf8')
-    data_list = data.values.tolist()
-
-    replacement_data = pd.read_csv("SF-LF-Pairs.csv", names=['term', 'abbv'], sep=';', encoding='utf8')
-    aeps_to_replace = replacement_data.values.tolist()
-
-    uncontr_aeps_data  = create_uncontrolled_abbreviations_in_requirements(data_list, aeps_to_replace, number_of_replacements)
-    result_list = []
-    for key in uncontr_aeps_data.keys():
-        result_list.append(uncontr_aeps_data[key])
-    result_list = result_list[1:]
-    df = pd.DataFrame.from_dict(result_list)
-    df.drop(columns=df.columns[0], axis=1, inplace=True)
-    df.to_csv("output.csv", sep=";", header=["Dataset", "Requirement_Text", "{replaced_term:inserted_abbreviation}"])

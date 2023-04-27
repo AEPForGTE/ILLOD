@@ -1,4 +1,5 @@
-import generate_uncontrolled_abbreviations
+from ILLOD_RE.src import generate_uncontrolled_abbreviations
+
 
 def main():
     generate_uncontrolled_abbreviations.generate_modified_requirements(100)

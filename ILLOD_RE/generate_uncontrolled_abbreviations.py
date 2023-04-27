@@ -1,10 +1,10 @@
 import pandas as pd
 import random
-import functions
+import functionsPool
 
 
 def replace_term_with_abb_in_given_req(req_text, cleaned_nc, abb):
-    set_of_term_pairs = functions.nc_detect(req_text)
+    set_of_term_pairs = functionsPool.nc_detect(req_text)
     for item in set_of_term_pairs:
         if item[1] == cleaned_nc:
             return req_text.replace(item[0], abb)
@@ -42,7 +42,7 @@ def replace_phrase_with_abb(nc_to_reqID_map, reqs_dict, replacement_sample):
 
 
 def create_uncontrolled_abbreviations_in_requirements(data_list, terms_to_be_replaced, number_of_abbreviations):
-    nc_to_reqID_map = functions.generate_nc_to_reqID_map(data_list)
+    nc_to_reqID_map = functionsPool.generate_nc_to_reqID_map(data_list)
     list_of_replacements = []
     for sample in terms_to_be_replaced:
         if not (sample[1] != sample[1]):
@@ -53,10 +53,14 @@ def create_uncontrolled_abbreviations_in_requirements(data_list, terms_to_be_rep
 
     changed_data_dict = {}
     for sample in data_list:
+        if sample[0] + "_" + sample[1] == "ID_dataset":
+            d = "{replaced_term:inserted_abbreviation}"
+        else:
+            d = {}
         changed_data_dict[sample[0] + "_" + sample[1]] = {"id": sample[0],
                                                           "dataset": sample[1],
                                                           "requirement": sample[2],
-                                                          "replaced_term": {}}
+                                                          "replaced_term": d}
 
 
     for r_sample in list_of_replacements:
@@ -66,7 +70,7 @@ def create_uncontrolled_abbreviations_in_requirements(data_list, terms_to_be_rep
 
 
 def generate_modified_requirements(number_of_replacements):
-    filePath = "pure_dataset.csv"
+    filePath = "pure_requirements.csv"
     data = pd.read_csv(filePath, names=['ID', 'dataset', 'requirement'], sep=';', encoding='utf8')
     data_list = data.values.tolist()
 
@@ -74,4 +78,10 @@ def generate_modified_requirements(number_of_replacements):
     aeps_to_replace = replacement_data.values.tolist()
 
     uncontr_aeps_data  = create_uncontrolled_abbreviations_in_requirements(data_list, aeps_to_replace, number_of_replacements)
-    pd.DataFrame.from_dict(uncontr_aeps_data).T.to_csv("output.csv", sep=";")
+    result_list = []
+    for key in uncontr_aeps_data.keys():
+        result_list.append(uncontr_aeps_data[key])
+    result_list = result_list[1:]
+    df = pd.DataFrame.from_dict(result_list)
+    df.drop(columns=df.columns[0], axis=1, inplace=True)
+    df.to_csv("output.csv", sep=";", header=["Dataset", "Requirement_Text", "{replaced_term:inserted_abbreviation}"])

@@ -488,7 +488,7 @@ def extract_abbs(sents):
     return set_of_detected_abbreviations
 
 
-##################### NC-Extraction + Generation of new validation data (100 uncontrolled abbreviations in PURE dataset)
+##################### NC-Extraction + Generation of new validation input_data (100 uncontrolled abbreviations in PURE dataset)
 
 
 def normalize_nc(nc):

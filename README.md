@@ -75,11 +75,11 @@ Run the main&#46;py script to generate the output files:
 python main.py
 ```
 
-After the execution of main&#46;py two new output files in the MAIN/output directory:
+After running main.py, two new output files are created in the MAIN/output directory:
 
 | FILE | DESCRIPTION |
 | ------ | ------ |
-| output/pure_modified_requirements.csv | A CSV file containing 1934 requirements from PURE dataset, where a given number of randomly chosen terms (long forms) were replaced by uncontrolled abbreviations (short forms).|
-| output/evaluation_results.csv | A CSV file containing detailed evaluation results showing how the ILLOD approach performed on detecting the inserted abbreviations.|
+| pure_modified_requirements.csv | A CSV file containing 1934 requirements from PURE dataset, where a given number of randomly chosen terms (long forms) were replaced by uncontrolled abbreviations (short forms).|
+| evaluation_results.csv | A CSV file containing detailed evaluation results showing how the ILLOD approach performed on detecting the inserted abbreviations.|
 
 By default, the main routine replaces 100 long forms with abbreviations. This value can be changed by modifying the NUM_OF_REPLACEMENTS variable in main&#46;py. Note that only values between 0 and 400 are allowed. 

@@ -75,7 +75,7 @@ Run the main&#46;py script to generate the output files:
 python main.py
 ```
 
-This will generate two new output files in the MAIN/output directory:
+After the execution of main&#46;py two new output files in the MAIN/output directory:
 
 | FILE | DESCRIPTION |
 | ------ | ------ |

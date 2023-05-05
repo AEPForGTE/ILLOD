@@ -9,7 +9,8 @@ ILLOD is a binary classifier for abbreviation-expansion detection (it checks Ini
 
 ILLOD is a feature based classifier and proves to be more accurate than approaches based on syntactic or semantic similarity. Therefore, it can be a useful extension for term clustering tools for synonym detection.
 
-This repo is organised as follows
+This repo is organised as follows:
+
 | DIRECTORY | DESCRIPTION |
 | ------ | ------ |
 | ILLOD_IST | Notebooks and Sources for IST Journal submission |
@@ -42,23 +43,8 @@ To successfully run the ILLOD_RE artifact, the following system requirements mus
 - Pip (to install Python dependencies)
 - All other required libraries will be installed automatically when running pip install -r requirements.txt.
 
-### Installation Instructions
-To install the ILLOD artifact, follow these steps:
 
-Clone the repository:
-```sh
-git clone https://github.com/AEPForGTE/ILLOD
-```
-Once the virtual environment has been activated, navigate to the MAIN directory and run python main&#46;py. This will generate two new output files in the MAIN/output directory:
-
-| FILE | DESCRIPTION |
-| ------ | ------ |
-| output/pure_modified_requirements.csv | A CSV file containing 1934 requirements from PURE dataset, where a given number of randomly chosen terms (long forms) were replaced by uncontrolled abbreviations (short forms).|
-| output/evaluation_results.csv | A CSV file containing detailed evaluation results showing how the ILLOD approach performed on detecting the inserted abbreviations.|
-
-By default, the script replaces 100 long forms with abbreviations. This value can be changed by modifying the NUM_OF_REPLACEMENTS variable in main&#46;py. Note that only values between 0 and 400 are allowed. 
-
-## Steps to Reproduce
+### Steps to Reproduce
 To reproduce the results presented in the paper, follow these steps:
 Clone the repository:
 ```sh
@@ -88,3 +74,12 @@ Run the main&#46;py script to generate the output files:
 ```sh
 python main.py
 ```
+
+This will generate two new output files in the MAIN/output directory:
+
+| FILE | DESCRIPTION |
+| ------ | ------ |
+| output/pure_modified_requirements.csv | A CSV file containing 1934 requirements from PURE dataset, where a given number of randomly chosen terms (long forms) were replaced by uncontrolled abbreviations (short forms).|
+| output/evaluation_results.csv | A CSV file containing detailed evaluation results showing how the ILLOD approach performed on detecting the inserted abbreviations.|
+
+By default, the main routine replaces 100 long forms with abbreviations. This value can be changed by modifying the NUM_OF_REPLACEMENTS variable in main&#46;py. Note that only values between 0 and 400 are allowed. 

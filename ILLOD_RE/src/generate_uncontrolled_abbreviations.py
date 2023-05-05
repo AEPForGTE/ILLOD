@@ -49,7 +49,4 @@ def generate_modified_requirements(number_of_replacements):
     # Drop the first column of the DataFrame (corresponding to the internal id, which is not needed in the csv file).
     df.drop(columns=df.columns[0], axis=1, inplace=True)
 
-    # Write the modified requirements to a CSV file.
-    df.to_csv("replacement_output.csv", sep=";", header=["Dataset", "Requirement_Text", "{replaced_term:inserted_abbreviation}"])
-
-    return result_list
+    return df

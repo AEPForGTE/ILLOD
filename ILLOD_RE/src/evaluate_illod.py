@@ -133,4 +133,4 @@ def ten_fold_validation(number_of_replacements):
             d["Duration"] = subresult[6]
             output_list.append(d)
     df = pd.DataFrame.from_dict(output_list)
-    df.to_csv("evaluation_output.csv", sep=";")
+    return df

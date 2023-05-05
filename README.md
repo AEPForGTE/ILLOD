@@ -24,18 +24,18 @@ This section explains how ILLOD artefacts can be generated and used on your loca
 The MAIN directory contains all necessary data and implementations to install and run ILLOD on your local system.
 By running the main script, two CSV files are created in the subdirectory MAIN/output.
 - modified_requirements.csv
-- evaluation.csv
+- evaluation_results.csv
 
 
 ### Description of Artifact
 
-| FILE | DESCRIPTION |
-| ------ | ------ |
+| FILE                    | DESCRIPTION                                               |
+|-------------------------|-----------------------------------------------------------|
 | input_data/pure_requirements.csv | A csv file containing 1934 requirements from PURE dataset |
-| input_data/LF-SF_pairs.csv | A csv file containing 518 LF-SF pairs |
-| main&#46;py| The script that generates the output files |
-| utils&#46;py| A utility script containing helper functions |
-| requirements.txt| A text file containing the required dependencies |
+| input_data/LF-SF_pairs.csv | A csv file containing 518 LF-SF pairs                     |
+| main&#46;py             | The script that generates the output files                |
+| src                     | Folder containing sources to run ILLOD and its evaluation |
+| requirements.txt        | A text file containing the required dependencies          |
 
 ### System Requirements
 To successfully run the ILLOD_RE artifact, the following system requirements must be met: 

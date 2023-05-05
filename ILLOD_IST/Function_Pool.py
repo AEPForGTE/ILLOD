@@ -17,8 +17,9 @@ from spacy_syllables import SpacySyllables
 nlp = spacy.load("en_core_web_sm")
 nlp.add_pipe("syllables", after="tagger")
 
-import hunspell
-spellchecker = hunspell.HunSpell('en_US.dic', 'en_US.aff')
+from spylls.hunspell import Dictionary
+spellchecker = Dictionary.from_files('en_US')
+
 from string import punctuation
 
 ################################# Helper Functions and Syntactic Similarity Measures
@@ -437,13 +438,13 @@ def check_if_word_is_capital_letter_abbv(word):
 
 def get_additional_candidates(req):
     m = re.findall(r"(?:\w+\.)+(?!$)", req)
-    cleaned_list_of_candidates = [item for item in m if not spellchecker.spell(item)]
+    cleaned_list_of_candidates = [item for item in m if not spellchecker.lookup(item)]
     return cleaned_list_of_candidates
 
 def check_if_word_is_lower_letter_abbv(word, candidates):
     if len(word)<=1 and word != "a":
         return True
-    if (not spellchecker.spell(' '.join(re.findall(r"[\w\-]+", word))) or
+    if (not spellchecker.lookup(' '.join(re.findall(r"[\w\-]+", word))) or
         word in candidates) and word.islower() and len(word) < 7:
         return True
     word = re.sub("(\w)(\W)(\w)", r"\1 \3", word)

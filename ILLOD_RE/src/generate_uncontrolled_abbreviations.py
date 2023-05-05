@@ -50,4 +50,6 @@ def generate_modified_requirements(number_of_replacements):
     df.drop(columns=df.columns[0], axis=1, inplace=True)
 
     # Write the modified requirements to a CSV file.
-    df.to_csv("output.csv", sep=";", header=["Dataset", "Requirement_Text", "{replaced_term:inserted_abbreviation}"])
+    df.to_csv("replacement_output.csv", sep=";", header=["Dataset", "Requirement_Text", "{replaced_term:inserted_abbreviation}"])
+
+    return result_list

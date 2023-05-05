@@ -70,6 +70,11 @@ Install the required dependencies:
 pip install -r requirements.txt
 ```
 
+Nvigate to the root folder:
+```sh
+cd ..
+```
+
 Run the main&#46;py script to generate the output files:
 ```sh
 python main.py

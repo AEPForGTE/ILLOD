@@ -1,5 +1,5 @@
 import pandas as pd
-from ILLOD_RE.src import functionsPool
+from MAIN.src import functionsPool
 import os
 
 # Get the directory path of the current file.

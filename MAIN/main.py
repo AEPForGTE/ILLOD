@@ -1,5 +1,5 @@
-from ILLOD_RE.src import generate_uncontrolled_abbreviations
-from ILLOD_RE.src import evaluate_illod
+from MAIN.src import generate_uncontrolled_abbreviations
+from MAIN.src import evaluate_illod
 NUMBER_OF_REPLACEMENTS=100
 
 def main():

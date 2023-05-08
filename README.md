@@ -3,11 +3,11 @@
 ## What is it?
 Providing precise definitions of all project specific terms is a crucial task in requirements engineering. In order to support the glossary building process, many previous tools rely on the assumption that the requirements set has a certain level of quality. Yet, the parallel detection and correction of quality weaknesses in the context of glossary terms is beneficial to requirements definition. We focus on detection of uncontrolled usage of abbreviations by identification of abbreviation-expansion pair (AEP) candidates. We compare our feature-based approach (ILLOD+) to other similarity measures to detect AEPs and propose how to extend the glossary term extraction (GTE) and synonym clustering with AEP-specific methods.
 
-This repo provides data and evaluation results from our research in abbreviation-expansion pair detection for glossary term extraction (AEPForGTE). It also provides an implementation of ILLOD and its extension ILLOD+. In ILLOD+ the detection of AEPs is refined through recursive calls and a more sophisticated character distribution analysis, it achieves higher recall and precision. In ILLOD+ the detection of AEPs is refined through recursive calls and a more sophisticated character distribution analysis, it achieves higher recall and precision.
-
+This repo provides data and evaluation results from our research in abbreviation-expansion pair detection for glossary term extraction (AEPForGTE). It also provides an implementation of ILLOD and its extension ILLOD+. 
 ILLOD is a binary classifier for abbreviation-expansion detection (it checks Initial Letters, term Lengths, Order, and Distribution of characters). It checks for two given terms whether they are compatible as abbreviation-expansion pair. It extends the algorithm of Schwartz and Hearst [1], that we re-implemented in Python to make it usable for cross-comparisons, where abbreviations and possible expansions appear in different sentences/ requirements.
-
 ILLOD is a feature based classifier and proves to be more accurate than approaches based on syntactic or semantic similarity. Therefore, it can be a useful extension for term clustering tools for synonym detection.
+
+In ILLOD+ the detection of AEPs is refined through recursive calls and a more sophisticated character distribution analysis, it achieves higher recall and precision. In ILLOD+ the detection of AEPs is refined through recursive calls and a more sophisticated character distribution analysis, it achieves higher recall and precision.
 
 This repo is organised as follows:
 

@@ -1,13 +1,15 @@
 # ILLOD: Tool for Term Consolidation
 
 ## What is it?
-Providing precise definitions of all project specific terms is a crucial task in requirements engineering. In order to support the glossary building process, many previous tools rely on the assumption that the requirements set has a certain level of quality. Yet, the parallel detection and correction of quality weaknesses in the context of glossary terms is beneficial to requirements definition. We focus on detection of uncontrolled usage of abbreviations by identification of abbreviation-expansion pair (AEP) candidates. We compare our feature-based approach (ILLOD+) to other similarity measures to detect AEPs and propose how to extend the glossary term extraction (GTE) and synonym clustering with AEP-specific methods.
+Effective requirements engineering requires providing precise definitions for all project-specific terms. One of the critical tasks in this process is building a glossary. However, many existing tools for glossary term extraction assume a certain level of quality in the requirements set, which may not always be the case. Therefore, detecting and correcting quality weaknesses in the context of glossary terms is crucial to ensure successful requirements definition.
 
-This repo provides data and evaluation results from our research in abbreviation-expansion pair detection for glossary term extraction (AEPForGTE). It also provides an implementation of ILLOD and its extension ILLOD+. 
-ILLOD is a binary classifier for abbreviation-expansion detection (it checks Initial Letters, term Lengths, Order, and Distribution of characters). It checks for two given terms whether they are compatible as abbreviation-expansion pair. It extends the algorithm of Schwartz and Hearst [1], that we re-implemented in Python to make it usable for cross-comparisons, where abbreviations and possible expansions appear in different sentences/ requirements.
-ILLOD is a feature based classifier and proves to be more accurate than approaches based on syntactic or semantic similarity. Therefore, it can be a useful extension for term clustering tools for synonym detection.
+Our research focuses on detecting uncontrolled usage of abbreviations by identifying abbreviation-expansion pair (AEP) candidates. To achieve this, we have developed a feature-based approach called ILLOD, a binary classifier that checks Initial Letters, term Lengths, Order, and Distribution of characters. Our method is aimed at extending glossary term extraction (GTE) and synonym clustering with AEP-specific methods. We have also compared our approach with other common similarity measures to evaluate its effectiveness.
 
-In ILLOD+ the detection of AEPs is refined through recursive calls and a more sophisticated character distribution analysis, it achieves higher recall and precision. In ILLOD+ the detection of AEPs is refined through recursive calls and a more sophisticated character distribution analysis, it achieves higher recall and precision.
+This repository provides data and evaluation results from our research in AEP detection for glossary term extraction. We also offer an implementation of ILLOD and its extension, ILLOD+. It determines whether two given terms are compatible as an abbreviation-expansion pair. ILLOD is based on the algorithm of Schwartz and Hearst [SOURCE]. We re-implemented it in Python to enable cross-comparisons where abbreviations and possible expansions appear in different sentences or requirements.
+
+ILLOD has proven to be more accurate than approaches based on syntactic or semantic similarity. Therefore, it can be a valuable extension for term clustering tools for synonym detection. ILLOD+ refines the detection of AEPs through recursive calls and a more sophisticated character distribution analysis, achieving higher recall and precision.
+
+In summary, our approach provides an effective solution for detecting uncontrolled abbreviation usage, allowing for a more accurate glossary building process and improving the overall quality of requirements definition.
 
 This repo is organised as follows:
 

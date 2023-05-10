@@ -79,7 +79,7 @@ python main.py
 
 Running main&#46;py executes 3 tasks.
 
-- The 1st task checks wether an additional file for AEP detection is given. It returns a list of detected AEP (Abbreviation Expansion Pairs) groups from that file.
+- The 1st task checks wether an additional file for AEP detection is placed in the input_data folder. It returns a list of detected AEP (Abbreviation Expansion Pairs) groups from that file.
 
 - The 2nd task generates a modified version of the requirements data by replacing some terms with their corresponding abbreviations.
 

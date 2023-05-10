@@ -79,11 +79,11 @@ python main.py
 
 Running main&#46;py executes 3 tasks.
 
-The 1st task checks wether an additional file for AEP detection is given. It returns a list of detected AEP (Abbreviation Expansion Pairs) groups from that file.
+- The 1st task checks wether an additional file for AEP detection is given. It returns a list of detected AEP (Abbreviation Expansion Pairs) groups from that file.
 
-The 2nd task generates a modified version of the requirements data by replacing some terms with their corresponding abbreviations.
+- The 2nd task generates a modified version of the requirements data by replacing some terms with their corresponding abbreviations.
 
-Finally, the 3rd tasks runs the ten fold validation function with the NUM_OF_REPLACEMENTS parameter to evaluate the performance of ILLOD on the modified requirements data. 
+- Finally, the 3rd tasks runs the ten fold validation function with the NUM_OF_REPLACEMENTS parameter to evaluate the performance of ILLOD on the modified requirements data. 
 
 
 After running main&#46;py, two new output files are created in the MAIN/output directory. A third file is optionally generated when an additional file for AEP detection is placed in the input folder by the user.

@@ -88,7 +88,9 @@ Run the main&#46;py script to generate the output files:
 python main.py
 ```
 
-Running main&#46;py executes 3 tasks.
+### Results
+
+Running main&#46;py executes 3 subroutines.
 
 - The first function checks whether an additional file for AEP detection is stored in the input_data folder. It writes the list of detected AEP groups (Abbreviation Expansion Pairs) into the file "found_AEP_groups.json". 
 

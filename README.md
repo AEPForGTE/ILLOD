@@ -32,7 +32,6 @@ The following files are included in the ILLOD artifact:
 | input_data/pure_requirements.csv | A csv file containing 1934 requirements from PURE dataset |
 | input_data/LF-SF_pairs.csv | A csv file containing 518 LF-SF pairs                     |
 | main&#46;py             | The script that generates the output files                |
-| src                     | Folder containing sources to run ILLOD and its evaluation |
 | requirements.txt        | A text file containing the required dependencies          |
 
 ### System Requirements
@@ -78,6 +77,15 @@ Run the main&#46;py script to generate the output files:
 python main.py
 ```
 
+Running main&#46;py executes 3 tasks.
+
+The 1st task checks wether an additional file for AEP detection is given. It returns a list of detected AEP (Abbreviation Expansion Pairs) groups from that file.
+
+The 2nd task generates a modified version of the requirements data by replacing some terms with their corresponding abbreviations.
+
+Finally, the 3rd tasks runs the ten fold validation function with the NUM_OF_REPLACEMENTS parameter to evaluate the performance of ILLOD on the modified requirements data. 
+
+
 After running main&#46;py, two new output files are created in the MAIN/output directory:
 
 | FILE | DESCRIPTION |
@@ -85,4 +93,11 @@ After running main&#46;py, two new output files are created in the MAIN/output d
 | pure_modified_requirements.csv | A CSV file containing 1934 requirements from PURE dataset, where a given number of randomly chosen terms (long forms) were replaced by uncontrolled abbreviations (short forms).|
 | evaluation_results.csv | A CSV file containing detailed evaluation results showing how the ILLOD approach performed on detecting the inserted abbreviations.|
 
+A third file is optionally generated when an additional file for AEP detection is placed in the input folder by the user.
+
+| FILE                  | DESCRIPTION |
+| ------ | ------ |
+| found_AEP_groups.json | JSON-encoded file that contains detected AEP groups from the additional file. |
+
 By default, the main routine replaces 100 long forms with abbreviations. This value can be changed by modifying the NUM_OF_REPLACEMENTS variable in main&#46;py. Note that only values between 0 and 400 are allowed. 
+

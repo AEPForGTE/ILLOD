@@ -8,11 +8,11 @@ here:
 
 This repository is organised as follows:
 
-| DIRECTORY | DESCRIPTION                                                              |
-| ------ |--------------------------------------------------------------------------|
-| ILLOD_IST | Notebooks and Sources for IST Journal submission (Link to Readme)        |
-| ILLOD_REFSQ | Notebooks and Sources for REFSQ2022 conference submission  (Link Readme) |
-| MAIN | Data and Sources for Reproduction Purposes                               |
+| DIRECTORY | DESCRIPTION                                       |
+| ------ |---------------------------------------------------|
+| ILLOD_IST | Notebooks and Sources for IST article.            |
+| ILLOD_REFSQ | Notebooks and Sources for REFSQ2022 contribution. |
+| MAIN | Data and Sources for Reproduction Purposes        |
 
 Instructions for loading and using the ILLOD (Initial Letters, term Lengths, Order, and Distribution of characters) artifact on your local system will be described below. The artifact also allows the execution of ILLOD on individual user data without requiring in-depth Python knowledge.
 

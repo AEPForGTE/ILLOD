@@ -10,7 +10,7 @@ This repository is organised as follows:
 
 | DIRECTORY | DESCRIPTION                                       |
 | ------ |---------------------------------------------------|
-| ILLOD_IST | Notebooks and Sources for IST article.            |
+| ILLOD_IST | Notebooks and Sources for [IST article](https://www.sciencedirect.com/science/article/abs/pii/S0950584923000575).            |
 | ILLOD_REFSQ | Notebooks and Sources for REFSQ2022 contribution. |
 | MAIN | Data and Sources for Reproduction Purposes        |
 

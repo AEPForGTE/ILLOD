@@ -125,3 +125,7 @@ After running main&#46;py, two new output files are created in the MAIN/output d
 | pure_modified_requirements.csv  | A CSV file containing 1934 requirements from PURE dataset, where a given number of randomly chosen terms (long forms) were replaced by uncontrolled abbreviations (short forms).|
 | evaluation_results.csv          | A CSV file containing detailed evaluation results showing how the ILLOD approach performed on detecting the inserted abbreviations.|
 | Optional: found_AEP_groups.json | JSON-encoded file that contains detected AEP groups from the additional file. |
+
+## How to Cite
+
+If you find this work useful and want to cite it in your research, you can use the following format:

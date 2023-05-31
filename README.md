@@ -130,11 +130,12 @@ After running main&#46;py, two new output files are created in the MAIN/output d
 
 If you find this work useful and want to cite it in your research, you can use the following format:
 
+
 ## License
 
 Software under MIT License
 
-Copyright (c) 2022-2023
+Copyright (c) 2022-2023 Hussein Hasso, Katharina Großer, Iliass Aymaz, Hanna Geppert, Jan Jürjens
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

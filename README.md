@@ -4,7 +4,7 @@ This repository provides data, methods (python sources) and evaluation results f
 of abbreviation-expansion pairs (AEPs) in requirement sets, specifically for glossary term 
 extraction in requirements engineering documents. The corresponding research papers are availiable 
 here:
-[REFSQ2022 Conference](https://link.springer.com/chapter/10.1007/978-3-030-98464-9_6), [Elsevir IST Journal](https://www.sciencedirect.com/science/article/abs/pii/S0950584923000575).
+[REFSQ2022 Conference](https://link.springer.com/chapter/10.1007/978-3-030-98464-9_6), [IST Journal](https://www.sciencedirect.com/science/article/abs/pii/S0950584923000575).
 
 This repository is organised as follows:
 
@@ -125,6 +125,12 @@ After running main&#46;py, two new output files are created in the MAIN/output d
 | pure_modified_requirements.csv  | A CSV file containing 1934 requirements from PURE dataset, where a given number of randomly chosen terms (long forms) were replaced by uncontrolled abbreviations (short forms).|
 | evaluation_results.csv          | A CSV file containing detailed evaluation results showing how the ILLOD approach performed on detecting the inserted abbreviations.|
 | Optional: found_AEP_groups.json | JSON-encoded file that contains detected AEP groups from the additional file. |
+
+## Related Publications
+
+Hasso, H., Großer, K., Aymaz, I., Geppert, H., Jürjens, J. (2022). Abbreviation-Expansion Pair Detection for Glossary Term Extraction. In: Gervasi, V., Vogelsang, A. (eds) Requirements Engineering: Foundation for Software Quality. REFSQ 2022. Lecture Notes in Computer Science, vol 13216. Springer, Cham. DOI: [10.1007/978-3-030-98464-9_6](https://doi.org/10.1007/978-3-030-98464-9_6)
+
+Hasso, H., Großer, K., Aymaz, I., Geppert, H., Jürjens, J. (2023). Enhanced Abbreviation–Expansion Pair Detection for Glossary Term Extraction. In: Information and Software Technology, vol 159 (July 2023), p. 107203. ISSN: 0950-5849. DOI: [10.1016/j.infsof.2023.107203](https://doi.org/10.1016/j.infsof.2023.107203)
 
 ## How to Cite
 

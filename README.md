@@ -6,42 +6,58 @@ extraction and consolidation in requirement documents.
 For AEP detection, the ILLOD(+) tool identifies 
 if a term is a potential long form to a given abbreviation
 based on syntactic features of both terms, i.a. **I**nitial **L**etters, term **L**engths, **O**rder, and **D**istribution of characters.
-Corresponding research papers that motivate this approach and discuss the results are availiable 
+Corresponding research papers that motivate this approach and discuss the results are available 
 here:
 REFSQ2022 Conference [[1]](https://link.springer.com/chapter/10.1007/978-3-030-98464-9_6), IST Journal [[2]](https://www.sciencedirect.com/science/article/abs/pii/S0950584923000575).
+
+The content provided can be used as follows:
+ - to reproduce results presented in [[1]](https://link.springer.com/chapter/10.1007/978-3-030-98464-9_6) and [[2]](https://www.sciencedirect.com/science/article/abs/pii/S0950584923000575)
+ - to use ILLOD(+) to detect AEPs
+ - to retrieve and use the input data-set for other research with AEPs in requirements engineering or other contexts
 
 The repository is organised as follows:
 
 | DIRECTORY | DESCRIPTION                                       |
 | ------ |---------------------------------------------------|
-| MAIN | Data and sources to run ILLOD(+) and further AEP classifiers + experiments for their evaluation (depends on ILLOD_IST)        |
+| MAIN | Data and sources to run ILLOD(+) and further AEP classifiers as well as experiments for their evaluation ([[2]](https://www.sciencedirect.com/science/article/abs/pii/S0950584923000575)) (depends on ILLOD_IST)        |
 | ILLOD_IST | Notebooks and sources for experiments presented in [[2]](https://www.sciencedirect.com/science/article/abs/pii/S0950584923000575)           |
 | ILLOD_REFSQ | Notebooks and sources for experiments presented in [[1]](https://link.springer.com/chapter/10.1007/978-3-030-98464-9_6) |
 
-Instructions for loading and using ILLOD on your local system will be described below. It is possible to execute ILLOD on individual user data without requiring in-depth Python knowledge.
+Instructions for loading and using ILLOD(+) on your local system will be described below. It is possible to execute ILLOD(+) on individual user data without requiring in-depth Python knowledge.
 
-## Description of Artifact
+## Description
 ### Summary 
-This artifact includes data and methods (python sources) to run the following steps:
+This repository includes data and methods (python sources) to run the following steps:
 
-1) Replace long-form terms with abbreviations from predefined lists to create a modified 
+1) **Create a test data-set:** Replace long-form terms in a requirement set with abbreviations from predefined lists to create a modified 
 requirement set.
 
 
-2) Execute and evaluate different classifiers for AEP detection, using the modified 
+2) **Replicate Evaluation:** Execute and evaluate different classifiers for AEP detection, using the modified 
 requirement set.
 
 
-3) Optionally, the artifact allows for extraction of AEP groups (clusters that link a single 
+3) **Use ILLOD for custom data-set:** Optionally, the artifact allows for extraction of AEP groups (clusters that link a single 
 abbreviation with all the potential expansions associated with that abbreviation) from a user-specified file. For this, the user-specified file must be csv-formatted and contain the columns "ID" and "requirement", which are separated by a semicolon ";". 
 This file has to be placed in the input_data folder.
 
-Step (1) aims to simulate a scenario where the requirement set has a large number of undefined 
-abbreviations, thereby representing a weak requirements set qualitatively.
-The evaluation process (2) assesses the performance of these classifiers in detecting AEPs.
+Step (1) aims to simulate a scenario where the requirement set has a large number of undefined and uncontrolled
+abbreviations, thereby representing a requirements set of weak quality.
+The data provided consists of 1934 requirements from the [PURE](https://ieeexplore.ieee.org/document/8049173) dataset and a list of abbreviations for a subset of 518 terms extracted from those. The abbreviations are suggested by different persons in an uncontrolled way. 
+An automated routine can be used to replace random long-form terms from the list with the corresponding abbreviations and create a testset that contains requirements with long and short forms respectively.
+Such a dataset was used for the experiments on requirements texts presented in [[2]](https://www.sciencedirect.com/science/article/abs/pii/S0950584923000575) and can be generated for replication.
+Where to find the respective files in the repository structure is described below.
+In addition, the *ILLOD_REFSQ* subdirectory contains with *insertedAbbreviations.txt* a shorter list of 30 AEPs and with *Promise_constructed.CSV* a data-set where these long forms where replaced manually in requirements from the [PROMISE NFR dataset](http://ctp.di.fct.unl.pt/RE2017/downloads/datasets/nfr.arff) for the pilot experiment in [[1]](https://link.springer.com/chapter/10.1007/978-3-030-98464-9_6).
+Further, both publication specific subdirectories contain *abbr_db.CSV* a list of 1786 AEPs from the field of information technology ((https://www.computerhope.com/jargon/acronyms.htm)), which was used for initial abbreviation detection optimization and to generate a synthetic data-set of AEPs hidden in unrelated text. 
+ 
 
-In the specific context of our [IST](https://www.sciencedirect.com/science/article/abs/pii/S0950584923000575) paper, the methods described in the artifact were 
-applied to an experiment involving 1934 requirements from the [PURE](https://ieeexplore.ieee.org/document/8049173) dataset. Different individuals suggested abbreviations for a subset of 518 terms, and an automated routine was used to replace long-form terms with the corresponding abbreviations.
+The evaluation process (2) assesses the performance of different classifiers in detecting AEPs:
+- LD (based on Levenshtein-Distance)
+- JWS (based on Jaro–Winkler-Similarity)
+- DC (based on Dice-Coefficient)
+- ILLOD
+- ILLOD+ A
+- ILLOD+ B
 
 
 ### Structure

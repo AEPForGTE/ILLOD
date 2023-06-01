@@ -1,20 +1,24 @@
 # ILLOD: Tool for Term Consolidation
-## Overview
-This repository provides data, methods (python sources) and evaluation results for the detection 
-of abbreviation-expansion pairs (AEPs) in requirement sets, specifically for glossary term 
-extraction in requirements engineering documents. The corresponding research papers are availiable 
-here:
-[REFSQ2022 Conference](https://link.springer.com/chapter/10.1007/978-3-030-98464-9_6), [IST Journal](https://www.sciencedirect.com/science/article/abs/pii/S0950584923000575).
 
-This repository is organised as follows:
+This repository provides methods (python sources), data, and evaluation results for the detection 
+of abbreviation-expansion pairs (AEPs) in requirement sets, specifically for glossary term 
+extraction and consolidation in requirement documents. 
+For AEP detection, the ILLOD(+) tool identifies 
+if a term is a potential long form to a given abbreviation
+based on syntactic features of both terms, i.a. **I**nitial **L**etters, term **L**engths, **O**rder, and **D**istribution of characters.
+Corresponding research papers that motivate this approach and discuss the results are availiable 
+here:
+REFSQ2022 Conference [[1]](https://link.springer.com/chapter/10.1007/978-3-030-98464-9_6), IST Journal [[2]](https://www.sciencedirect.com/science/article/abs/pii/S0950584923000575).
+
+The repository is organised as follows:
 
 | DIRECTORY | DESCRIPTION                                       |
 | ------ |---------------------------------------------------|
-| ILLOD_IST | Notebooks and Sources for [IST article](https://www.sciencedirect.com/science/article/abs/pii/S0950584923000575).            |
-| ILLOD_REFSQ | Notebooks and Sources for REFSQ2022 contribution. |
-| MAIN | Data and Sources for Reproduction Purposes        |
+| MAIN | Data and sources to run ILLOD(+) and further AEP classifiers + experiments for their evaluation (depends on ILLOD_IST)        |
+| ILLOD_IST | Notebooks and sources for experiments presented in [2](https://www.sciencedirect.com/science/article/abs/pii/S0950584923000575)           |
+| ILLOD_REFSQ | Notebooks and sources for experiments presented in [1](https://link.springer.com/chapter/10.1007/978-3-030-98464-9_6) |
 
-Instructions for loading and using the ILLOD (Initial Letters, term Lengths, Order, and Distribution of characters) artifact on your local system will be described below. The artifact also allows the execution of ILLOD on individual user data without requiring in-depth Python knowledge.
+Instructions for loading and using ILLOD on your local system will be described below. It is possible to execute ILLOD on individual user data without requiring in-depth Python knowledge.
 
 ## Description of Artifact
 ### Summary 
@@ -128,9 +132,9 @@ After running main&#46;py, two new output files are created in the MAIN/output d
 
 ## Related Publications
 
-Hasso, H., Großer, K., Aymaz, I., Geppert, H., Jürjens, J. (2022). Abbreviation-Expansion Pair Detection for Glossary Term Extraction. In: Gervasi, V., Vogelsang, A. (eds) Requirements Engineering: Foundation for Software Quality. REFSQ 2022. Lecture Notes in Computer Science, vol 13216. Springer, Cham. DOI: [10.1007/978-3-030-98464-9_6](https://doi.org/10.1007/978-3-030-98464-9_6)
+[1] Hasso, H., Großer, K., Aymaz, I., Geppert, H., Jürjens, J. (2022). Abbreviation-Expansion Pair Detection for Glossary Term Extraction. In: Gervasi, V., Vogelsang, A. (eds) Requirements Engineering: Foundation for Software Quality. REFSQ 2022. Lecture Notes in Computer Science, vol 13216. Springer, Cham. DOI: [10.1007/978-3-030-98464-9_6](https://doi.org/10.1007/978-3-030-98464-9_6)
 
-Hasso, H., Großer, K., Aymaz, I., Geppert, H., Jürjens, J. (2023). Enhanced Abbreviation–Expansion Pair Detection for Glossary Term Extraction. In: Information and Software Technology, vol 159 (July 2023), p. 107203. ISSN: 0950-5849. DOI: [10.1016/j.infsof.2023.107203](https://doi.org/10.1016/j.infsof.2023.107203)
+[2] Hasso, H., Großer, K., Aymaz, I., Geppert, H., Jürjens, J. (2023). Enhanced Abbreviation–Expansion Pair Detection for Glossary Term Extraction. In: Information and Software Technology, vol 159 (July 2023), p. 107203. ISSN: 0950-5849. DOI: [10.1016/j.infsof.2023.107203](https://doi.org/10.1016/j.infsof.2023.107203)
 
 ## How to Cite
 

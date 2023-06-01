@@ -15,8 +15,8 @@ The repository is organised as follows:
 | DIRECTORY | DESCRIPTION                                       |
 | ------ |---------------------------------------------------|
 | MAIN | Data and sources to run ILLOD(+) and further AEP classifiers + experiments for their evaluation (depends on ILLOD_IST)        |
-| ILLOD_IST | Notebooks and sources for experiments presented in [2](https://www.sciencedirect.com/science/article/abs/pii/S0950584923000575)           |
-| ILLOD_REFSQ | Notebooks and sources for experiments presented in [1](https://link.springer.com/chapter/10.1007/978-3-030-98464-9_6) |
+| ILLOD_IST | Notebooks and sources for experiments presented in [[2]](https://www.sciencedirect.com/science/article/abs/pii/S0950584923000575)           |
+| ILLOD_REFSQ | Notebooks and sources for experiments presented in [[1]](https://link.springer.com/chapter/10.1007/978-3-030-98464-9_6) |
 
 Instructions for loading and using ILLOD on your local system will be described below. It is possible to execute ILLOD on individual user data without requiring in-depth Python knowledge.
 

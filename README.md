@@ -101,8 +101,8 @@ The following files are included in the ILLOD artifact:
 
 ### System Requirements
 To run ILLOD and the experiments, your system must meet the following requirements:
-- Python 3.8
-- Pip 21.0.1 or 22.0.2
+- Python 3.10
+- Pip 22.0.2
 - All other required libraries will be installed automatically when running pip install -r requirements.txt.
 
 All input datafiles are provided as .csv files that can be accesses by text or spreadsheet editor.
@@ -120,12 +120,12 @@ cd MAIN
 
 Create a new virtual environment for the project:
 ```sh
-python3 -m venv venv
+python3 -m venv illod_venv
 ```
 
 Activate the virtual environment:
 ```sh
-source venv/bin/activate
+source illod_venv/bin/activate
 ```
 
 Install the required dependencies:

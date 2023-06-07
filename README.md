@@ -1,4 +1,4 @@
-# ILLOD: Tool for Term Consolidation
+# ILLOD: A Tool for Abbreviation-Expansion Pair Detection<br> in Natural Language Requirements
 
 This repository provides methods (python sources), data, and evaluation results for the detection 
 of abbreviation-expansion pairs (AEPs) in requirement sets, specifically for glossary term 

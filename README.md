@@ -101,8 +101,8 @@ The following files are included in the ILLOD artifact:
 
 ### System Requirements
 To run ILLOD and the experiments, your system must meet the following requirements:
-- Python 3.8 or higher
-- Pip (to install Python dependencies)
+- Python 3.8
+- Pip 21.0.1 or 22.0.2
 - All other required libraries will be installed automatically when running pip install -r requirements.txt.
 
 All input datafiles are provided as .csv files that can be accesses by text or spreadsheet editor.

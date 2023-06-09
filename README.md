@@ -135,7 +135,7 @@ source illod_venv/bin/activate
 
 Install the required dependencies:
 ```sh
-pip install -r requirements.txt
+pip install -r requirements_lin.txt
 ```
 
 Navigate to the root folder:

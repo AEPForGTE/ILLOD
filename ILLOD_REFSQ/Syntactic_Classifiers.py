@@ -29,8 +29,9 @@ def clean_string(s):
 def stop_words_handling(term):
     splitted_term = term.split()
     stop_words = set(["for", "and", "of", "in", "via", "be"])
-    if splitted_term[0] in stop_words:
-        stop_words = stop_words - set([splitted_term[0]])
+    if len(splitted_term[0]) >=1:
+        if splitted_term[0] in stop_words:
+            stop_words = stop_words - set([splitted_term[0]])
     for sw in stop_words:
         while sw in splitted_term:
             splitted_term.remove(sw)

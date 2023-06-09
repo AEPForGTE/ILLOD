@@ -113,73 +113,75 @@ To run ILLOD and the experiments, your system must meet the following requiremen
 
 All input datafiles are provided as .csv files that can be accesses by text or spreadsheet editor.
 
-### Steps to Reproduce on Linux
+### Steps to Reproduce on Linux/ Ubuntu
 To reproduce the results presented in the paper [[2]](https://www.sciencedirect.com/science/article/abs/pii/S0950584923000575), follow these steps:
-Clone the repository:
+
+#### 1)  Clone the repository:
 ```sh
 git clone https://github.com/AEPForGTE/ILLOD
 ```
-Navigate to the MAIN directory:
+#### 2) Navigate to the MAIN directory:
 ```sh
 cd MAIN
 ```
 
-Create a new virtual environment for the project:
+#### 3) Create a new virtual environment for the project:
 ```sh
 python3 -m venv illod_venv
 ```
 
-Activate the virtual environment:
+#### 4) Activate the virtual environment:
 ```sh
 source illod_venv/bin/activate
 ```
 
-Install the required dependencies:
+#### 5) Install the required dependencies:
 ```sh
 pip install -r requirements_lin.txt
 ```
 
-Navigate to the root folder:
+#### 6) Navigate to the root folder:
 ```sh
 cd ..
 ```
 
-Run the main&#46;py script to generate the output files:
+#### 7) Run the main&#46;py script to generate the output files:
 ```sh
 python main.py
 ```
 
 ### Steps to Reproduce on Windows
 To reproduce the results presented in the paper [[2]](https://www.sciencedirect.com/science/article/abs/pii/S0950584923000575), follow these steps:
-Clone the repository:
+
+#### 1)  Clone the repository:
 ```sh
 git clone https://github.com/AEPForGTE/ILLOD
 ```
-Navigate to the MAIN directory:
+#### 2) Navigate to the MAIN directory:
 ```sh
 cd MAIN
 ```
 
-Create a new virtual environment for the project:
+#### 3) Create a new virtual environment for the project:
 ```sh
 python -m venv illod_venv
 ```
 
-Activate the virtual environment:
+#### 4) Activate the virtual environment:
 ```sh
 .\illod_venv\Scripts\activate
 ```
 
-Install the required dependencies:
+#### 5) Install the required dependencies:
 ```sh
 pip install -r requirements_win.txt
 ```
-Navigate to the root folder:
+##### 6) Navigate to the root folder:
 ```sh
 cd ..
 ```
 
-Run the main&#46;py script to generate the output files:
+#### 7) Run the main&#46;py script to generate the output files:
 ```sh
 python main.py
 ```

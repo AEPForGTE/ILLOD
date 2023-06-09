@@ -14,33 +14,12 @@ ILLOD operates as a feature-based classifier and has shown to be more accurate t
 The notebooks in this repository are organized according to the chapter structure in the associated research paper. Each notebook computes the various tables and key figures mentioned in the paper. These experiments demonstrate ILLOD's ability to effectively extract abbreviations and match their expansions in real-world scenarios. Furthermore, ILLOD is well-suited for augmenting previous term clusters with clusters that combine AEP candidates.
 
 ### Usage
-To utilize the AEPForGTE project and ILLOD implementation, follow these steps:
+To utilize the AEPForGTE project and ILLOD implementation, depending on your operating system run 
+steps (1) to (6)
+as described in the 
+[README.md](https://github.com/AEPForGTE/ILLOD/blob/main/README.md) at the root.
 
-Clone the repository:
-```sh
-git clone https://github.com/AEPForGTE/ILLOD
-```
-Navigate to the ILLOD_IST directory:
-```sh
-cd ILLOD_IST
-```
-
-Create a new virtual environment for the project:
-```sh
-python3 -m venv illod_ist
-```
-
-Activate the virtual environment:
-```sh
-source illod_ist/bin/activate
-```
-
-Install the required dependencies:
-```sh
-pip install -r requirements.txt
-```
-
-Start jupyter-notebook:
+As seventh step start jupyter-notebook:
 ```sh
 jupyter-notebook
 ```

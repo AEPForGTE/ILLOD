@@ -16,7 +16,7 @@ abbreviations. This is done by calling the generate_modified_requirements() func
 generate_uncontrolled_abbreviations module with the NUM_OF_REPLACEMENTS parameter. The resulting dataframe is then saved
 to a CSV file named "pure_modified_requirements.csv" with semicolon separators and header names.
 
-Finally, the third tasks runs theten_fold_validation() function from the evaluate_illod module is called with the NUM_OF_REPLACEMENTS 
+Finally, the third tasks runs the ten_fold_validation() function from the evaluate_illod module is called with the NUM_OF_REPLACEMENTS 
 parameter to evaluate the performance of ILLOD on the modified requirements data using ten-fold validation. 
 The resulting dataframe is saved to a CSV file named "evaluation_results.csv" with semicolon separators.
 """

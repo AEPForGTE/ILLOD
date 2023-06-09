@@ -101,13 +101,18 @@ The following files are included in the ILLOD artifact:
 
 ### System Requirements
 To run ILLOD and the experiments, your system must meet the following requirements:
-- Python 3.10
-- Pip 22.0.2
-- All other required libraries will be installed automatically when running pip install -r requirements.txt.
+- On Linux:
+    - Python 3.10
+    - Pip 22.0.2
+    - All other required libraries will be installed automatically when running pip install -r requirements_lin.txt.
+- On Windows:
+    - Python 3.11
+    - Pip 23.1.2
+    - All other required libraries will be installed automatically when running pip install -r requirements_win.txt.
 
 All input datafiles are provided as .csv files that can be accesses by text or spreadsheet editor.
 
-### Steps to Reproduce
+### Steps to Reproduce on Linux
 To reproduce the results presented in the paper [[2]](https://www.sciencedirect.com/science/article/abs/pii/S0950584923000575), follow these steps:
 Clone the repository:
 ```sh
@@ -133,7 +138,7 @@ Install the required dependencies:
 pip install -r requirements.txt
 ```
 
-Nvigate to the root folder:
+Navigate to the root folder:
 ```sh
 cd ..
 ```
@@ -142,6 +147,42 @@ Run the main&#46;py script to generate the output files:
 ```sh
 python main.py
 ```
+
+### Steps to Reproduce on Windows
+To reproduce the results presented in the paper [[2]](https://www.sciencedirect.com/science/article/abs/pii/S0950584923000575), follow these steps:
+Clone the repository:
+```sh
+git clone https://github.com/AEPForGTE/ILLOD
+```
+Navigate to the MAIN directory:
+```sh
+cd MAIN
+```
+
+Create a new virtual environment for the project:
+```sh
+python -m venv illod_venv
+```
+
+Activate the virtual environment:
+```sh
+.\illod_venv\Scripts\activate
+```
+
+Install the required dependencies:
+```sh
+pip install -r requirements_win.txt
+```
+Navigate to the root folder:
+```sh
+cd ..
+```
+
+Run the main&#46;py script to generate the output files:
+```sh
+python main.py
+```
+
 
 ### Results
 

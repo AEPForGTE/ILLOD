@@ -223,7 +223,7 @@ Yet, again, if executed again, values based on random selections will change in 
 
 If you find this work useful and want to cite it in your research, you can use the following format:
 
-Hasso, H., Großer, K., Aymaz, I., Geppert, H., Jürjens, J. (2023). ILLOD: Tool for Term Consolidation. DOI:
+Hasso, H., Großer, K., Aymaz, I., Geppert, H., Jürjens, J. (2023). ILLOD: A Tool for Abbreviation-Expansion Pair Detection in Natural Language Requirements. DOI: 10.5281/zenodo.5904312
 
 ## License
 

@@ -107,7 +107,8 @@ To run ILLOD and the experiments, your system must meet the following requiremen
     - All other required libraries will be installed automatically when running pip install -r requirements_lin.txt.
 - On Windows:
     - Python 3.11
-    - Pip 23.1.2
+    - Pip 23.1.2 
+    - Microsoft Visual C++ 2015-2022 Redistributable
     - All other required libraries will be installed automatically when running pip install -r requirements_win.txt.
 
 All input datafiles are provided as .csv files that can be accesses by text or spreadsheet editor.

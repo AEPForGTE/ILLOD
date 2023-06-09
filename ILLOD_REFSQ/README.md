@@ -11,10 +11,7 @@ approaches relying on syntactic or semantic similarity. It serves as a valuable 
 The notebooks in this repository are organized according to the chapter structure in the associated research paper. Each notebook computes the various tables and key figures mentioned in the paper. These experiments demonstrate ILLOD's ability to effectively extract abbreviations and match their expansions in real-world scenarios. Furthermore, ILLOD is well-suited for augmenting previous term clusters with clusters that combine AEP candidates.
 
 ### Usage
-To utilize the AEPForGTE project and ILLOD implementation, depending on your operating system run 
-steps (1) to (6)
-as described in the 
-[README.md](https://github.com/AEPForGTE/ILLOD/blob/main/README.md) at the root.
+To use the AEPForGTE project and the ILLOD implementation, carry out steps (1) to (6), depending on the operating system, as described in the [README.md](https://github.com/AEPForGTE/ILLOD/blob/main/README.md)  in the root directory.
 
 As seventh step start jupyter-notebook:
 ```sh

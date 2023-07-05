@@ -17,6 +17,6 @@ COPY ILLOD_REFSQ /usr/ILLOD/ILLOD_REFSQ
 COPY MAIN /usr/ILLOD/MAIN
 
 RUN pip install --upgrade pip==22.0.2
-RUN pip install --proxy http://128.7.3.56:3128 -r MAIN/requirements_lin.txt
+RUN pip install  -r MAIN/requirements_lin.txt
 
 CMD ["python", "./main.py"]

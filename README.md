@@ -185,6 +185,34 @@ cd ..
 ```sh
 python main.py
 ```
+### Steps to reproduce with Docker on Linux/Ubuntu
+
+To reproduce the results presented in the paper [[2]](https://www.sciencedirect.com/science/article/abs/pii/S0950584923000575), follow these steps:
+
+#### 1)  Clone the repository:
+```sh
+git clone https://github.com/AEPForGTE/ILLOD
+```
+
+#### 2) Navigate to the project directory and make the script executable:
+
+````sh
+cd ILLOD
+chmod +x run_docker.sh
+````
+
+If docker isn't installed, follow these steps to install it on your system: [Install Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
+
+
+
+#### 3) Run the bash script `run_docker.sh` to build the docker image and run it:
+
+````sh
+./run_docker.sh
+````
+
+The results are to be generated under `MAIN/output_data_docker`.
+
 
 
 ### Results

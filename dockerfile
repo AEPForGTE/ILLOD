@@ -5,6 +5,7 @@ HEALTHCHECK --interval=10s --timeout=5s --retries=3 CMD wget --no-proxy -O - -q 
 #ARG http_proxy=http://128.7.3.56:3128
 #ARG https_proxy=http://128.7.3.56:3128
 ENV PATH "$PATH:/root/.local/bin"
+ENV PYTHONUNBUFFERED=1
 
 RUN apt-get update -qq && apt-get install --no-install-recommends --yes build-essential
 
@@ -17,6 +18,6 @@ COPY ILLOD_REFSQ /usr/ILLOD/ILLOD_REFSQ
 COPY MAIN /usr/ILLOD/MAIN
 
 RUN pip install --upgrade pip==22.0.2
-RUN pip install --proxy http://128.7.3.56:3128 -r MAIN/requirements_lin.txt
+RUN pip install  -r MAIN/requirements_lin.txt
 
 CMD ["python", "./main.py"]

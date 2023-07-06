@@ -185,7 +185,7 @@ cd ..
 ```sh
 python main.py
 ```
-### Steps to reproduce with Docker on Linux/Ubuntu
+### Steps to reproduce with Docker
 
 To reproduce the results presented in the paper [[2]](https://www.sciencedirect.com/science/article/abs/pii/S0950584923000575), follow these steps:
 
@@ -194,22 +194,44 @@ To reproduce the results presented in the paper [[2]](https://www.sciencedirect.
 git clone https://github.com/AEPForGTE/ILLOD
 ```
 
-#### 2) Navigate to the project directory and make the script executable:
+#### 2) Navigate to the project directory:
 
 ````sh
 cd ILLOD
-chmod +x run_docker.sh
 ````
 
-If docker isn't installed, follow these steps to install it on your system: [Install Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
+#### 3) Make the script executable (Ubuntu/macOS):
+
+On Windows, using Git Bash, use these commands:
+
+````sh
+cd ILLOD
+dos2unix run_docker.sh
+````
+
+####  4) Install docker (if not installed):
+
+If docker isn't installed, follow the appropriate guide to install it on your system: 
+- [Install Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
+- [Install Docker Desktop on Windows](https://docs.docker.com/desktop/install/windows-install/)
+- [Install Docker Desktop on Mac](https://docs.docker.com/desktop/install/mac-install/)
 
 
+#### 5) Run the docker image:
 
-#### 3) Run the bash script `run_docker.sh` to build the docker image and run it:
+On Ubuntu and macOS, run:
 
 ````sh
 ./run_docker.sh
 ````
+
+On Windows, run:
+
+````sh
+run_docker.bat
+````
+
+
 
 The results are to be generated under `MAIN/output_data_docker`.
 

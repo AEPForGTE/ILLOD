@@ -202,11 +202,10 @@ cd ILLOD
 
 #### 3) Make the script executable (Ubuntu/macOS):
 
-On Windows, using Git Bash, use these commands:
+To make the script executable, run:
 
 ````sh
-cd ILLOD
-dos2unix run_docker.sh
+chmod +x run_docker.sh
 ````
 
 ####  4) Install docker (if not installed):

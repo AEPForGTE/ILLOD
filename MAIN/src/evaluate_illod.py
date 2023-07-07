@@ -89,6 +89,7 @@ def ten_fold_validation(number_of_replacements):
     data_list = data.values.tolist()
     replacement_data = pd.read_csv(replacementDataFilePath, names=['term', 'abbv'], sep=';', encoding='utf8')
     aeps_to_replace = replacement_data.values.tolist()
+    print("Running iterations for 10-fold validation ...")
 
     overall_results = []
     for i in range(0, 10):
